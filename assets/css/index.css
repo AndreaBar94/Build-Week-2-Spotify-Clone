@@ -10778,13 +10778,13 @@ body {
 
 #playbarMobile {
   position: fixed;
-  bottom: 60px;
+  bottom: 80px;
+  z-index: 1;
 }
 
 #sticky {
   position: -webkit-sticky;
   position: fixed;
   bottom: 0;
-  height: 30px;
-  width: 100vw;
+  z-index: 1;
 }/*# sourceMappingURL=index.css.map */

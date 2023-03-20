@@ -12,7 +12,7 @@
 		<link rel="stylesheet" href="assets/css/index.css" />
 	</head>
 	<body>
-		<nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-secondary fixed-top">
 			<div class="container-fluid">
 				<span class="d-md-none text-light fw-bold fs-4">Buonasera</span>
 				<div class="btn-group d-none d-md-block" role="group">
@@ -128,18 +128,47 @@
 					</svg>
 				</button>
 				<div class="offcanvas offcanvas-end d-lg-none" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-					<div class="offcanvas-header bg-secondary">
-						<button type="button" class="btn-close ms-auto" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+					<div class="offcanvas-header bg-dark">
+						<button type="button" class="btn-close btn-close-white ms-auto" data-bs-dismiss="offcanvas" aria-label="Close"></button>
 					</div>
-					<div class="offcanvas-body bg-secondary opacity-3">
-						<ul class="list-group list-unstyled bg-secondary text-decoration-none">
-							<li><a class="dropdown-item text-light" href="#">Account</a></li>
-							<li><a class="dropdown-item text-light" href="#">Profilo</a></li>
-							<li><a class="dropdown-item text-light" href="#">Effettua l'upgrade a premium</a></li>
+					<div class="offcanvas-body bg-dark opacity-3">
+						<ul class="list-group list-unstyled bg-dark text-decoration-none">
 							<li>
-								<a class="dropdown-item text-light border-bottom border-light pb-2" href="#">Impostazioni</a>
+								<a class="dropdown-item text-light pt-2 fs-3 fw-bold" href="#"
+									>Visualizza account
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="16"
+										height="16"
+										fill="currentColor"
+										class="bi bi-arrow-up-right"
+										viewBox="0 0 16 16">
+										<path
+											fill-rule="evenodd"
+											d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z" />
+									</svg>
+								</a>
 							</li>
-							<li><a class="dropdown-item text-light pt-2" href="#">Esci</a></li>
+							<li><a class="dropdown-item text-light pt-2 fs-3 fw-bold" href="#">Profilo</a></li>
+							<li><a class="dropdown-item text-light pt-2 fs-3 fw-bold" href="#">Esci</a></li>
+							<li>
+								<a class="dropdown-item text-light" href="#"
+									><svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="16"
+										height="16"
+										fill="currentColor"
+										class="bi bi-dash-lg text-light"
+										viewBox="0 0 16 16">
+										<path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z" />
+									</svg>
+								</a>
+							</li>
+							<li><a class="dropdown-item text-light pt-2" href="#">Premium</a></li>
+							<li><a class="dropdown-item text-light pt-2" href="#">Assistenza</a></li>
+							<li><a class="dropdown-item text-light pt-2" href="#">Download</a></li>
+							<li><a class="dropdown-item text-light pt-2" href="#">Privacy</a></li>
+							<li><a class="dropdown-item text-light pt-2" href="#">Condizioni</a></li>
 						</ul>
 					</div>
 				</div>

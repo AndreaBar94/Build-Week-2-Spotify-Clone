@@ -1,1 +1,8 @@
-@import 'bootstrap-overrides';
+@import "bootstrap-overrides";
+
+.dropdown-item:hover {
+	background-color: #3e3e3e;
+}
+.navBtns {
+	background-color: $dark;
+}

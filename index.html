@@ -15,73 +15,91 @@
 <body>
 
 
-	<div class="container-fluid d-block position-fixed bottom-0 bg-dark" style="height: 180px;">
+	<div class="container-fluid position-fixed bottom-0 bg-dark d-none d-lg-block">
 		<div class="container-fluid">
-			<div class="row px-3 d-flex align-items-center">
+			<div class="row d-flex align-items-center">
 				<div id="songInfo" class="col-3">
 					<div class="row d-flex align-items-center justify-content-start">
 						<div class="col-2">
-							<img src="assets/imgs/main/image-1.jpg" alt="album cover" class="img-fluid"
+							<img src="assets/imgs/main/image-1.jpg" alt="album cover" class="img-fluid songCover"
 								style="height: 100%;">
 						</div>
 						<div class="col-4 text-light lh-1">
-							<p class="fw-bold">Song Title</p>
-							<p>Song artist</p>
+							<p class="fw-bold fs-6 songTitle">Song Title</p>
+							<p class="fs-6 songArtist">Song artist</p>
 						</div>
 						<div class="col-1">
 							<button class="btn"><i class="bi bi-heart text-light"></i></button>
 						</div>
 					</div>
 				</div>
-				<div id="songControls" class="col px-5">
+				<div id="songControls" class="col-6 px-5 container">
 					<div id="upperControls" class="row d-flex align-items-center justify-content-center">
-						<div class="col-5 d-flex justify-content-end">
+						<div class="col-6 d-flex justify-content-center">
 							<button class="btn"><i class="bi bi-shuffle text-primary"></i></button>
 							<button class="btn"><i class="bi bi-skip-backward-fill text-muted"></i></button>
-						</div>
-						<div class="col-1 d-flex justify-content-center">
-							<button class="btn"><i class="bi bi-play-circle-fill text-light fs-1"></i></button>
-						</div>
-						<div class="col-5 d-flex justify-content-start">
+							<button class="btn"><i class="bi bi-play-circle-fill text-light fs-2"></i></button>
 							<button class="btn"><i class="bi bi-skip-forward-fill text-muted"></i></button>
 							<button class="btn"><i class="bi bi-repeat text-primary"></i></button>
 						</div>
 					</div>
-					<div id="timeBar" class="row pb-3" style="width: 100%">
-						<div class="d-flex justify-content-between">
-							<p class="text-muted fs-6">0:00</p>
-							<p class="text-muted fs-6">0:00</p>
+					<div id="timeBar" class="row pb-3 d-flex align-items-center" style="width: 100%">
+						<div class="col-2 d-flex align-items-center justify-content-end">
+							<p class="text-muted fs-6 d-flex align-items-center justify-content-end m-0">0:00</p>
 						</div>
-						<div class="progress d-flex justify-content-start" style="height: 3px;">
-							<div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25"
-								aria-valuemin="0" aria-valuemax="100"></div>
+						<div class="container col-8">
+							<div class="progress d-flex justify-content-start" style="height: 3px;">
+								<div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25"
+									aria-valuemin="0" aria-valuemax="100"></div>
+							</div>
+						</div>
+						<div class="col-2 d-flex align-items-center justify-content-start">
+							<p class="text-muted fs-6 d-flex align-items-center justify-content-end m-0">0:00</p>
 						</div>
 					</div>
 				</div>
 				<div id="extraControls" class="col-3 d-flex align-items-center justify-content-end">
-					<div class="row">
-						<div class="col-1"><button class="btn"><i class="bi bi-mic text-muted fs-5"></i></button></div>
-						<div class="col-1"><button class="btn"><i class="bi bi-view-list text-muted fs-5"></i></button>
+					<div class="row flex align-items-center">
+						<div class="col-6 d-flex justify-content-center">
+							<button class="btn"><i class="bi bi-mic text-muted"></i></button>
+							<button class="btn"><i class="bi bi-view-list text-muted"></i></button>
+							<button class="btn"><i class="bi bi-speaker text-muted"></i></button>
+							<button class="btn"><i class="bi bi-volume-up text-muted"></i></button>
+							<button class="btn"><i class="bi bi-arrows-angle-expand text-muted"></i></button>
 						</div>
-						<div class="col-1"><button class="btn"><i class="bi bi-speaker text-muted fs-5"></i></button>
-						</div>
-						<div class="col-4 d-inline-block">
-							<div>
-								<i class="bi bi-volume-up text-muted"></i>
-							</div>
-							<div class="progress" style="height: 1px;">
-								<div class="progress-bar" role="progressbar" aria-label="Example 1px high"
-									style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-							</div>
-						</div>
-						<div class="col-1"><button class="btn"><i
-									class="bi bi-arrows-angle-expand text-muted fs-5"></i></button>
-						</div>
+
 					</div>
 				</div>
 			</div>
 		</div>
 
+
+	</div>
+
+	<div
+		class="container d-lg-none m-2 bg-dark position-fixed bottom-0 d-flex justify-content-between border border-0 rounded-2">
+		<div id="songInfo" class="col-6 d-flex align-items-center justify-content-start">
+			<div class="d-flex align-items-center">
+				<div class="pe-3">
+					<img src="assets/imgs/main/image-1.jpg" alt="album cover" class="img-fluid songCover"
+						style="width: 50px">
+				</div>
+				<div class="lh-1 pt-3">
+					<p class="fw-bold text-light songTitle">Song Title</p>
+					<p class="text-muted songArtist">Song artist</p>
+				</div>
+			</div>
+		</div>
+		<div id="songControls" class="col-6 d-flex align-items-center justify-content-end">
+			<div class="d-flex align-items-center justify-content-end">
+				<div class="">
+					<button class="btn text-muted"><i class="bi bi-speaker fs-5"></i></button>
+				</div>
+				<div class="d-flex align-items-center">
+					<button class="btn text-muted"><i class="bi bi-play-circle-fill fs-1"></i></button>
+				</div>
+			</div>
+		</div>
 
 	</div>
 

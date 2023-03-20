@@ -10762,4 +10762,11 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
+}
+.dropdown-item:hover {
+  background-color: #3e3e3e;
+}
+
+.navBtns {
+  background-color: #212529;
 }/*# sourceMappingURL=index.css.map */

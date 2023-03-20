@@ -18,6 +18,13 @@ body {
 	bottom: 80px;
 	z-index: 1;
 }
+@media screen and (max-width: 320px) {
+	#playbarMobile {
+		position: fixed;
+		bottom: 105px;
+		z-index: 1;
+	}
+}
 #sticky {
 	position: -webkit-sticky;
 	position: fixed;

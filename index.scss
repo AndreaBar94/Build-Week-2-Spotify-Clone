@@ -13,4 +13,14 @@
 body {
 	font-family: "Circular";
 }
-
+#playbarMobile {
+	position: fixed;
+	bottom: 60px;
+}
+#sticky {
+	position: -webkit-sticky;
+	position: fixed;
+	bottom: 0;
+	height: 30px;
+	width: 100vw;
+}

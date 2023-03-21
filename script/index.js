@@ -9,21 +9,21 @@ const selectedId = URLParams.get('id');
 //Population of the fields
 
 window.onload = () => {
-	// try {
-	// 	fetch(endpointAlbum)
-	// 		.then((responseObj) => responseObj.json())
-	// 		.then((album) => {
-	// 			let albumName = document.getElementById('albumNameTop');
-	// 			albumName.textContent = album.title;
-	// 			let albumArtist = document.getElementById('albumArtistTop');
-	// 			albumArtist.textContent = album.artist.name;
-	// 			let albumCover = document.getElementById('albumCoverTop');
-	// 			albumCover.src = album.cover_big;
-	// 			console.log(endpointAlbum);
-	// 		});
-	// } catch (error) {
-	// 	console.log('ERROR' + error);
-	// }
+	try {
+		fetch(endpointAlbum)
+			.then((responseObj) => responseObj.json())
+			.then((album) => {
+				let albumName = document.getElementById('albumNameTop');
+				albumName.textContent = album.title;
+				let albumArtist = document.getElementById('albumArtistTop');
+				albumArtist.textContent = album.artist.name;
+				let albumCover = document.getElementById('albumCoverTop');
+				albumCover.src = album.cover_big;
+				console.log(endpointAlbum);
+			});
+	} catch (error) {
+		console.log('ERROR' + error);
+	}
 
 	try {
 		fetch(trackList)

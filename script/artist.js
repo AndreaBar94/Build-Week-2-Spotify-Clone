@@ -30,6 +30,7 @@ window.onload = () => {
 				trackList.data.forEach((track) => {
 					let liElement = document.createElement("li");
 					liElement.classList.add("py-3");
+					let duration = (track.duration / 60).toFixed(2) + " minuti";
 					liElement.innerHTML = `
                         <div class="row row-cols-3">
                             <div class="col-6 fs-10">
@@ -40,7 +41,7 @@ window.onload = () => {
                                 <span>Rank ${track.rank}</span>
                             </div>
                             <div class="col-3">
-                                <span>${track.duration}</span>
+                                <span>${duration}</span>
                             </div>
                         </div>
                     `;

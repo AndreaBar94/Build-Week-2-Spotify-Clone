@@ -11717,7 +11717,7 @@ body {
   height: auto;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1220px) {
   .spotify-logo-text {
     width: 100px;
     height: auto;

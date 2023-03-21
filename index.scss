@@ -13,6 +13,7 @@
 body {
 	font-family: 'Circular';
 }
+
 #playbarMobile {
 	position: fixed;
 	bottom: 80px;
@@ -54,6 +55,16 @@ body {
 	width: 100%;
 	display: flex;
 	justify-content: space-around;
+	z-index: 1;
+	/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#282828+0,070707+100&0.8+0,1+66 */
+	background: -moz-linear-gradient(top, rgba(40, 40, 40, 0.8) 0%, rgba(18, 18, 18, 1) 66%, rgba(7, 7, 7, 1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(40, 40, 40, 0.8) 0%, rgba(18, 18, 18, 1) 66%, rgba(7, 7, 7, 1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(
+		to bottom,
+		rgba(40, 40, 40, 0.8) 0%,
+		rgba(18, 18, 18, 1) 66%,
+		rgba(7, 7, 7, 1) 100%
+	); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 
 	p {
 		font-size: 0.8rem;
@@ -67,24 +78,104 @@ body {
 	}
 }
 
-.playbarMobile {
+#playbarMobile {
 	z-index: 1;
 }
 
+.playbarSongInfo {
+	line-height: 0rem;
+}
+
 main {
-	margin-inline: 15%;
+	/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#282828+0,282828+0,070707+100 */
+	background: #282828; /* Old browsers */
+	background: -moz-linear-gradient(top, #282828 0%, #282828 0%, #070707 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #282828 0%, #282828 0%, #070707 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #282828 0%, #282828 0%, #070707 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 .mainBox {
-	width: 100%;
-	margin: 0;
+	margin-inline: 0;
+	padding-bottom: 10rem;
+	background-color: $dark;
 }
 
-#friendsProfile {
-	line-height: 0.1rem;
-
-	#friendsPicture {
-		width: 15%;
-		height: 15%;
+#friendsActivity {
+	#friendsProfile {
+		line-height: 0.1rem;
+		#friendsPicture {
+			width: 15%;
+			height: 15%;
+		}
 	}
+	#friendsActivity {
+		background-color: $dark;
+		padding-bottom: 10rem;
+	}
+}
+
+#sidebarDesktop {
+	width: 15%;
+	padding-bottom: 10rem;
+}
+// ARTIST
+#mainContent {
+	position: relative;
+	background: #282828;
+	background: -moz-linear-gradient(top, #282828 0%, #282828 0%, #070707 100%);
+	background: -webkit-linear-gradient(top, #282828 0%, #282828 0%, #070707 100%);
+	background: linear-gradient(to bottom, #282828 0%, #282828 0%, #070707 100%);
+}
+#artistMainContent {
+	position: absolute;
+	top: 0;
+	padding-inline: 0;
+	padding-bottom: 10rem;
+	background: #282828;
+	background: -moz-linear-gradient(top, #282828 0%, #282828 0%, #070707 100%);
+	background: -webkit-linear-gradient(top, #282828 0%, #282828 0%, #070707 100%);
+	background: linear-gradient(to bottom, #282828 0%, #282828 0%, #070707 100%);
+}
+
+#artistThumbnail {
+	background-image: url(https://www.romatoday.it/~media/horizontal-hi/51536659594995/concerto-maneskin-9-luglio-2.jpg);
+	background-size: cover;
+	height: 40vh;
+}
+
+@media screen and (max-width: 991px) {
+	#artistPlaybar {
+		display: flex;
+		flex-direction: row-reverse;
+		justify-content: space-between;
+	}
+	#artistOverview {
+		padding: 1rem;
+		.row {
+			display: flex;
+			flex-direction: row;
+		}
+	}
+}
+
+@media screen and (max-width: 991px) {
+}
+
+#homeMainCard {
+	/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#070707+0,282828+100 */
+	background: #070707; /* Old browsers */
+	background: -moz-linear-gradient(45deg, #070707 0%, #282828 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(45deg, #070707 0%, #282828 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(45deg, #070707 0%, #282828 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+	width: 100%;
+}
+
+.mobileHomeMainCards {
+	line-height: 0.5rem;
+}
+
+.horizontal-scrollable {
+	overflow-x: auto;
+	white-space: nowrap;
 }

@@ -11747,6 +11747,8 @@ body {
 
 .mainBox {
   margin-inline: 0;
+  padding-bottom: 10rem;
+  background-color: #070707;
 }
 
 #friendsProfile {
@@ -11755,6 +11757,11 @@ body {
 #friendsProfile #friendsPicture {
   width: 15%;
   height: 15%;
+}
+
+#friendsActivity {
+  background-color: #070707;
+  padding-bottom: 10rem;
 }
 
 #mainContent {
@@ -11780,11 +11787,6 @@ body {
   background-image: url(https://www.romatoday.it/~media/horizontal-hi/51536659594995/concerto-maneskin-9-luglio-2.jpg);
   background-size: cover;
   height: 40vh;
-}
-
-#friendsActivity {
-  height: 100vh;
-  background-color: #070707;
 }
 
 @media screen and (max-width: 991px) {

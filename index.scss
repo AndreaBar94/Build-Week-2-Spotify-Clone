@@ -13,6 +13,7 @@
 body {
 	font-family: "Circular";
 }
+
 #playbarMobile {
 	position: fixed;
 	bottom: 80px;
@@ -72,6 +73,8 @@ body {
 
 .mainBox {
 	margin-inline: 0;
+	padding-bottom: 10rem;
+	background-color: $dark;
 }
 
 #friendsProfile {
@@ -81,6 +84,10 @@ body {
 		width: 15%;
 		height: 15%;
 	}
+}
+#friendsActivity {
+	background-color: $dark;
+	padding-bottom: 10rem;
 }
 
 // ARTIST
@@ -106,11 +113,6 @@ body {
 	background-image: url(https://www.romatoday.it/~media/horizontal-hi/51536659594995/concerto-maneskin-9-luglio-2.jpg);
 	background-size: cover;
 	height: 40vh;
-}
-
-#friendsActivity {
-	height: 100vh;
-	background-color: $dark;
 }
 
 @media screen and (max-width: 991px) {

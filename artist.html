@@ -268,10 +268,11 @@
 				</nav>
 				<div id="artistMainContent" class="container-fluid">
 					<div id="artistThumbnail" class="container-fluid d-flex flex-column justify-content-end text-light px-3">
-						<p>Artista verificato</p>
+						<p class="d-none d-lg-block">Artista verificato</p>
 						<p class="fs-2 fw-bold">Artist Name</p>
-						<p>Followers</p>
+						<p class="d-none d-lg-block">Followers</p>
 					</div>
+					<p id="listener" class="text-muted mb-0 d-lg-none">ascoltatori mensili</p>
 					<div id="artistPlaybar" class="container-fluid d-flex justify-content-start p-3">
 						<button class="btn btn-primary rounded-circle px-2">
 							<svg xmlns="http://www.w3.org/2000/svg" width="24" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
@@ -309,7 +310,7 @@
 							<div class="col-lg-7 col-12 p-4 p-lg-0">
 								<h5>Popolari</h5>
 								<!-- ripassare qui per togliere puntini dalla ol -->
-								<ol class="olList">
+								<ol>
 									<li class="py-1">
 										<div class="row row-cols-3">
 											<div class="col-6 fs-10">
@@ -396,7 +397,7 @@
 									</li>
 								</ol>
 							</div>
-							<div class="col-lg-5 col-12">
+							<div id="liked" class="col-lg-5 col-12">
 								<div class="container d-none d-lg-block">
 									<h5>Brani che ti piacciono</h5>
 									<div class="row mt-4">

@@ -123,25 +123,16 @@ body {
 		background: linear-gradient(to bottom, #282828 0%, #282828 0%, #070707 100%);
 		.row {
 			display: flex;
-			flex-direction: column-reverse;
+			flex-direction: row;
 		}
 	}
 }
-// .olList {
-// 	counter-reset: item;
-// 	margin-left: 0;
-// 	padding-left: 0;
-// 	li {
-// 		display: block;
-// 		margin-bottom: 0.5em;
-// 		margin-left: 2em;
-// 	}
-// 	li::before {
-// 		display: inline-block;
-// 		content: counter(item) "";
-// 		counter-increment: item;
-// 		width: 2em;
-// 		margin-left: -2em;
-// 		margin-top: 2em;
-// 	}
-// }
+#listener {
+	padding: 1rem;
+	background: #282828;
+	background: -moz-linear-gradient(top, #282828 0%, #282828 0%, #070707 100%);
+	background: -webkit-linear-gradient(top, #282828 0%, #282828 0%, #070707 100%);
+	background: linear-gradient(to bottom, #282828 0%, #282828 0%, #070707 100%);
+}
+@media screen and (max-width: 991px) {
+}

@@ -100,19 +100,17 @@ main {
 	background-color: $dark;
 }
 
-#friendsActivity {
-	#friendsProfile {
-		line-height: 0.1rem;
-		#friendsPicture {
-			width: 15%;
-			height: 15%;
-		}
-	}
-	#friendsActivity {
-		background-color: $dark;
-		padding-bottom: 10rem;
-	}
+
+#friendsPicture {
+	width: 15%;
+	height: 15%;
 }
+	
+#friendsActivity {
+	background-color: $dark;
+	padding-bottom: 10rem;
+}
+
 
 #sidebarDesktop {
 	width: 15%;

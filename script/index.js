@@ -2,7 +2,7 @@ let randomArtist = Math.floor(Math.random() * 1000) + 1;
 let randomAlbum = Math.floor(Math.random() * 100000) + 10000000;
 const endpointArtist = 'https://striveschool-api.herokuapp.com/api/deezer/artist/' + randomArtist;
 const endpointAlbum = 'https://striveschool-api.herokuapp.com/api/deezer/album/' + randomAlbum;
-const trackList = 'https://striveschool-api.herokuapp.com/api/deezer/artist/' + randomArtist + '/top?limit=50';
+const endpointTrackList = 'https://striveschool-api.herokuapp.com/api/deezer/artist/' + randomArtist + '/top?limit=50';
 const URLParams = new URLSearchParams(window.location.search);
 const selectedId = URLParams.get('id');
 
@@ -23,28 +23,34 @@ window.onload = () => {
 			});
 	} catch (error) {
 		console.log('ERROR' + error);
-	}
+	};
 
 	try {
-		fetch(trackList)
+		fetch(endpointTrackList)
 			.then((responseObj) => responseObj.json())
 			.then((trackList) => {
 				console.log(trackList);
-				trackList.data.forEach((track) => {
-					let col = document.querySelectorAll('.madeForYou');
-					col.innerHTML += `<button class="btn">
+				let track = trackList;
+				console.log(track); 
+				let cols = document.getElementById('madeForYou');
+				cols.forEach((col) => {
+					col.innerHTML = `<button class="btn">
                                             <div class="card p-2 bg-secondary">
-                                            <img src="${track.album.cover}" class="card-img-top"
+                                            <img src="${track.album.cover_small}" class="card-img-top"
                                                 alt="${track.title}">
                                             <div class="card-body text-start">
                                                 <p class="card-text fs-10 text-light">${track.title}</p>
                                                 <p class="card-text fs-10 fw-light text-info">${track.artist.name}</p>
                                             </div>
                                             </div>
-                                        </button>`;
+                                    	</button>`;
 				});
+				
 			});
 	} catch (error) {
 		console.log('ERROR' + error);
-	}
-};
+	};
+}
+
+
+//  

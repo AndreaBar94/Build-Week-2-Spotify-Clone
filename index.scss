@@ -37,6 +37,13 @@ body {
 	height: auto;
 }
 
+@media screen and (max-width: 1024px) {
+	.spotify-logo-text {
+		width: 100px;
+		height: auto;
+	}
+}
+
 #navDivider {
 	width: 95%;
 }

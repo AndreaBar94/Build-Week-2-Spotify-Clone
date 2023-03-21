@@ -4,7 +4,7 @@ const endpoint = "https://striveschool-api.herokuapp.com/api/deezer/artist/" + c
 const trackList = "https://striveschool-api.herokuapp.com/api/deezer/artist/" + casualId + "/top?limit=50";
 const URLParams = new URLSearchParams(window.location.search);
 const selectedId = URLParams.get("id");
-
+// https://rapidapi.com/deezerdevs/api/deezer-1 documentazione
 //fill the html with artist info
 window.onload = () => {
 	try {

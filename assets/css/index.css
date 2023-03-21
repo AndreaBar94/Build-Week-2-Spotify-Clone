@@ -11741,17 +11741,8 @@ body {
   height: auto;
 }
 
-.playbarMobile {
-  z-index: 1;
-}
-
-main {
-  margin-inline: 15%;
-}
-
 .mainBox {
-  width: 100%;
-  margin: 0;
+  margin-inline: 0;
 }
 
 #friendsProfile {
@@ -11760,4 +11751,52 @@ main {
 #friendsProfile #friendsPicture {
   width: 15%;
   height: 15%;
+}
+
+#mainContent {
+  position: relative;
+  background: #282828;
+  background: -moz-linear-gradient(top, #282828 0%, #282828 0%, #070707 100%);
+  background: -webkit-linear-gradient(top, #282828 0%, #282828 0%, #070707 100%);
+  background: linear-gradient(to bottom, #282828 0%, #282828 0%, #070707 100%);
+}
+
+#artistMainContent {
+  position: absolute;
+  top: 0;
+  padding-inline: 0;
+}
+
+#artistThumbnail {
+  background-image: url(https://www.romatoday.it/~media/horizontal-hi/51536659594995/concerto-maneskin-9-luglio-2.jpg);
+  background-size: cover;
+  height: 40vh;
+}
+
+#friendsActivity {
+  height: 100vh;
+  background-color: #070707;
+}
+
+@media screen and (max-width: 991px) {
+  #artistPlaybar {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    background: #282828;
+    background: -moz-linear-gradient(top, #282828 0%, #282828 0%, #070707 100%);
+    background: -webkit-linear-gradient(top, #282828 0%, #282828 0%, #070707 100%);
+    background: linear-gradient(to bottom, #282828 0%, #282828 0%, #070707 100%);
+  }
+  #artistOverview {
+    padding: 1rem;
+    background: #282828;
+    background: -moz-linear-gradient(top, #282828 0%, #282828 0%, #070707 100%);
+    background: -webkit-linear-gradient(top, #282828 0%, #282828 0%, #070707 100%);
+    background: linear-gradient(to bottom, #282828 0%, #282828 0%, #070707 100%);
+  }
+  #artistOverview .row {
+    display: flex;
+    flex-direction: column-reverse;
+  }
 }/*# sourceMappingURL=index.css.map */

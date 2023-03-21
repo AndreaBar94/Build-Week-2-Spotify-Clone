@@ -1,6 +1,6 @@
-@import 'bootstrap-overrides';
+@import "bootstrap-overrides";
 
-@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
 
 .dropdown-item:hover {
 	background-color: #3e3e3e;
@@ -11,7 +11,7 @@
 }
 
 body {
-	font-family: 'Circular';
+	font-family: "Circular";
 }
 #playbarMobile {
 	position: fixed;
@@ -67,17 +67,8 @@ body {
 	}
 }
 
-.playbarMobile {
-	z-index: 1;
-}
-
-main {
-	margin-inline: 15%;
-}
-
 .mainBox {
-	width: 100%;
-	margin: 0;
+	margin-inline: 0;
 }
 
 #friendsProfile {
@@ -88,3 +79,69 @@ main {
 		height: 15%;
 	}
 }
+
+// ARTIST
+#mainContent {
+	position: relative;
+	background: #282828;
+	background: -moz-linear-gradient(top, #282828 0%, #282828 0%, #070707 100%);
+	background: -webkit-linear-gradient(top, #282828 0%, #282828 0%, #070707 100%);
+	background: linear-gradient(to bottom, #282828 0%, #282828 0%, #070707 100%);
+}
+#artistMainContent {
+	position: absolute;
+	top: 0;
+	padding-inline: 0;
+}
+
+#artistThumbnail {
+	background-image: url(https://www.romatoday.it/~media/horizontal-hi/51536659594995/concerto-maneskin-9-luglio-2.jpg);
+	background-size: cover;
+	height: 40vh;
+}
+
+#friendsActivity {
+	height: 100vh;
+	background-color: $dark;
+}
+
+@media screen and (max-width: 991px) {
+	#artistPlaybar {
+		display: flex;
+		flex-direction: row-reverse;
+		justify-content: space-between;
+		background: #282828;
+		background: -moz-linear-gradient(top, #282828 0%, #282828 0%, #070707 100%);
+		background: -webkit-linear-gradient(top, #282828 0%, #282828 0%, #070707 100%);
+		background: linear-gradient(to bottom, #282828 0%, #282828 0%, #070707 100%);
+	}
+	#artistOverview {
+		padding: 1rem;
+		background: #282828;
+		background: -moz-linear-gradient(top, #282828 0%, #282828 0%, #070707 100%);
+		background: -webkit-linear-gradient(top, #282828 0%, #282828 0%, #070707 100%);
+		background: linear-gradient(to bottom, #282828 0%, #282828 0%, #070707 100%);
+		.row {
+			display: flex;
+			flex-direction: column-reverse;
+		}
+	}
+}
+// .olList {
+// 	counter-reset: item;
+// 	margin-left: 0;
+// 	padding-left: 0;
+// 	li {
+// 		display: block;
+// 		margin-bottom: 0.5em;
+// 		margin-left: 2em;
+// 	}
+// 	li::before {
+// 		display: inline-block;
+// 		content: counter(item) "";
+// 		counter-increment: item;
+// 		width: 2em;
+// 		margin-left: -2em;
+// 		margin-top: 2em;
+// 	}
+// }

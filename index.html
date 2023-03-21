@@ -13,9 +13,10 @@
 </head>
 
 <body>
-	<div class="mainBox row">
+	<div class="mainBox row g-0 bg-dark">
 		<!-- SIDEBAR -->
-		<nav class="navbar col-2 fixed-start bg-dark d-none d-lg-block px-3" style="width: 15%; height: 100vh">
+		<nav class="navbar col-0 col-lg-2 fixed-start bg-dark d-none d-lg-block px-3 g-0"
+			style="width: 15%; height: 100vh">
 			<div class="container-fluid p-2 pb-5">
 				<a class="navbar-brand text-info" href="index.html">
 					<svg viewBox="0 0 1134 340" class="spotify-logo-text" xmlns="http://www.w3.org/2000/svg">
@@ -133,7 +134,7 @@
 		</nav>
 
 		<!-- SIDEBAR MOBILE -->
-		<ul class="nav position-fixed bottom-0 bg-dark d-md-none" id="sidebarMobile">
+		<ul class="nav position-fixed bottom-0 py-2 d-lg-none g-0" id="sidebarMobile">
 			<li class="nav-item">
 				<a class="nav-link text-center" href="index.html">
 					<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#FFFFFF"
@@ -167,7 +168,7 @@
 		</ul>
 
 		<!-- CENTRAL NAVBAR  + MAIN -->
-		<div id="centralNavbar" class="col-12 col-lg-8 px-0 m-0">
+		<div id="centralNavbar" class="col-12 col-lg-8 px-0 m-0 g-0">
 			<nav class="navbar navbar-expand-lg navbar-dark bg-secondary d-flex justify-content-end sticky-top">
 				<div class="container-fluid ps-5 ps-lg-1">
 					<span class="d-lg-none text-light fw-bold fs-5">Good evening</span>
@@ -283,7 +284,7 @@
 				</div>
 			</nav>
 			<!-- MAIN -->
-			<main class="py-2 pb-5 px-4 m-0 d-none d-md-block overflow-auto" style="height: 90vh">
+			<main class="py-2 pb-5 px-4 m-0 overflow-auto d-none d-lg-block" style="height: 90vh">
 				<div>
 					<div class="card mb-3 border border-0" id="homeMainCard" ">
 					<div class=" row g-0" style="width: 1300px">
@@ -310,7 +311,7 @@
 					<p class="text-light fs-8 fw-bold">Buonasera</p>
 					<div class="container-fluid">
 						<div class="row">
-							<div class="col-4">
+							<div class="col-4 ">
 								<button class="btn" style="width:100%">
 									<div class="card mb-3 bg-secondary text-light mainPlaylistCards border border-0">
 										<div class="row g-0">
@@ -594,47 +595,340 @@
 				</div>
 
 			</main>
+
+			<!-- MAIN MOBILE -->
+			<main class="py-2 pb-5 d-lg-none">
+				<div class="d-flex">
+					<button class="btn btn-secondary rounded-5 mx-2 fw-light text-light fs-11">
+						Music
+					</button>
+					<button class="btn btn-secondary rounded-5 mx-2 fw-light text-light fs-11">
+						Podcasts & shows
+					</button>
+				</div>
+				<div class="container-fluid py-3">
+					<div class="row d-flex justify-content-start">
+						<div class="col-6">
+							<button class="btn" style="width:100%">
+								<div class="card mb-3 bg-secondary text-light mainPlaylistCards border border-0">
+									<div class="row g-0">
+										<img src="assets/imgs/main/image-4.jpg" class="img-fluid rounded-start g-0"
+											alt="playlist cover" style="width: 60px; height: auto">
+										<div class="col-6 d-flex justify-content-start g-0">
+											<div class="card-body p-0 pt-3 px-2">
+												<p class="card-text fs-11 fw-bold text-start">Playlist name </p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</button>
+						</div>
+						<div class="col-6">
+							<button class="btn" style="width:100%">
+								<div class="card mb-3 bg-secondary text-light mainPlaylistCards border border-0">
+									<div class="row g-0">
+										<img src="assets/imgs/main/image-4.jpg" class="img-fluid rounded-start g-0"
+											alt="playlist cover" style="width: 60px; height: auto">
+										<div class="col-6 d-flex justify-content-start g-0">
+											<div class="card-body p-0 pt-3 px-2">
+												<p class="card-text fs-11 fw-bold text-start">Playlist name </p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</button>
+						</div>
+						<div class="row d-flex justify-content-start">
+							<div class="col-6">
+								<button class="btn" style="width:100%">
+									<div class="card mb-3 bg-secondary text-light mainPlaylistCards border border-0">
+										<div class="row g-0">
+											<img src="assets/imgs/main/image-4.jpg" class="img-fluid rounded-start g-0"
+												alt="playlist cover" style="width: 60px; height: auto">
+											<div class="col-6 d-flex justify-content-start g-0">
+												<div class="card-body p-0 pt-3 px-2">
+													<p class="card-text fs-11 fw-bold text-start">Playlist name </p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</button>
+							</div>
+							<div class="col-6">
+								<button class="btn" style="width:100%">
+									<div class="card mb-3 bg-secondary text-light mainPlaylistCards border border-0">
+										<div class="row g-0">
+											<img src="assets/imgs/main/image-4.jpg" class="img-fluid rounded-start g-0"
+												alt="playlist cover" style="width: 60px; height: auto">
+											<div class="col-6 d-flex justify-content-start g-0">
+												<div class="card-body p-0 pt-3 px-2">
+													<p class="card-text fs-11 fw-bold text-start">Playlist name </p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</button>
+							</div>
+							<div class="row d-flex justify-content-start">
+								<div class="col-6">
+									<button class="btn" style="width:100%">
+										<div
+											class="card mb-3 bg-secondary text-light mainPlaylistCards border border-0">
+											<div class="row g-0">
+												<img src="assets/imgs/main/image-4.jpg"
+													class="img-fluid rounded-start g-0" alt="playlist cover"
+													style="width: 60px; height: auto">
+												<div class="col-6 d-flex justify-content-start g-0">
+													<div class="card-body p-0 pt-3 px-2">
+														<p class="card-text fs-11 fw-bold text-start">Playlist name </p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</button>
+								</div>
+								<div class="col-6">
+									<button class="btn" style="width:100%">
+										<div
+											class="card mb-3 bg-secondary text-light mainPlaylistCards border border-0">
+											<div class="row g-0">
+												<img src="assets/imgs/main/image-4.jpg"
+													class="img-fluid rounded-start g-0" alt="playlist cover"
+													style="width: 60px; height: auto">
+												<div class="col-6 d-flex justify-content-start g-0">
+													<div class="card-body p-0 pt-3 px-2">
+														<p class="card-text fs-11 fw-bold text-start">Playlist name </p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</button>
+								</div>
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<div class="container-fluid">
+					<div class="container-fluid d-flex justify-content-between align-items-baseline p-2">
+						<p class="text-light fs-8 fw-bold">Your shows</p>
+					</div>
+					<div class="container-fluid horizontal-scrollable">
+						<div class="row flex-nowrap g-3">
+							<div class="col">
+								<div class="card border border-0 bg-dark" style="width: 150px">
+									<img src="assets/imgs/main/image-18.jpg" class="card-img-top rounded-4"
+										alt="episodeCover">
+									<div class="card-body text-start px-1 mobileHomeMainCards">
+										<p class="card-text text-light fs-10">Podcast title</p>
+										<p class="card-text text-info fs-11 fw-light">Podcast prod.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col">
+								<div class="card border border-0 bg-dark" style="width: 150px">
+									<img src="assets/imgs/main/image-18.jpg" class="card-img-top rounded-4"
+										alt="episodeCover">
+									<div class="card-body text-start px-1 mobileHomeMainCards">
+										<p class="card-text text-light fs-10">Podcast title</p>
+										<p class="card-text text-info fs-11 fw-light">Podcast prod.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col">
+								<div class="card border border-0 bg-dark" style="width: 150px">
+									<img src="assets/imgs/main/image-18.jpg" class="card-img-top rounded-4"
+										alt="episodeCover">
+									<div class="card-body text-start px-1 mobileHomeMainCards">
+										<p class="card-text text-light fs-10">Podcast title</p>
+										<p class="card-text text-info fs-11 fw-light">Podcast prod.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col">
+								<div class="card border border-0 bg-dark" style="width: 150px">
+									<img src="assets/imgs/main/image-18.jpg" class="card-img-top rounded-4"
+										alt="episodeCover">
+									<div class="card-body text-start px-1 mobileHomeMainCards">
+										<p class="card-text text-light fs-10">Podcast title</p>
+										<p class="card-text text-info fs-11 fw-light">Podcast prod.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col">
+								<div class="card border border-0 bg-dark" style="width: 150px">
+									<img src="assets/imgs/main/image-18.jpg" class="card-img-top rounded-4"
+										alt="episodeCover">
+									<div class="card-body text-start px-1 mobileHomeMainCards">
+										<p class="card-text text-light fs-10">Podcast title</p>
+										<p class="card-text text-info fs-11 fw-light">Podcast prod.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col">
+								<div class="card border border-0 bg-dark" style="width: 150px">
+									<img src="assets/imgs/main/image-18.jpg" class="card-img-top rounded-4"
+										alt="episodeCover">
+									<div class="card-body text-start px-1 mobileHomeMainCards">
+										<p class="card-text text-light fs-10">Podcast title</p>
+										<p class="card-text text-info fs-11 fw-light">Podcast prod.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col">
+								<div class="card border border-0 bg-dark" style="width: 150px">
+									<img src="assets/imgs/main/image-18.jpg" class="card-img-top rounded-4"
+										alt="episodeCover">
+									<div class="card-body text-start px-1 mobileHomeMainCards">
+										<p class="card-text text-light fs-10">Podcast title</p>
+										<p class="card-text text-info fs-11 fw-light">Podcast prod.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col">
+								<div class="card border border-0 bg-dark" style="width: 150px">
+									<img src="assets/imgs/main/image-18.jpg" class="card-img-top rounded-4"
+										alt="episodeCover">
+									<div class="card-body text-start px-1 mobileHomeMainCards">
+										<p class="card-text text-light fs-10">Podcast title</p>
+										<p class="card-text text-info fs-11 fw-light">Podcast prod.</p>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<div class="container-fluid">
+					<div class="container-fluid d-flex justify-content-between align-items-baseline p-2">
+						<p class="text-light fs-8 fw-bold">Jump back in</p>
+					</div>
+					<div class="container-fluid horizontal-scrollable">
+						<div class="row flex-nowrap g-3">
+							<div class="col homeMainAlbumCard">
+								<div class="card border border-0 bg-dark" style="width: 150px">
+									<img src="assets/imgs/main/image-18.jpg" class="card-img-top rounded-0"
+										alt="episodeCover">
+									<div class="card-body text-start px-1 mobileHomeMainCards">
+										<p class="card-text text-light fs-10">Artist name</p>
+										<p class="card-text text-info fs-11 fw-light">Album artist</p>
+									</div>
+								</div>
+							</div>
+							<div class="col homeMainArtistCard">
+								<div class="card border border-0 bg-dark" style="width: 150px">
+									<img src="assets/imgs/main/image-18.jpg" class="card-img-top rounded-circle"
+										alt="episodeCover">
+									<div class="card-body text-start px-1 mobileHomeMainCards">
+										<p class="card-text text-light fs-10">Album title</p>
+									</div>
+								</div>
+							</div>
+							<div class="col homeMainAlbumCard">
+								<div class="card border border-0 bg-dark" style="width: 150px">
+									<img src="assets/imgs/main/image-18.jpg" class="card-img-top rounded-0"
+										alt="episodeCover">
+									<div class="card-body text-start px-1 mobileHomeMainCards">
+										<p class="card-text text-light fs-10">Artist name</p>
+										<p class="card-text text-info fs-11 fw-light">Album artist</p>
+									</div>
+								</div>
+							</div>
+							<div class="col homeMainAlbumCard">
+								<div class="card border border-0 bg-dark" style="width: 150px">
+									<img src="assets/imgs/main/image-18.jpg" class="card-img-top rounded-0"
+										alt="episodeCover">
+									<div class="card-body text-start px-1 mobileHomeMainCards">
+										<p class="card-text text-light fs-10">Artist name</p>
+										<p class="card-text text-info fs-11 fw-light">Album artist</p>
+									</div>
+								</div>
+							</div>
+							<div class="col homeMainArtistCard">
+								<div class="card border border-0 bg-dark" style="width: 150px">
+									<img src="assets/imgs/main/image-18.jpg" class="card-img-top rounded-circle"
+										alt="episodeCover">
+									<div class="card-body text-start px-1 mobileHomeMainCards">
+										<p class="card-text text-light fs-10">Album title</p>
+									</div>
+								</div>
+							</div>
+							<div class="col homeMainAlbumCard">
+								<div class="card border border-0 bg-dark" style="width: 150px">
+									<img src="assets/imgs/main/image-18.jpg" class="card-img-top rounded-0"
+										alt="episodeCover">
+									<div class="card-body text-start px-1 mobileHomeMainCards">
+										<p class="card-text text-light fs-10">Artist name</p>
+										<p class="card-text text-info fs-11 fw-light">Album artist</p>
+									</div>
+								</div>
+							</div>
+							<div class="col homeMainAlbumCard">
+								<div class="card border border-0 bg-dark" style="width: 150px">
+									<img src="assets/imgs/main/image-18.jpg" class="card-img-top rounded-0"
+										alt="episodeCover">
+									<div class="card-body text-start px-1 mobileHomeMainCards">
+										<p class="card-text text-light fs-10">Artist name</p>
+										<p class="card-text text-info fs-11 fw-light">Album artist</p>
+									</div>
+								</div>
+							</div>
+
+
+						</div>
+					</div>
+				</div>
+			</main>
 		</div>
 
 		<!-- SIDEBAR FRIENDS -->
-		<div class="col-2 px-0 container container-fluid m-0 d-none d-lg-block">
-			<div class="container container-fluid bg-dark py-4 px-3">
-				<p class="text-light">Friends activity</p>
-			</div>
-			<div class="container container-fluid bg-dark py-4 px-3 d-flex align-items-start" id="friendsProfile">
-				<img src="assets/imgs/icons8-user-64.png" alt="profile_pic" class="img-fluid" id="friendsPicture" />
-				<div class="text-light px-3 m-0">
-					<p class="fs-11 fw-bold">Nome cognome</p>
-					<p class="fs-11 fw-light">Song title</p>
-					<p class="fs-11 fw-light">Album title</p>
+		<div class="col-0 col-lg-2 px-0 container m-0 d-none d-lg-block bg-dark" id="friendsActivity"
+			style="height: 90vh">
+			<div>
+				<div class="container container-fluid bg-dark py-4 px-3">
+					<p class="text-light">Friends activity</p>
+				</div>
+				<div class="container container-fluid bg-dark py-4 px-3 d-flex align-items-start" id="friendsProfile">
+					<img src="assets/imgs/icons8-user-64.png" alt="profile_pic" class="img-fluid" id="friendsPicture" />
+					<div class="text-light px-3 m-0">
+						<p class="fs-11 fw-bold">Nome cognome</p>
+						<p class="fs-11 fw-light">Song title</p>
+						<p class="fs-11 fw-light">Album title</p>
+					</div>
+				</div>
+				<div class="container container-fluid bg-dark py-4 px-3 d-flex align-items-start" id="friendsProfile">
+					<img src="assets/imgs/icons8-user-64.png" alt="profile_pic" class="img-fluid" id="friendsPicture" />
+					<div class="text-light px-3 m-0">
+						<p class="fs-11 fw-bold">Nome cognome</p>
+						<p class="fs-11 fw-light">Song title</p>
+						<p class="fs-11 fw-light">Album title</p>
+					</div>
+				</div>
+				<div class="container container-fluid bg-dark py-4 px-3 d-flex align-items-start" id="friendsProfile">
+					<img src="assets/imgs/icons8-user-64.png" alt="profile_pic" class="img-fluid" id="friendsPicture" />
+					<div class="text-light px-3 m-0">
+						<p class="fs-11 fw-bold">Nome cognome</p>
+						<p class="fs-11 fw-light">Song title</p>
+						<p class="fs-11 fw-light">Album title</p>
+					</div>
 				</div>
 			</div>
-			<div class="container container-fluid bg-dark py-4 px-3 d-flex align-items-start" id="friendsProfile">
-				<img src="assets/imgs/icons8-user-64.png" alt="profile_pic" class="img-fluid" id="friendsPicture" />
-				<div class="text-light px-3 m-0">
-					<p class="fs-11 fw-bold">Nome cognome</p>
-					<p class="fs-11 fw-light">Song title</p>
-					<p class="fs-11 fw-light">Album title</p>
-				</div>
-			</div>
-			<div class="container container-fluid bg-dark py-4 px-3 d-flex align-items-start" id="friendsProfile">
-				<img src="assets/imgs/icons8-user-64.png" alt="profile_pic" class="img-fluid" id="friendsPicture" />
-				<div class="text-light px-3 m-0">
-					<p class="fs-11 fw-bold">Nome cognome</p>
-					<p class="fs-11 fw-light">Song title</p>
-					<p class="fs-11 fw-light">Album title</p>
-				</div>
-			</div>
+
 		</div>
 
-		<!-- PLAYBAR -->
-		<div class="container-fluid position-fixed bottom-0 bg-secondary d-none d-md-block pt-2">
-			<div class="container-fluid">
+	</div>
+
+	<!-- PLAYBAR -->
+	<div class="row m-0">
+		<div class="col-12 container position-fixed bottom-0 bg-secondary d-none d-lg-block p-2">
+			<div class="container-fluid px-5">
 				<div class="row d-flex align-items-center">
 					<div id="songInfo" class="col-md-4 col-lg-3">
 						<div class="row d-flex align-items-center justify-content-start">
 							<div class="col-2 songCover">
-								<img src="assets/imgs/main/image-1.jpg" alt="album cover" class="img-fluid" />
+								<img src="assets/imgs/main/image-1.jpg" alt="album cover" class="img-fluid"
+									style="width: 100%;" />
 							</div>
 							<div class="col-6 text-light lh-1">
 								<p class="fw-bold fs-10 songTitle">Song Title</p>
@@ -685,37 +979,37 @@
 				</div>
 			</div>
 		</div>
+	</div>
 
-		<!-- PLAYBAR MOBILE -->
-		<div class="container d-flex justify-content-center" id="playbarMobile">
-			<div
-				class="container d-md-none m-2 bg-dark position-fixed bottom-0 d-flex justify-content-between border border-0 rounded-2 mb-6">
-				<div id="songInfo" class="col-6 d-flex align-items-center justify-content-start">
-					<div class="d-flex align-items-center">
-						<div class="pe-3 songCover">
-							<img src="assets/imgs/main/image-1.jpg" alt="album cover" class="img-fluid"
-								style="width: 50px" />
-						</div>
-						<div class="lh-1 pt-3">
-							<p class="fw-bold text-light songTitle">Song Title</p>
-							<p class="text-muted songArtist">Song artist</p>
-						</div>
+
+	<!-- PLAYBAR MOBILE -->
+	<div class="container d-flex justify-content-center playbarMobile">
+		<div class="container d-lg-none m-2 bg-dark position-fixed bottom-0 d-flex justify-content-between border border-0 rounded-4 mb-6"
+			style="
+			width: 95%;
+		">
+			<div id="songInfo" class="col-6 d-flex align-items-center justify-content-start">
+				<div class="d-flex align-items-center">
+					<div class="pe-3 songCover">
+						<img src="assets/imgs/main/image-1.jpg" alt="album cover" class="img-fluid"
+							style="width: 45px" />
+					</div>
+					<div class="lh-1 pt-3">
+						<p class="text-light songTitle fs-11 playbarSongInfo">Song Title</p>
+						<p class="text-muted songArtist fs-12 fw-light">Song artist</p>
 					</div>
 				</div>
-				<div id="songControls" class="col-6 d-flex align-items-center justify-content-end">
-					<div class="d-flex align-items-center justify-content-end">
-						<div class="">
-							<button class="btn text-muted"><i class="bi bi-speaker fs-5"></i></button>
-						</div>
-						<div class="d-flex align-items-center">
-							<button class="btn text-muted"><i class="bi bi-play-circle-fill fs-1"></i></button>
-						</div>
+			</div>
+			<div id="songControls" class="col-6 d-flex align-items-center justify-content-end">
+				<div class="d-flex align-items-center justify-content-end">
+					<div class="d-flex align-items-center">
+						<button class="btn text-muted"><i class="bi bi-speaker fs-8"></i></button>
+						<button class="btn text-light"><i class="bi bi-play-fill fs-4"></i></button>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-
 
 	<script src="script/index.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"

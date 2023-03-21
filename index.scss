@@ -1,6 +1,6 @@
-@import "bootstrap-overrides";
+@import 'bootstrap-overrides';
 
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css');
 
 .dropdown-item:hover {
 	background-color: #3e3e3e;
@@ -11,7 +11,7 @@
 }
 
 body {
-	font-family: "Circular";
+	font-family: 'Circular';
 }
 #playbarMobile {
 	position: fixed;
@@ -31,5 +31,51 @@ body {
 	bottom: 0;
 	z-index: 1;
 }
-#contentSidebarLeft {
+
+.spotify-logo-text {
+	width: 60%;
+	height: auto;
+}
+
+#navDivider {
+	width: 95%;
+}
+
+#sidebarMobile {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+
+	p {
+		font-size: 0.8rem;
+	}
+}
+
+.songCover {
+	img {
+		width: max-content;
+		height: auto;
+	}
+}
+
+.playbarMobile {
+	z-index: 1;
+}
+
+main {
+	margin-inline: 15%;
+}
+
+.mainBox {
+	width: 100%;
+	margin: 0;
+}
+
+#friendsProfile {
+	line-height: 0.1rem;
+
+	#friendsPicture {
+		width: 15%;
+		height: 15%;
+	}
 }

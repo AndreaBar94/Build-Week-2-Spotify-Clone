@@ -11710,4 +11710,48 @@ body {
   position: fixed;
   bottom: 0;
   z-index: 1;
+}
+
+.spotify-logo-text {
+  width: 60%;
+  height: auto;
+}
+
+#navDivider {
+  width: 95%;
+}
+
+#sidebarMobile {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+#sidebarMobile p {
+  font-size: 0.8rem;
+}
+
+.songCover img {
+  width: max-content;
+  height: auto;
+}
+
+.playbarMobile {
+  z-index: 1;
+}
+
+main {
+  margin-inline: 15%;
+}
+
+.mainBox {
+  width: 100%;
+  margin: 0;
+}
+
+#friendsProfile {
+  line-height: 0.1rem;
+}
+#friendsProfile #friendsPicture {
+  width: 15%;
+  height: 15%;
 }/*# sourceMappingURL=index.css.map */

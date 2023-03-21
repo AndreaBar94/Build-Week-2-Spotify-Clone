@@ -172,7 +172,7 @@
 			</ul>
 
 			<!-- CENTRAL NAVBAR -->
-			<div id="mainContent" class="col-12 col-lg-8 px-0">
+			<div id="mainContent" class="col-12 col-lg-8 px-0 overflow-scroll">
 				<nav class="navbar navbar-expand-lg navbar-dark bg-secondary d-flex justify-content-end sticky-top bg-opacity-10">
 					<div class="container-fluid">
 						<div class="btn-group" role="group">
@@ -269,11 +269,11 @@
 				</nav>
 				<div id="artistMainContent" class="container-fluid">
 					<div id="artistThumbnail" class="container-fluid d-flex flex-column justify-content-end text-light px-3">
-						<p class="d-none d-lg-block">Artista verificato</p>
-						<p class="fs-2 fw-bold">Artist Name</p>
-						<p class="d-none d-lg-block">Followers</p>
+						<p id="" class="d-none d-lg-block">Artista verificato</p>
+						<p id="artistName" class="fs-2 fw-bold">Artist Name</p>
+						<p id="followers" class="d-none d-lg-block">Followers</p>
 					</div>
-					<p class="text-muted mb-0 d-lg-none p-3">ascoltatori mensili</p>
+					<p id="monthlyListener" class="text-muted mb-0 d-lg-none p-3"></p>
 					<div id="artistPlaybar" class="container-fluid d-flex justify-content-start p-3 mx-0">
 						<button class="btn btn-primary rounded-circle px-2">
 							<svg xmlns="http://www.w3.org/2000/svg" width="24" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
@@ -306,97 +306,12 @@
 							</button>
 						</div>
 					</div>
-					<div id="artistOverview" class="container-fluid overflow-scroll text-light m-lg-3 mx-0">
+					<div id="artistOverview" class="container-fluid text-light m-lg-3 mx-0">
 						<div class="row">
 							<div class="col-lg-7 col-12 p-4 p-lg-0">
 								<h5>Popolari</h5>
 								<!-- ripassare qui per togliere puntini dalla ol -->
-								<ol>
-									<li class="py-1">
-										<div class="row row-cols-3">
-											<div class="col-6 fs-10">
-												<img src="assets/imgs/main/image-12.jpg" alt="" width="35px" />
-												<span>Titolo canzone</span>
-											</div>
-											<div class="col-3">
-												<span> tot stream </span>
-											</div>
-											<div class="col-3">
-												<span> durata </span>
-											</div>
-										</div>
-									</li>
-									<li class="py-1">
-										<div class="row row-cols-3">
-											<div class="col-6 fs-10">
-												<img src="assets/imgs/main/image-12.jpg" alt="" width="35px" />
-												<span>Titolo canzone</span>
-											</div>
-											<div class="col-3">
-												<span> tot stream </span>
-											</div>
-											<div class="col-3">
-												<span> durata </span>
-											</div>
-										</div>
-									</li>
-									<li class="py-1">
-										<div class="row row-cols-3">
-											<div class="col-6 fs-10">
-												<img src="assets/imgs/main/image-12.jpg" alt="" width="35px" />
-												<span>Titolo canzone</span>
-											</div>
-											<div class="col-3">
-												<span> tot stream </span>
-											</div>
-											<div class="col-3">
-												<span> durata </span>
-											</div>
-										</div>
-									</li>
-									<li class="py-1">
-										<div class="row row-cols-3">
-											<div class="col-6 fs-10">
-												<img src="assets/imgs/main/image-12.jpg" alt="" width="35px" />
-												<span>Titolo canzone</span>
-											</div>
-											<div class="col-3">
-												<span> tot stream </span>
-											</div>
-											<div class="col-3">
-												<span> durata </span>
-											</div>
-										</div>
-									</li>
-									<li class="py-1">
-										<div class="row row-cols-3">
-											<div class="col-6 fs-10">
-												<img src="assets/imgs/main/image-12.jpg" alt="" width="35px" />
-												<span>Titolo canzone</span>
-											</div>
-											<div class="col-3">
-												<span> tot stream </span>
-											</div>
-											<div class="col-3">
-												<span> durata </span>
-											</div>
-										</div>
-									</li>
-									<li class="py-1">
-										<div class="row row-cols-3">
-											<div class="col-6 fs-10">
-												<img src="assets/imgs/main/image-12.jpg" alt="" width="35px" />
-												<span>Titolo canzone</span>
-											</div>
-											<div class="col-3">
-												<span> tot stream </span>
-											</div>
-											<div class="col-3">
-												<span> durata </span>
-											</div>
-										</div>
-									</li>
-								</ol>
+								<ol id="popularList"></ol>
 							</div>
 							<div id="liked" class="col-lg-5 col-12">
 								<div class="container d-none d-lg-block">
@@ -419,7 +334,7 @@
 										<div class="pt-3 ps-2">
 											<h5>Brani che ti piacciono</h5>
 											<p class="lh-1 fs-11">Hai messo mi piace a *tot* brani</p>
-											<p class="lh-1 fs-11 text-muted">Di *artist*</p>
+											<p id="artistLikesName" class="lh-1 fs-11 text-muted"></p>
 										</div>
 									</div>
 								</div>

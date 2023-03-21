@@ -13,8 +13,12 @@ window.onload = () => {
         console.log(album);
         let imgAlbum = document.querySelector("#imgAlbum");
         let titleAlbum = document.querySelector("#titleAlbum");
-        imgAlbum.src = "";
+        let NumTrack = document.getElementById("NumTrack");
+        let tipe = document.getElementById("tipe");
+        imgAlbum.src = `${album.cover_medium}`;
         titleAlbum.textContent = album.title;
+        NumTrack.textContent = album.nb_tracks + " brani";
+        tipe.textContent = album.record_type;
       });
   } catch (error) {
     console.log("errore" + error);

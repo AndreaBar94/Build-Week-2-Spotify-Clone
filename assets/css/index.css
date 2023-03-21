@@ -11764,6 +11764,11 @@ body {
   padding-bottom: 10rem;
 }
 
+#sidebarDesktop {
+  width: 15%;
+  padding-bottom: 10rem;
+}
+
 #mainContent {
   position: relative;
   background: #282828;

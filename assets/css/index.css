@@ -11751,10 +11751,10 @@ body {
   background-color: #070707;
 }
 
-#friendsProfile {
+#friendsActivity #friendsProfile {
   line-height: 0.1rem;
 }
-#friendsProfile #friendsPicture {
+#friendsActivity #friendsProfile #friendsPicture {
   width: 15%;
   height: 15%;
 }

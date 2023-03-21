@@ -11805,9 +11805,10 @@ main {
 }
 
 #artistThumbnail {
-  background-image: url(https://www.romatoday.it/~media/horizontal-hi/51536659594995/concerto-maneskin-9-luglio-2.jpg);
   background-size: cover;
-  height: 40vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 60vh;
 }
 
 @media screen and (max-width: 991px) {

@@ -2,11 +2,14 @@
 @import 'bootstrap/functions';
 
 // 2. Include any default variable overrides here
-$primary: #1ed760;
-$secondary: #2d2d2d;
-//hover bottoni player #1B9C48
+$primary: #1cb954;
+$secondary: #282828;
+$info: #b3b3b3;
+$light: #ffffff;
+$dark: #070707;
 
-$text-muted: #dadada;
+$line-height-base: 1.2;
+$grid-gutter-width: 0.5rem;
 
 // 3. Include remainder of required Bootstrap stylesheets
 @import 'bootstrap/variables';

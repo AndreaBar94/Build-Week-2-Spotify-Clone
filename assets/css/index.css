@@ -11824,6 +11824,9 @@ main {
     display: flex;
     flex-direction: row;
   }
+  #artistMainContent {
+    position: static;
+  }
 }
 #homeMainCard {
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#070707+0,282828+100 */

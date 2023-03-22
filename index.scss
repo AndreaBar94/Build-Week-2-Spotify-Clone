@@ -124,6 +124,7 @@ main {
 	padding-bottom: 10rem;
 }
 // ARTIST
+
 #mainContent {
 	position: relative;
 	background: #282828;
@@ -163,9 +164,9 @@ main {
 			flex-direction: row;
 		}
 	}
-}
-
-@media screen and (max-width: 991px) {
+	#artistMainContent {
+		position: static;
+	}
 }
 
 #homeMainCard {

@@ -44,18 +44,19 @@ window.onload = () => {
 						.padStart(2, "0");
 					let formattedDuration = `${minutes}:${seconds}`;
 					liElement.innerHTML = `
-                        <div class="row row-cols-3 align-items-center">
-                            <div class="col-6 fs-10 d-flex align-items-center">
-                                <img src="${track.album.cover_small}" alt="cover" width="35px" class="d-none d-md-inline"/>
-                                <button type="button" class="btn text-light text-start trackBtn">${track.title}</button>
-                            </div>
-                            <div class="col-3">
-                                <span class="d-none d-md-inline">Rank ${track.rank}</span>
-                            </div>
-                            <div class="col-3">
-                                <span>${formattedDuration}</span>
-                            </div>
-                        </div>
+						<div class="row row-cols-3 justify-content-center">
+						<div class="col-6 fs-11 d-flex align-items-center">
+							<img src="${track.album.cover_small}" alt="cover" width="35px" class="d-none d-md-inline"/>
+							<button type="button" class="btn text-light text-start trackBtn align-self-center">${track.title}</button>
+						</div>
+						<div class="col-3 d-flex align-items-center justify-content-center">
+							<span class="d-none d-md-inline align-self-center">Rank ${track.rank}</span>
+						</div>
+						<div class="col-3 d-flex align-items-center justify-content-center">
+							<span class="align-self-center">${formattedDuration}</span>
+						</div>
+					</div>
+				
                     `;
 					popularList.appendChild(liElement);
 

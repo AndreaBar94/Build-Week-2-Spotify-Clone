@@ -11851,4 +11851,19 @@ main {
 .horizontal-scrollable {
   overflow-x: auto;
   white-space: nowrap;
+}
+
+#popularList {
+  list-style: none;
+  counter-reset: my-counter 0;
+}
+#popularList li {
+  position: relative;
+}
+#popularList li:before {
+  content: counter(my-counter) " ";
+  counter-increment: my-counter;
+  position: absolute;
+  left: -25px;
+  top: 25px;
 }/*# sourceMappingURL=index.css.map */

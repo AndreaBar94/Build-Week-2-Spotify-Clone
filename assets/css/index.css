@@ -11828,6 +11828,12 @@ main {
   #artistMainContent {
     position: static;
   }
+  #centralNavbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
 }
 #homeMainCard {
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#070707+0,282828+100 */

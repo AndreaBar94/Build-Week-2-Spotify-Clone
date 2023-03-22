@@ -160,6 +160,12 @@ main {
 	#artistMainContent {
 		position: static;
 	}
+	#centralNavbar {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+	}
 }
 
 #homeMainCard {
@@ -183,4 +189,19 @@ main {
 
 .playbarSongData {
 	line-height: 0.3rem;
+}
+
+#popularList {
+	list-style: none;
+	counter-reset: my-counter 0;
+	li {
+		position: relative;
+	}
+	li:before {
+		content: counter(my-counter) ' ';
+		counter-increment: my-counter;
+		position: absolute;
+		left: -25px;
+		top: 25px;
+	}
 }

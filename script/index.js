@@ -38,7 +38,7 @@ window.onload = () => {
 							<div class="card p-2 bg-secondary">
 							<img src="${trackList.data[index].album.cover_medium}" class="card-img-top" alt="${trackList.data[index].title}">
 							<div class="card-body text-start">
-								<p class="card-text fs-10 text-light">${trackList.data[index].title}</p>
+								<p class="card-text fs-10 text-light">${trackList.data[index].title_short}</p>
 								<p class="card-text fs-10 fw-light text-info">${trackList.data[index].artist.name}</p>
 							</div>
 							</div>`;
@@ -60,7 +60,7 @@ window.onload = () => {
 							<div class="card p-2 bg-secondary">
 							<img src="${trackList.data[index].album.cover_medium}" class="card-img-top" alt="${trackList.data[index].title}">
 							<div class="card-body text-start">
-								<p class="card-text fs-10 text-light">${trackList.data[index].title}</p>
+								<p class="card-text fs-10 text-light">${trackList.data[index].title_short}</p>
 								<p class="card-text fs-10 fw-light text-info">${trackList.data[index].artist.name}</p>
 							</div>
 							</div>`;

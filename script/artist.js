@@ -42,7 +42,7 @@ window.onload = () => {
                         <div class="row row-cols-3 align-items-center">
                             <div class="col-6 fs-10">
                                 <img src="${track.album.cover_small}" alt="" width="35px" class="d-none d-md-inline"/>
-                                <button type="button" class="btn text-light">${track.title}</button>
+                                <button type="button" class="btn text-light trackBtn">${track.title}</button>
                             </div>
                             <div class="col-3">
                                 <span class="d-none d-md-inline">Rank ${track.rank}</span>
@@ -53,6 +53,21 @@ window.onload = () => {
                         </div>
                     `;
 					popularList.appendChild(liElement);
+					let songTitle = document.querySelector(".songTitle");
+					let songArtist = document.querySelector(".songArtist");
+					let songCover = document.querySelector(".songCover");
+					let trackBtn = liElement.querySelector(".trackBtn");
+					trackBtn.addEventListener("click", function () {
+						songTitle.textContent = track.title;
+						songCover.innerHTML = `
+						<img src="${track.album.cover_medium}" alt="album cover" class="img-fluid" />
+						`;
+						if (track.contributors && track.contributors.length > 0) {
+							songArtist.textContent = track.contributors[0].name;
+						} else {
+							songArtist.textContent = "";
+						}
+					});
 				});
 			});
 	} catch (error) {

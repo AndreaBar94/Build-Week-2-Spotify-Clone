@@ -56,16 +56,25 @@ window.onload = () => {
 					let songTitle = document.querySelector(".songTitle");
 					let songArtist = document.querySelector(".songArtist");
 					let songCover = document.querySelector(".songCover");
+					let songTitleMobile = document.querySelector(".songTitleMobile");
+					let songArtistMobile = document.querySelector(".songArtistMobile");
+					let songCoverMobile = document.querySelector(".songCoverMobile");
 					let trackBtn = liElement.querySelector(".trackBtn");
 					trackBtn.addEventListener("click", function () {
 						songTitle.textContent = track.title;
+						songTitleMobile.textContent = track.title;
 						songCover.innerHTML = `
 						<img src="${track.album.cover_medium}" alt="album cover" class="img-fluid" />
 						`;
+						songCoverMobile.innerHTML = `
+						<img src="${track.album.cover_medium}" alt="album cover" class="img-fluid" style="width: 50px" />
+						`;
 						if (track.contributors && track.contributors.length > 0) {
 							songArtist.textContent = track.contributors[0].name;
+							songArtistMobile.textContent = track.contributors[0].name;
 						} else {
 							songArtist.textContent = "";
+							songArtistMobile.textContent = "";
 						}
 					});
 				});

@@ -1,7 +1,8 @@
 let casualId = Math.floor(Math.random() * 70000) + 1;
+let randomAlbum = Math.floor(Math.random() * 10000) + 40000;
 console.log(casualId);
-const endpoint = " https://striveschool-api.herokuapp.com/api/deezer/album/" + casualId;
-const tracklist = " https://striveschool-api.herokuapp.com/api/deezer/album/" + casualId;
+const endpoint = " https://striveschool-api.herokuapp.com/api/deezer/album/" + randomAlbum;
+const tracklist = " https://striveschool-api.herokuapp.com/api/deezer/album/" + randomAlbum;
 const URLParams = new URLSearchParams(window.location.search);
 const selectedId = URLParams.get("id");
 
@@ -31,19 +32,22 @@ window.onload = () => {
         containerAlbum.appendChild(olAlbum);
         trackslist.tracks.data.forEach((track, index) => {
           const liAlbum = document.createElement("li");
+          liAlbum.classList.add("mt-2");
+          let duration = (track.duration / 60).toFixed(2) + " minuti";
           liAlbum.innerHTML += `
             <div id="AlbumList" class="row align-items-start">
-              <div id="album-title" class="col-5">
-                <a href="#" class="card-title" style="color: white">
+              <div id="album-title" class="col12 col-md-5 mb-3">
+                <a href="#" class="card-title mb-2" style="color: white">
                   ${track.title}
                 </a>
-                <p class="album-artist text-info">${track.artist.name}</p>
+                <br>
+                <a href="artist.html?id= ${track.artist.Id}" class="album-artist text-info">${track.artist.name}</a>
               </div>
               <div class="col-4 d-none d-md-block text-info">
-                <p class="riproduction">18278</p>
+                <p class="riproduction">2819873</p>
               </div>
               <div class="col-2 d-none d-md-block text-info">
-                <p class="duration">1:28</p>
+                <p class="duration">${duration}</p>
               </div>
             </div>
           `;

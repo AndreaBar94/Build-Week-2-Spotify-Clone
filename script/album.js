@@ -34,7 +34,12 @@ window.onload = () => {
         trackslist.tracks.data.forEach((track, index) => {
           const liAlbum = document.createElement("li");
           liAlbum.classList.add("py-3");
-          let duration = (track.duration / 60).toFixed(2) + " minuti";
+          let duration = track.duration;
+          let minutes = Math.floor(duration / 60);
+          let seconds = Math.floor(duration % 60)
+            .toString()
+            .padStart(2, "0");
+          let formattedDuration = `${minutes}:${seconds}`;
           liAlbum.innerHTML += `
             <div id="AlbumList" class="row align-items-start">
               <div id="album-title" class="col12 col-md-5 mb-3">
@@ -48,7 +53,7 @@ window.onload = () => {
                 <p class="riproduction">2819873</p>
               </div>
               <div class="col-2 d-none d-md-block text-info">
-                <p class="duration">${duration}</p>
+                <p class="duration">${formattedDuration}</p>
               </div>
             </div>
           `;

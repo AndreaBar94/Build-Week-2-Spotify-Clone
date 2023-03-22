@@ -11845,4 +11845,8 @@ main {
 .horizontal-scrollable {
   overflow-x: auto;
   white-space: nowrap;
+}
+
+.playbarSongData {
+  line-height: 0.3rem;
 }/*# sourceMappingURL=index.css.map */

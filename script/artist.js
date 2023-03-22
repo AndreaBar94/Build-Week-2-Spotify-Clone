@@ -54,3 +54,4 @@ window.onload = () => {
 		console.log("errore" + error);
 	}
 };
+//button player bar song name and player bar filler

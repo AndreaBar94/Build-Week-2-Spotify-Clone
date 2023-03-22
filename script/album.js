@@ -16,6 +16,8 @@ window.onload = () => {
         let titleAlbum = document.querySelector("#titleAlbum");
         let NumTrack = document.getElementById("NumTrack");
         let tipe = document.getElementById("tipe");
+        let coverPic = document.getElementById("coverPic");
+        coverPic.src = `${album.cover}`;
         imgAlbum.src = `${album.cover_medium}`;
         titleAlbum.textContent = album.title;
         NumTrack.textContent = album.nb_tracks + " brani";
@@ -47,10 +49,10 @@ window.onload = () => {
                   ${track.title}
                 </a>
                 <br>
-                <a href="artist.html?id= ${track.artist.Id}" class="album-artist text-info text-decoration-none">${track.artist.name}</a>
+                <a href="artist.html?id= ${track.artist.id}" class="album-artist text-info text-decoration-none">${track.artist.name}</a>
               </div>
               <div class="col-4 d-none d-md-block text-info">
-                <p class="riproduction">2819873</p>
+                <p class="riproduction">${track.rank}</p>
               </div>
               <div class="col-2 d-none d-md-block text-info">
                 <p class="duration">${formattedDuration}</p>

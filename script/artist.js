@@ -15,7 +15,9 @@ window.onload = () => {
 				let followers = document.getElementById("followers");
 				let artistImg = document.getElementById("artistThumbnail");
 				let monthlyListener = document.getElementById("monthlyListener");
+				let artistLikeName = document.getElementById("artistLikeName");
 				artistName.textContent = artist.name;
+				artistLikeName.textContent = artist.name;
 				followers.textContent = artist.nb_fan + " followers";
 				monthlyListener.textContent = artist.nb_fan + " ascoltatori mensili";
 				artistImg.style.backgroundImage = `url(${artist.picture_xl})`;

@@ -58,3 +58,8 @@ window.onload = () => {
     console.log("errore" + error);
   }
 };
+
+let previousBtn = document.querySelector(".previousBtn");
+previousBtn.addEventListener("click", function () {
+  window.location.href = "index.html";
+});

@@ -89,7 +89,7 @@
             <p class="text-info m-0 px-4">Create playlist</p>
           </a>
         </div>
-        <div class="container-fluid">
+        <div class="container-fluid pt-3">
           <a class="nav-link d-flex align-items-center justify-content-start" href="#">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -104,7 +104,7 @@
             <p class="text-info m-0 px-4">Liked songs</p>
           </a>
         </div>
-        <div class="container-fluid">
+        <div class="container-fluid pt-3">
           <a class="nav-link d-flex align-items-center justify-content-start" href="#">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -398,15 +398,15 @@
               <img id="imgAlbum" class="img-fluid" src="assets/imgs/main/image-3.jpg" />
             </div>
             <div class="col-12 col-md-9">
-              <p class="">ALBUM</p>
+              <p id="tipe">ALBUM</p>
               <h3 id="titleAlbum">MASSIMA CONCENTRAZIONE</h3>
 
               <p class="">
                 <img class="rounded-circle" src="assets/imgs/search/image-4.jpg" height="30" />
                 <span>Spotify</span>
                 <span>2017</span>
-                <span class="d-none d-md-block">12 brani</span>
-                <span class="text-info d-none d-md-block">53 min 20 sec</span>
+                <span id="NumTrack" class="d-none d-md-inline">12 brani</span>
+                <span class="text-info d-none d-md-inline">53 min 20 sec</span>
               </p>
             </div>
           </div>
@@ -481,75 +481,8 @@
             </div>
           </div>
         </div>
-        <div class="container bg-dark">
-          <div class="row align-items-start">
-            <div class="col-1 d-none d-md-block">
-              <p class="number ps-5 text-light">1.</p>
-            </div>
-            <div id="album-title" class="col-5">
-              <a href="#" class="card-title" style="color: white">Song Title</a>
-              <p class="album-artist text-info">Artista</p>
-            </div>
-            <div class="col-4 d-none d-md-block text-info"><p class="riproduction">18278</p></div>
-            <div class="col-2 d-none d-md-block text-info"><p class="duration">1:28</p></div>
-          </div>
-          <div class="row align-items-start">
-            <div class="col-1 d-none d-md-block">
-              <p class="number ps-5 text-light">1.</p>
-            </div>
-            <div id="album-title" class="col-5">
-              <a href="#" class="card-title" style="color: white">Song Title</a>
-              <p class="album-artist text-info">Artista</p>
-            </div>
-            <div class="col-4 d-none d-md-block text-info"><p class="riproduction">18278</p></div>
-            <div class="col-2 d-none d-md-block text-info"><p class="duration">1:28</p></div>
-          </div>
-          <div class="row align-items-start">
-            <div class="col-1 d-none d-md-block">
-              <p class="number ps-5 text-light">1.</p>
-            </div>
-            <div id="album-title" class="col-5">
-              <a href="#" class="card-title" style="color: white">Song Title</a>
-              <p class="album-artist text-info">Artista</p>
-            </div>
-            <div class="col-4 d-none d-md-block text-info"><p class="riproduction">18278</p></div>
-            <div class="col-2 d-none d-md-block text-info"><p class="duration">1:28</p></div>
-          </div>
-          <div class="row align-items-start">
-            <div class="col-1 d-none d-md-block">
-              <p class="number ps-5 text-light">1.</p>
-            </div>
-            <div id="album-title" class="col-5">
-              <a href="#" class="card-title" style="color: white">Song Title</a>
-              <p class="album-artist text-info">Artista</p>
-            </div>
-            <div class="col-4 d-none d-md-block text-info"><p class="riproduction">18278</p></div>
-            <div class="col-2 d-none d-md-block text-info"><p class="duration">1:28</p></div>
-          </div>
 
-          <div class="row align-items-start">
-            <div class="col-1 d-none d-md-block">
-              <p class="number ps-5 text-light">1.</p>
-            </div>
-            <div id="album-title" class="col-5">
-              <a href="#" class="card-title" style="color: white">Song Title</a>
-              <p class="album-artist text-info">Artista</p>
-            </div>
-            <div class="col-4 d-none d-md-block text-info"><p class="riproduction">18278</p></div>
-            <div class="col-2 d-none d-md-block text-info"><p class="duration">1:28</p></div>
-          </div>
-          <div class="row align-items-start">
-            <div class="col-1 d-none d-md-block">
-              <p class="number ps-5 text-light">1.</p>
-            </div>
-            <div id="album-title" class="col-5">
-              <a href="#" class="card-title" style="color: white">Song Title</a>
-              <p class="album-artist text-info">Artista</p>
-            </div>
-            <div class="col-4 d-none d-md-block text-info"><p class="riproduction">18278</p></div>
-            <div class="col-2 d-none d-md-block text-info"><p class="duration">1:28</p></div>
-          </div>
-        </div>
+        <div id="containerAlbum" class="container bg-dark"></div>
 
         <!--div conclusive-->
       </div>

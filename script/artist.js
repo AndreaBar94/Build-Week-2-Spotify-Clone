@@ -1,5 +1,5 @@
-//id generator for casual artists
-let casualId = Math.floor(Math.random() * 1000) + 1;
+//id generator for casual artists for tests purposes
+// let casualId = Math.floor(Math.random() * 1000) + 1;
 const URLParams = new URLSearchParams(window.location.search);
 const selectedId = URLParams.get("id");
 const endpoint = "https://striveschool-api.herokuapp.com/api/deezer/artist/" + selectedId;

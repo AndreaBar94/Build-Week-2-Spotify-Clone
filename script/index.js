@@ -1,5 +1,6 @@
 let randomArtist = Math.floor(Math.random() * 1000) + 1;
-let randomAlbum = Math.floor(Math.random() * 100000) + 10000000;
+let randomAlbum = Math.floor(Math.random() * 10000) + 40000;
+const endpoint = 'https://striveschool-api.herokuapp.com/api/deezer/album/';
 const endpointArtist = 'https://striveschool-api.herokuapp.com/api/deezer/artist/' + randomArtist;
 const endpointAlbum = 'https://striveschool-api.herokuapp.com/api/deezer/album/' + randomAlbum;
 const endpointTrackList = 'https://striveschool-api.herokuapp.com/api/deezer/artist/' + randomArtist + '/top?limit=50';
@@ -11,13 +12,13 @@ const selectedId = URLParams.get('id');
 window.onload = () => {
 	//Spotlight album population
 	try {
-		fetch(endpointAlbum)
+		fetch(endpoint + '102501')
 			.then((responseObj) => responseObj.json())
 			.then((album) => {
 				let albumName = document.getElementById('albumNameTop');
 				albumName.textContent = album.title;
 				let albumArtist = document.getElementById('albumArtistTop');
-				albumArtist.textContent = album.artist.name;
+				albumArtist.innerHTML = `<a href="artist.html?id=${album.artist.id}"> ${album.artist.name} </a>`;
 				let albumCover = document.getElementById('albumCoverTop');
 				albumCover.src = album.cover_big;
 				console.log(endpointAlbum);
@@ -39,7 +40,7 @@ window.onload = () => {
 							<img src="${trackList.data[index].album.cover_medium}" class="card-img-top" alt="${trackList.data[index].title}">
 							<div class="card-body text-start">
 								<p class="card-text fs-10 text-light">${trackList.data[index].title_short}</p>
-								<p class="card-text fs-10 fw-light text-info">${trackList.data[index].artist.name}</p>
+								<p class="card-text fs-10 fw-light text-info"><a href="artist.html?id=${trackList.data[index].artist.id}" class="text-decoration-none"> ${trackList.data[index].artist.name} </a></p>
 							</div>
 							</div>`;
 				});
@@ -61,7 +62,7 @@ window.onload = () => {
 							<img src="${trackList.data[index].album.cover_medium}" class="card-img-top" alt="${trackList.data[index].title}">
 							<div class="card-body text-start">
 								<p class="card-text fs-10 text-light">${trackList.data[index].title_short}</p>
-								<p class="card-text fs-10 fw-light text-info">${trackList.data[index].artist.name}</p>
+								<p class="card-text fs-10 fw-light text-info"><a href="artist.html?id=${trackList.data[index].artist.id}" class="text-decoration-none"> ${trackList.data[index].artist.name} </a></p>
 							</div>
 							</div>`;
 				});

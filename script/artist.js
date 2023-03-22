@@ -1,9 +1,10 @@
 //id generator for casual artists
 let casualId = Math.floor(Math.random() * 1000) + 1;
-const endpoint = "https://striveschool-api.herokuapp.com/api/deezer/artist/" + casualId;
-const trackList = "https://striveschool-api.herokuapp.com/api/deezer/artist/" + casualId + "/top?limit=50";
 const URLParams = new URLSearchParams(window.location.search);
-const selectedId = URLParams.get("id");
+const selectedId = URLParams.get('id');
+const endpoint = 'https://striveschool-api.herokuapp.com/api/deezer/artist/' + selectedId;
+const trackList = 'https://striveschool-api.herokuapp.com/api/deezer/artist/' + selectedId + '/top?limit=50';
+
 // https://rapidapi.com/deezerdevs/api/deezer-1 documentazione
 //fill the html with artist info
 window.onload = () => {
@@ -11,15 +12,15 @@ window.onload = () => {
 		fetch(endpoint)
 			.then((responseObj) => responseObj.json())
 			.then((artist) => {
-				let artistName = document.getElementById("artistName");
-				let followers = document.getElementById("followers");
-				let artistImg = document.getElementById("artistThumbnail");
-				let monthlyListener = document.getElementById("monthlyListener");
-				let artistLikeName = document.getElementById("artistLikeName");
+				let artistName = document.getElementById('artistName');
+				let followers = document.getElementById('followers');
+				let artistImg = document.getElementById('artistThumbnail');
+				let monthlyListener = document.getElementById('monthlyListener');
+				let artistLikeName = document.getElementById('artistLikeName');
 				artistName.textContent = artist.name;
 				artistLikeName.textContent = artist.name;
-				followers.textContent = artist.nb_fan + " followers";
-				monthlyListener.textContent = artist.nb_fan + " ascoltatori mensili";
+				followers.textContent = artist.nb_fan + ' followers';
+				monthlyListener.textContent = artist.nb_fan + ' ascoltatori mensili';
 				artistImg.style.backgroundImage = `url(${artist.picture_xl})`;
 			});
 
@@ -27,12 +28,12 @@ window.onload = () => {
 			.then((responseList) => responseList.json())
 			.then((trackList) => {
 				console.log(trackList);
-				let popularList = document.getElementById("popularList");
-				popularList.innerHTML = "";
+				let popularList = document.getElementById('popularList');
+				popularList.innerHTML = '';
 				trackList.data.forEach((track) => {
-					let liElement = document.createElement("li");
-					liElement.classList.add("py-3");
-					let duration = (track.duration / 60).toFixed(2) + " minuti";
+					let liElement = document.createElement('li');
+					liElement.classList.add('py-3');
+					let duration = (track.duration / 60).toFixed(2) + ' minuti';
 					liElement.innerHTML = `
                         <div class="row row-cols-3">
                             <div class="col-6 fs-10">
@@ -51,7 +52,7 @@ window.onload = () => {
 				});
 			});
 	} catch (error) {
-		console.log("errore" + error);
+		console.log('errore' + error);
 	}
 };
 //button player bar song name and player bar filler

@@ -36,8 +36,7 @@ body {
 }
 
 .spotify-logo-text {
-	width: 150px;
-	height: auto;
+	width: 130px;
 }
 
 @media screen and (max-width: 1220px) {
@@ -105,18 +104,18 @@ main {
 	background-color: $dark;
 }
 
+#friendsPicture {
+	width: 15%;
+	height: 15%;
+}
+
 #friendsActivity {
-	#friendsProfile {
-		line-height: 0.1rem;
-		#friendsPicture {
-			width: 15%;
-			height: 15%;
-		}
-	}
-	#friendsActivity {
-		background-color: $dark;
-		padding-bottom: 10rem;
-	}
+	background-color: $dark;
+	padding-bottom: 10rem;
+}
+
+.friendsInfo {
+	line-height: 0.3rem;
 }
 
 #sidebarDesktop {

@@ -2,13 +2,14 @@ let randomArtist = Math.floor(Math.random() * 1000) + 1;
 let randomAlbum = Math.floor(Math.random() * 100000) + 10000000;
 const endpointArtist = 'https://striveschool-api.herokuapp.com/api/deezer/artist/' + randomArtist;
 const endpointAlbum = 'https://striveschool-api.herokuapp.com/api/deezer/album/' + randomAlbum;
-const trackList = 'https://striveschool-api.herokuapp.com/api/deezer/artist/' + randomArtist + '/top?limit=50';
+const endpointTrackList = 'https://striveschool-api.herokuapp.com/api/deezer/artist/' + randomArtist + '/top?limit=50';
 const URLParams = new URLSearchParams(window.location.search);
 const selectedId = URLParams.get('id');
 
 //Population of the fields
 
 window.onload = () => {
+	//Spotlight album population
 	try {
 		fetch(endpointAlbum)
 			.then((responseObj) => responseObj.json())
@@ -25,23 +26,44 @@ window.onload = () => {
 		console.log('ERROR' + error);
 	}
 
+	//Made for you population
 	try {
-		fetch(trackList)
+		fetch(endpointTrackList)
 			.then((responseObj) => responseObj.json())
 			.then((trackList) => {
 				console.log(trackList);
-				trackList.data.forEach((track) => {
-					let col = document.querySelectorAll('.madeForYou');
-					col.innerHTML += `<button class="btn">
-                                            <div class="card p-2 bg-secondary">
-                                            <img src="${track.album.cover}" class="card-img-top"
-                                                alt="${track.title}">
-                                            <div class="card-body text-start">
-                                                <p class="card-text fs-10 text-light">${track.title}</p>
-                                                <p class="card-text fs-10 fw-light text-info">${track.artist.name}</p>
-                                            </div>
-                                            </div>
-                                        </button>`;
+				let cols = document.querySelectorAll('.madeForYou');
+				cols.forEach((col, index) => {
+					col.innerHTML += `
+							<div class="card p-2 bg-secondary">
+							<img src="${trackList.data[index].album.cover_medium}" class="card-img-top" alt="${trackList.data[index].title}">
+							<div class="card-body text-start">
+								<p class="card-text fs-10 text-light">${trackList.data[index].title_short}</p>
+								<p class="card-text fs-10 fw-light text-info">${trackList.data[index].artist.name}</p>
+							</div>
+							</div>`;
+				});
+			});
+	} catch (error) {
+		console.log('ERROR' + error);
+	}
+
+	//Your Episodes population
+	try {
+		fetch(endpointTrackList)
+			.then((responseObj) => responseObj.json())
+			.then((trackList) => {
+				console.log(trackList);
+				let cols = document.querySelectorAll('.yourEpisodes');
+				cols.forEach((col, index) => {
+					col.innerHTML += `
+							<div class="card p-2 bg-secondary">
+							<img src="${trackList.data[index].album.cover_medium}" class="card-img-top" alt="${trackList.data[index].title}">
+							<div class="card-body text-start">
+								<p class="card-text fs-10 text-light">${trackList.data[index].title_short}</p>
+								<p class="card-text fs-10 fw-light text-info">${trackList.data[index].artist.name}</p>
+							</div>
+							</div>`;
 				});
 			});
 	} catch (error) {

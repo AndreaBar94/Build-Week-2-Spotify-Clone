@@ -53,6 +53,8 @@ window.onload = () => {
                         </div>
                     `;
 					popularList.appendChild(liElement);
+
+					//button player bar song name and player bar filler
 					let songTitle = document.querySelector(".songTitle");
 					let songArtist = document.querySelector(".songArtist");
 					let songCover = document.querySelector(".songCover");
@@ -83,4 +85,8 @@ window.onload = () => {
 		console.log("errore" + error);
 	}
 };
-//button player bar song name and player bar filler
+
+let previousBtn = document.querySelector(".previousBtn");
+previousBtn.addEventListener("click", function () {
+	window.location.href = "index.html";
+});

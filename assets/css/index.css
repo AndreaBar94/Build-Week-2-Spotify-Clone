@@ -11853,12 +11853,23 @@ main {
   white-space: nowrap;
 }
 
-#cont {
-  margin-top: 15rem;
-}
-
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 777px) {
   #cont {
-    margin-top: 12rem;
+    margin-top: 30rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  #cont {
+    margin-top: 18rem;
+  }
+}
+@media screen and (min-width: 865px) {
+  #cont {
+    margin-top: 20rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  #cont {
+    margin-top: 17rem;
   }
 }/*# sourceMappingURL=index.css.map */

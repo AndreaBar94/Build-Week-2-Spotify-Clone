@@ -44,7 +44,7 @@ window.onload = () => {
                 <a href="artist.html?id= ${track.artist.Id}" class="album-artist text-info">${track.artist.name}</a>
               </div>
               <div class="col-4 d-none d-md-block text-info">
-                <p class="riproduction">18278</p>
+                <p class="riproduction">2819873</p>
               </div>
               <div class="col-2 d-none d-md-block text-info">
                 <p class="duration">${duration}</p>

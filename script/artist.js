@@ -37,18 +37,23 @@ window.onload = () => {
 				trackList.data.forEach((track) => {
 					let liElement = document.createElement("li");
 					liElement.classList.add("py-3");
-					let duration = (track.duration / 60).toFixed(2) + " minuti";
+					let duration = track.duration;
+					let minutes = Math.floor(duration / 60);
+					let seconds = Math.floor(duration % 60)
+						.toString()
+						.padStart(2, "0");
+					let formattedDuration = `${minutes}:${seconds}`;
 					liElement.innerHTML = `
                         <div class="row row-cols-3 align-items-center">
-                            <div class="col-6 fs-10">
-                                <img src="${track.album.cover_small}" alt="" width="35px" class="d-none d-md-inline"/>
-                                <button type="button" class="btn text-light trackBtn">${track.title}</button>
+                            <div class="col-6 fs-10 d-flex align-items-center">
+                                <img src="${track.album.cover_small}" alt="cover" width="35px" class="d-none d-md-inline"/>
+                                <button type="button" class="btn text-light text-start trackBtn">${track.title}</button>
                             </div>
                             <div class="col-3">
                                 <span class="d-none d-md-inline">Rank ${track.rank}</span>
                             </div>
                             <div class="col-3">
-                                <span>${duration}</span>
+                                <span>${formattedDuration}</span>
                             </div>
                         </div>
                     `;

@@ -1,6 +1,6 @@
-@import 'bootstrap-overrides';
+@import "bootstrap-overrides";
 
-@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
 
 .dropdown-item:hover {
 	background-color: #3e3e3e;
@@ -11,7 +11,7 @@
 }
 
 body {
-	font-family: 'Circular';
+	font-family: "Circular";
 }
 
 #playbarMobile {
@@ -57,7 +57,12 @@ body {
 	z-index: 1;
 	/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#282828+0,070707+100&0.8+0,1+66 */
 	background: -moz-linear-gradient(top, rgba(40, 40, 40, 0.8) 0%, rgba(18, 18, 18, 1) 66%, rgba(7, 7, 7, 1) 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(top, rgba(40, 40, 40, 0.8) 0%, rgba(18, 18, 18, 1) 66%, rgba(7, 7, 7, 1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: -webkit-linear-gradient(
+		top,
+		rgba(40, 40, 40, 0.8) 0%,
+		rgba(18, 18, 18, 1) 66%,
+		rgba(7, 7, 7, 1) 100%
+	); /* Chrome10-25,Safari5.1-6 */
 	background: linear-gradient(
 		to bottom,
 		rgba(40, 40, 40, 0.8) 0%,
@@ -160,6 +165,12 @@ main {
 	#artistMainContent {
 		position: static;
 	}
+	#centralNavbar {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+	}
 }
 
 #homeMainCard {
@@ -183,4 +194,18 @@ main {
 
 .playbarSongData {
 	line-height: 0.3rem;
+}
+#popularList {
+	list-style: none;
+	counter-reset: my-counter 0;
+	li {
+		position: relative;
+	}
+	li:before {
+		content: counter(my-counter) " ";
+		counter-increment: my-counter;
+		position: absolute;
+		left: -25px;
+		top: 25px;
+	}
 }

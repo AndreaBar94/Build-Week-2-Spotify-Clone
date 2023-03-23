@@ -45,11 +45,9 @@ window.onload = () => {
           liAlbum.innerHTML += `
             <div id="AlbumList" class="row align-items-start">
               <div id="album-title" class="col12 col-md-5 mb-3">
-                <a href="#" class="card-title mb-2 text-decoration-none text-light">
-                  ${track.title}
-                </a>
+              <button id="trackBtn" type="button" class="btn text-light text-start trackBtn align-self-center text-truncate">${track.title}</button>
                 <br>
-                <a href="artist.html?id= ${track.artist.id}" class="album-artist text-info text-decoration-none">${track.artist.name}</a>
+                <a href="artist.html?id=${track.artist.id}" class="album-artist text-info text-decoration-none">${track.artist.name}</a>
               </div>
               <div class="col-4 d-none d-md-block text-info">
                 <p class="riproduction">${track.rank}</p>
@@ -60,6 +58,22 @@ window.onload = () => {
             </div>
           `;
           olAlbum.appendChild(liAlbum);
+          //button player bar song name and player bar filler
+          let songTitle = document.querySelector(".songTitle");
+          let songArtist = document.querySelector(".songArtist");
+          let songCover = document.querySelector(".songCover");
+          let songTitleMobile = document.querySelector(".songTitleMobile");
+          let songArtistMobile = document.querySelector(".songArtistMobile");
+          let songCoverMobile = document.querySelector(".songCoverMobile");
+          let trackBtn = document.querySelector("#trackBtn");
+          trackBtn.addEventListener("click", function () {
+            songTitle.textContent = track.title_short;
+            songTitleMobile.textContent = track.title_short;
+            songArtist.textContent = track.artist.name;
+            songArtistMobile.textContent = track.artist.name;
+            songCover.innerHTML = `<img src="${track.album.cover_medium}" alt="album cover" class="img-fluid" />`;
+            songCoverMobile.innerHTML = `<img src="${track.album.cover_medium}" alt="album cover" class="img-fluid" style="width: 50px" />`;
+          });
         });
       });
   } catch (error) {

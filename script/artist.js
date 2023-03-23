@@ -78,6 +78,7 @@ window.onload = () => {
 						songTitleMobile.textContent = track.title_short;
 						songArtist.textContent = track.artist.name;
 						songArtistMobile.textContent = track.artist.name;
+						//player audio
 						audioPlayer.src = track.preview;
 						playPauseBtn.addEventListener("click", function () {
 							if (audioPlayer.paused) {

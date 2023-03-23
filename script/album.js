@@ -17,6 +17,10 @@ window.onload = () => {
         let NumTrack = document.getElementById("NumTrack");
         let tipe = document.getElementById("tipe");
         let coverPic = document.getElementById("coverPic");
+        let authorAlbum = document.getElementById("authorAlbum");
+        let releaseDate = document.getElementById("releaseDate");
+        releaseDate.textContent = album.release_date;
+        authorAlbum.textContent = `${album.artist.name}`;
         coverPic.src = `${album.cover}`;
         imgAlbum.src = `${album.cover_medium}`;
         titleAlbum.textContent = album.title;
@@ -33,7 +37,7 @@ window.onload = () => {
         const olAlbum = document.createElement("ol");
         olAlbum.setAttribute("id", "popularList");
         containerAlbum.appendChild(olAlbum);
-        trackslist.tracks.data.forEach((track, index) => {
+        trackslist.tracks.data.forEach(track => {
           const liAlbum = document.createElement("li");
           liAlbum.classList.add("py-3");
           let duration = track.duration;
@@ -45,7 +49,7 @@ window.onload = () => {
           liAlbum.innerHTML += `
             <div id="AlbumList" class="row align-items-start">
               <div id="album-title" class="col12 col-md-5 mb-3">
-              <button id="trackBtn" type="button" class="btn text-light text-start trackBtn align-self-center text-truncate">${track.title}</button>
+              <button id="trackBtn" type="button" class="btn text-light text-start trackBtn align-self-center text-truncate ps-0">${track.title_short}</button>
                 <br>
                 <a href="artist.html?id=${track.artist.id}" class="album-artist text-info text-decoration-none">${track.artist.name}</a>
               </div>
@@ -65,12 +69,12 @@ window.onload = () => {
           let songTitleMobile = document.querySelector(".songTitleMobile");
           let songArtistMobile = document.querySelector(".songArtistMobile");
           let songCoverMobile = document.querySelector(".songCoverMobile");
-          let trackBtn = document.querySelector("#trackBtn");
+          let trackBtn = liAlbum.querySelector("#trackBtn");
           trackBtn.addEventListener("click", function () {
             songTitle.textContent = track.title_short;
             songTitleMobile.textContent = track.title_short;
-            songArtist.textContent = track.artist.name;
-            songArtistMobile.textContent = track.artist.name;
+            songArtist.innerHTML = track.artist.name;
+            songArtistMobile.innerHTML = track.artist.name;
             songCover.innerHTML = `<img src="${track.album.cover_medium}" alt="album cover" class="img-fluid" />`;
             songCoverMobile.innerHTML = `<img src="${track.album.cover_medium}" alt="album cover" class="img-fluid" style="width: 50px" />`;
           });

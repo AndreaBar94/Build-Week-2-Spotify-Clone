@@ -15,6 +15,20 @@ if (sessionStorage.getItem('Username')) {
 } else {
 	userName.textContent = 'Nessun utente memorizzato';
 }
+
+//playbar placeholder
+let playbarInfo = document.querySelector('#songInfo');
+let songTitleMobile = document.querySelector('.songTitleMobile');
+let songTitle = document.querySelector('.songTitle');
+
+if (songTitle == '') {
+	playbarInfo.classList.add('d-none');
+}
+
+if (songTitleMobile == '') {
+	playbarInfo.classList.add('d-none');
+}
+
 //Population of the fields
 
 window.onload = () => {
@@ -189,7 +203,10 @@ window.onload = () => {
 					let songTitle = document.querySelector('.songTitle');
 					let songArtist = document.querySelector('.songArtist');
 					let songCover = document.querySelector('.songCover');
+					let playbarInfo = document.querySelector('#songInfo');
+
 					madeForYouA = () => {
+						playbarInfo.classList.add('d-block');
 						songTitle.textContent = trackList.data[index].title_short;
 						songArtist.textContent = trackList.data[index].artist.name;
 						songCover.innerHTML = `<img src="${trackList.data[index].album.cover_medium}" alt="album cover" class="img-fluid"/>`;

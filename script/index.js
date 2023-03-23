@@ -463,6 +463,7 @@ window.onload = () => {
 					let songCover = document.querySelector('.songCover');
 					let playPauseBtn = document.getElementById('playPauseBtn');
 					let audioPlayer = document.getElementById('audioPlayer');
+
 					yourEpisodesA = () => {
 						songTitle.textContent = trackList.data[index].title_short;
 						songArtist.textContent = trackList.data[index].artist.name;
@@ -509,6 +510,7 @@ window.onload = () => {
 					let songCover = document.querySelector('.songCover');
 					let playPauseBtn = document.getElementById('playPauseBtn');
 					let audioPlayer = document.getElementById('audioPlayer');
+
 					yourEpisodesB = () => {
 						songTitle.textContent = trackList.data[index].title_short;
 						songArtist.textContent = trackList.data[index].artist.name;
@@ -555,6 +557,7 @@ window.onload = () => {
 					let songCover = document.querySelector('.songCover');
 					let playPauseBtn = document.getElementById('playPauseBtn');
 					let audioPlayer = document.getElementById('audioPlayer');
+
 					yourEpisodesC = () => {
 						songTitle.textContent = trackList.data[index].title_short;
 						songArtist.textContent = trackList.data[index].artist.name;
@@ -601,6 +604,7 @@ window.onload = () => {
 					let songCover = document.querySelector('.songCover');
 					let playPauseBtn = document.getElementById('playPauseBtn');
 					let audioPlayer = document.getElementById('audioPlayer');
+
 					yourEpisodesD = () => {
 						songTitle.textContent = trackList.data[index].title_short;
 						songArtist.textContent = trackList.data[index].artist.name;
@@ -647,6 +651,7 @@ window.onload = () => {
 					let songCover = document.querySelector('.songCover');
 					let playPauseBtn = document.getElementById('playPauseBtn');
 					let audioPlayer = document.getElementById('audioPlayer');
+
 					yourEpisodesE = () => {
 						songTitle.textContent = trackList.data[index].title_short;
 						songArtist.textContent = trackList.data[index].artist.name;

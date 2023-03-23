@@ -276,10 +276,22 @@ window.onload = () => {
 					let songTitle = document.querySelector('.songTitle');
 					let songArtist = document.querySelector('.songArtist');
 					let songCover = document.querySelector('.songCover');
+					let playPauseBtn = document.getElementById('playPauseBtn');
+					let audioPlayer = document.getElementById('audioPlayer');
 					madeForYouB = () => {
 						songTitle.textContent = trackList.data[index].title_short;
 						songArtist.textContent = trackList.data[index].artist.name;
 						songCover.innerHTML = `<img src="${trackList.data[index].album.cover_medium}" alt="album cover" class="img-fluid"/>`;
+						audioPlayer.src = trackList.data[index].preview;
+						playPauseBtn.addEventListener('click', function () {
+							if (audioPlayer.paused) {
+								audioPlayer.play();
+								playPauseBtn.innerHTML = '<i class="bi bi-pause-circle-fill text-light fs-6"></i>';
+							} else {
+								audioPlayer.pause();
+								playPauseBtn.innerHTML = '<i class="bi bi-play-circle-fill text-light fs-6"></i>';
+							}
+						});
 					};
 				});
 			});
@@ -310,10 +322,22 @@ window.onload = () => {
 					let songTitle = document.querySelector('.songTitle');
 					let songArtist = document.querySelector('.songArtist');
 					let songCover = document.querySelector('.songCover');
+					let playPauseBtn = document.getElementById('playPauseBtn');
+					let audioPlayer = document.getElementById('audioPlayer');
 					madeForYouC = () => {
 						songTitle.textContent = trackList.data[index].title_short;
 						songArtist.textContent = trackList.data[index].artist.name;
 						songCover.innerHTML = `<img src="${trackList.data[index].album.cover_medium}" alt="album cover" class="img-fluid"/>`;
+						audioPlayer.src = trackList.data[index].preview;
+						playPauseBtn.addEventListener('click', function () {
+							if (audioPlayer.paused) {
+								audioPlayer.play();
+								playPauseBtn.innerHTML = '<i class="bi bi-pause-circle-fill text-light fs-6"></i>';
+							} else {
+								audioPlayer.pause();
+								playPauseBtn.innerHTML = '<i class="bi bi-play-circle-fill text-light fs-6"></i>';
+							}
+						});
 					};
 				});
 			});
@@ -344,10 +368,22 @@ window.onload = () => {
 					let songTitle = document.querySelector('.songTitle');
 					let songArtist = document.querySelector('.songArtist');
 					let songCover = document.querySelector('.songCover');
+					let playPauseBtn = document.getElementById('playPauseBtn');
+					let audioPlayer = document.getElementById('audioPlayer');
 					madeForYouD = () => {
 						songTitle.textContent = trackList.data[index].title_short;
 						songArtist.textContent = trackList.data[index].artist.name;
 						songCover.innerHTML = `<img src="${trackList.data[index].album.cover_medium}" alt="album cover" class="img-fluid"/>`;
+						audioPlayer.src = trackList.data[index].preview;
+						playPauseBtn.addEventListener('click', function () {
+							if (audioPlayer.paused) {
+								audioPlayer.play();
+								playPauseBtn.innerHTML = '<i class="bi bi-pause-circle-fill text-light fs-6"></i>';
+							} else {
+								audioPlayer.pause();
+								playPauseBtn.innerHTML = '<i class="bi bi-play-circle-fill text-light fs-6"></i>';
+							}
+						});
 					};
 				});
 			});
@@ -378,10 +414,22 @@ window.onload = () => {
 					let songTitle = document.querySelector('.songTitle');
 					let songArtist = document.querySelector('.songArtist');
 					let songCover = document.querySelector('.songCover');
+					let playPauseBtn = document.getElementById('playPauseBtn');
+					let audioPlayer = document.getElementById('audioPlayer');
 					madeForYouE = () => {
 						songTitle.textContent = trackList.data[index].title_short;
 						songArtist.textContent = trackList.data[index].artist.name;
 						songCover.innerHTML = `<img src="${trackList.data[index].album.cover_medium}" alt="album cover" class="img-fluid"/>`;
+						audioPlayer.src = trackList.data[index].preview;
+						playPauseBtn.addEventListener('click', function () {
+							if (audioPlayer.paused) {
+								audioPlayer.play();
+								playPauseBtn.innerHTML = '<i class="bi bi-pause-circle-fill text-light fs-6"></i>';
+							} else {
+								audioPlayer.pause();
+								playPauseBtn.innerHTML = '<i class="bi bi-play-circle-fill text-light fs-6"></i>';
+							}
+						});
 					};
 				});
 			});
@@ -413,10 +461,22 @@ window.onload = () => {
 					let songTitle = document.querySelector('.songTitle');
 					let songArtist = document.querySelector('.songArtist');
 					let songCover = document.querySelector('.songCover');
+					let playPauseBtn = document.getElementById('playPauseBtn');
+					let audioPlayer = document.getElementById('audioPlayer');
 					yourEpisodesA = () => {
 						songTitle.textContent = trackList.data[index].title_short;
 						songArtist.textContent = trackList.data[index].artist.name;
 						songCover.innerHTML = `<img src="${trackList.data[index].album.cover_medium}" alt="album cover" class="img-fluid"/>`;
+						audioPlayer.src = trackList.data[index].preview;
+						playPauseBtn.addEventListener('click', function () {
+							if (audioPlayer.paused) {
+								audioPlayer.play();
+								playPauseBtn.innerHTML = '<i class="bi bi-pause-circle-fill text-light fs-6"></i>';
+							} else {
+								audioPlayer.pause();
+								playPauseBtn.innerHTML = '<i class="bi bi-play-circle-fill text-light fs-6"></i>';
+							}
+						});
 					};
 				});
 			});
@@ -447,10 +507,22 @@ window.onload = () => {
 					let songTitle = document.querySelector('.songTitle');
 					let songArtist = document.querySelector('.songArtist');
 					let songCover = document.querySelector('.songCover');
+					let playPauseBtn = document.getElementById('playPauseBtn');
+					let audioPlayer = document.getElementById('audioPlayer');
 					yourEpisodesB = () => {
 						songTitle.textContent = trackList.data[index].title_short;
 						songArtist.textContent = trackList.data[index].artist.name;
 						songCover.innerHTML = `<img src="${trackList.data[index].album.cover_medium}" alt="album cover" class="img-fluid"/>`;
+						audioPlayer.src = trackList.data[index].preview;
+						playPauseBtn.addEventListener('click', function () {
+							if (audioPlayer.paused) {
+								audioPlayer.play();
+								playPauseBtn.innerHTML = '<i class="bi bi-pause-circle-fill text-light fs-6"></i>';
+							} else {
+								audioPlayer.pause();
+								playPauseBtn.innerHTML = '<i class="bi bi-play-circle-fill text-light fs-6"></i>';
+							}
+						});
 					};
 				});
 			});
@@ -481,10 +553,22 @@ window.onload = () => {
 					let songTitle = document.querySelector('.songTitle');
 					let songArtist = document.querySelector('.songArtist');
 					let songCover = document.querySelector('.songCover');
+					let playPauseBtn = document.getElementById('playPauseBtn');
+					let audioPlayer = document.getElementById('audioPlayer');
 					yourEpisodesC = () => {
 						songTitle.textContent = trackList.data[index].title_short;
 						songArtist.textContent = trackList.data[index].artist.name;
 						songCover.innerHTML = `<img src="${trackList.data[index].album.cover_medium}" alt="album cover" class="img-fluid"/>`;
+						audioPlayer.src = trackList.data[index].preview;
+						playPauseBtn.addEventListener('click', function () {
+							if (audioPlayer.paused) {
+								audioPlayer.play();
+								playPauseBtn.innerHTML = '<i class="bi bi-pause-circle-fill text-light fs-6"></i>';
+							} else {
+								audioPlayer.pause();
+								playPauseBtn.innerHTML = '<i class="bi bi-play-circle-fill text-light fs-6"></i>';
+							}
+						});
 					};
 				});
 			});
@@ -515,10 +599,22 @@ window.onload = () => {
 					let songTitle = document.querySelector('.songTitle');
 					let songArtist = document.querySelector('.songArtist');
 					let songCover = document.querySelector('.songCover');
+					let playPauseBtn = document.getElementById('playPauseBtn');
+					let audioPlayer = document.getElementById('audioPlayer');
 					yourEpisodesD = () => {
 						songTitle.textContent = trackList.data[index].title_short;
 						songArtist.textContent = trackList.data[index].artist.name;
 						songCover.innerHTML = `<img src="${trackList.data[index].album.cover_medium}" alt="album cover" class="img-fluid"/>`;
+						audioPlayer.src = trackList.data[index].preview;
+						playPauseBtn.addEventListener('click', function () {
+							if (audioPlayer.paused) {
+								audioPlayer.play();
+								playPauseBtn.innerHTML = '<i class="bi bi-pause-circle-fill text-light fs-6"></i>';
+							} else {
+								audioPlayer.pause();
+								playPauseBtn.innerHTML = '<i class="bi bi-play-circle-fill text-light fs-6"></i>';
+							}
+						});
 					};
 				});
 			});
@@ -549,10 +645,22 @@ window.onload = () => {
 					let songTitle = document.querySelector('.songTitle');
 					let songArtist = document.querySelector('.songArtist');
 					let songCover = document.querySelector('.songCover');
+					let playPauseBtn = document.getElementById('playPauseBtn');
+					let audioPlayer = document.getElementById('audioPlayer');
 					yourEpisodesE = () => {
 						songTitle.textContent = trackList.data[index].title_short;
 						songArtist.textContent = trackList.data[index].artist.name;
 						songCover.innerHTML = `<img src="${trackList.data[index].album.cover_medium}" alt="album cover" class="img-fluid"/>`;
+						audioPlayer.src = trackList.data[index].preview;
+						playPauseBtn.addEventListener('click', function () {
+							if (audioPlayer.paused) {
+								audioPlayer.play();
+								playPauseBtn.innerHTML = '<i class="bi bi-pause-circle-fill text-light fs-6"></i>';
+							} else {
+								audioPlayer.pause();
+								playPauseBtn.innerHTML = '<i class="bi bi-play-circle-fill text-light fs-6"></i>';
+							}
+						});
 					};
 				});
 			});
@@ -827,7 +935,7 @@ window.onload = () => {
 					col.innerHTML += `
 								<div class="card border border-0 bg-dark" style="width: 150px">
 									<a href="album.html?id=${trackList.data[index].album.id}" class="text-decoration-none link-info">
-									<img src="${trackList.data[index].album.cover_medium}" class="card-img-top rounded-0"alt="episodeCover">
+									<img src="${trackList.data[index].album.cover_medium}" class="card-img-top rounded-0" alt="episodeCover">
 									</a>
 									<div class="card-body text-start px-1 mobileHomeMainCards">
 										<p class="card-text text-light fs-10 text-truncate">${trackList.data[index].title_short}</p>
@@ -850,9 +958,9 @@ window.onload = () => {
 					col.innerHTML += `
 								<div class="card border border-0 bg-dark" style="width: 150px">
 								<a href="artist.html?id=${artist.id}" class="text-decoration-none link-info">
-									<img src="${artist.picture}" class="card-img-top rounded-circle"
+									<img src="${artist.picture}" class="card-img-top rounded-circle" alt="episodeCover">
 									</a>
-									alt="episodeCover">
+									
 								<div class="card-body text-start px-1 mobileHomeMainCards">
 									<p class="card-text text-light fs-10"><a href="artist.html?id=${artist.id}" class="text-decoration-none link-info"> ${artist.name} </a></p>
 								</div>
@@ -873,7 +981,7 @@ window.onload = () => {
 					col.innerHTML += `
 									<div class="card border border-0 bg-dark" style="width: 150px">
 										<a href="album.html?id=${trackList.data[index].album.id}" class="text-decoration-none link-info">
-										<img src="${trackList.data[index].album.cover_medium}" class="card-img-top rounded-0"alt="episodeCover">
+										<img src="${trackList.data[index].album.cover_medium}" class="card-img-top rounded-0" alt="episodeCover">
 										</a>
 										<div class="card-body text-start px-1 mobileHomeMainCards">
 											<p class="card-text text-light fs-10 text-truncate">${trackList.data[index].title_short}</p>
@@ -896,7 +1004,7 @@ window.onload = () => {
 					col.innerHTML += `
 									<div class="card border border-0 bg-dark" style="width: 150px">
 										<a href="album.html?id=${trackList.data[index].album.id}" class="text-decoration-none link-info">
-										<img src="${trackList.data[index].album.cover_medium}" class="card-img-top rounded-0"alt="episodeCover">
+										<img src="${trackList.data[index].album.cover_medium}" class="card-img-top rounded-0" alt="episodeCover">
 										</a>
 										<div class="card-body text-start px-1 mobileHomeMainCards">
 											<p class="card-text text-light fs-10 text-truncate">${trackList.data[index].title_short}</p>

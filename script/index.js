@@ -145,15 +145,17 @@ window.onload = () => {
 
 	//Spotlight album population
 	try {
-		fetch(endpoint + '77068962')
+		fetch(endpoint + '395973467')
 			.then((responseObj) => responseObj.json())
 			.then((album) => {
 				let albumName = document.getElementById('albumNameTop');
-				albumName.textContent = album.title;
+				albumName.innerHTML = `<a href="album.html?id=${album.id}" class="text-decoration-none link-light d-inline-block text-truncate"> ${album.title} </a>`;
 				let albumArtist = document.getElementById('albumArtistTop');
 				albumArtist.innerHTML = `<a href="artist.html?id=${album.artist.id}" class="text-decoration-none link-light d-inline-block text-truncate"> ${album.artist.name} </a>`;
 				let albumCover = document.getElementById('albumCoverTop');
 				albumCover.src = album.cover_big;
+				let albumCoverLink = document.getElementById('albumCoverLink');
+				albumCoverLink.href = `album.html?id=${album.id}`;
 				console.log(endpointAlbum);
 			});
 	} catch (error) {
@@ -170,7 +172,7 @@ window.onload = () => {
 				cols.forEach((col, index) => {
 					col.innerHTML += `
 							
-							<button id="trackBtn" class="btn"> 
+							<button type="button" onclick="madeForYouA()" class="btn"> 
 							<div class="card p-2 bg-secondary">
 								<a href="album.html?id=${trackList.data[index].album.id}" class="text-decoration-none link-info">
 									<img src="${trackList.data[index].album.cover_medium}" class="card-img-top rounded-0"alt="episodeCover">
@@ -187,18 +189,11 @@ window.onload = () => {
 					let songTitle = document.querySelector('.songTitle');
 					let songArtist = document.querySelector('.songArtist');
 					let songCover = document.querySelector('.songCover');
-					let songTitleMobile = document.querySelector('.songTitleMobile');
-					let songArtistMobile = document.querySelector('.songArtistMobile');
-					let songCoverMobile = document.querySelector('.songCoverMobile');
-					let trackBtn = document.getElementById('trackBtn');
-					trackBtn.addEventListener('click', function () {
+					madeForYouA = () => {
 						songTitle.textContent = trackList.data[index].title_short;
-						songTitleMobile.textContent = trackList.data[index].title_short;
 						songArtist.textContent = trackList.data[index].artist.name;
-						songArtistMobile.textContent = trackList.data[index].artist.name;
 						songCover.innerHTML = `<img src="${trackList.data[index].album.cover_medium}" alt="album cover" class="img-fluid"/>`;
-						songCoverMobile.innerHTML = `<img src="${trackList.data[index].album.cover_medium}" alt="album cover" class="img-fluid" style="width: 50px"/>`;
-					});
+					};
 				});
 			});
 	} catch (error) {
@@ -213,15 +208,26 @@ window.onload = () => {
 				let cols = document.querySelectorAll('.madeForYouB');
 				cols.forEach((col, index) => {
 					col.innerHTML += `
-							<div class="card p-2 bg-secondary">
-							<a href="album.html?id=${trackList.data[index].album.id}" class="text-decoration-none link-info">
-									<img src="${trackList.data[index].album.cover_medium}" class="card-img-top rounded-0"alt="episodeCover">
-									</a>
-							<div class="card-body text-start">
-								<p class="card-text fs-10 text-light text-truncate">${trackList.data[index].title_short}</p>
-								<p class="card-text fs-10 fw-light text-info"><a href="artist.html?id=${trackList.data[index].artist.id}" class="text-decoration-none link-info"> ${trackList.data[index].artist.name} </a></p>
-							</div>
-							</div>`;
+					<button type="button" onclick="madeForYouB()" class="btn"> 
+					<div class="card p-2 bg-secondary">
+						<a href="album.html?id=${trackList.data[index].album.id}" class="text-decoration-none link-info">
+							<img src="${trackList.data[index].album.cover_medium}" class="card-img-top rounded-0"alt="episodeCover">
+						</a>
+						<div class="card-body text-start">
+							<p class="card-text fs-10 text-light text-truncate">${trackList.data[index].title_short}</p>
+							<p class="card-text fs-10 fw-light text-info"><a href="artist.html?id=${trackList.data[index].artist.id}" class="text-decoration-none link-info"> ${trackList.data[index].artist.name} </a></p>
+						</div>
+						</div>
+					</button>`;
+					//button player bar song name and player bar filler
+					let songTitle = document.querySelector('.songTitle');
+					let songArtist = document.querySelector('.songArtist');
+					let songCover = document.querySelector('.songCover');
+					madeForYouB = () => {
+						songTitle.textContent = trackList.data[index].title_short;
+						songArtist.textContent = trackList.data[index].artist.name;
+						songCover.innerHTML = `<img src="${trackList.data[index].album.cover_medium}" alt="album cover" class="img-fluid"/>`;
+					};
 				});
 			});
 	} catch (error) {
@@ -236,15 +242,26 @@ window.onload = () => {
 				let cols = document.querySelectorAll('.madeForYouC');
 				cols.forEach((col, index) => {
 					col.innerHTML += `
-							<div class="card p-2 bg-secondary">
-							<a href="album.html?id=${trackList.data[index].album.id}" class="text-decoration-none link-info">
-									<img src="${trackList.data[index].album.cover_medium}" class="card-img-top rounded-0"alt="episodeCover">
-									</a>
-							<div class="card-body text-start">
-								<p class="card-text fs-10 text-light text-truncate">${trackList.data[index].title_short}</p>
-								<p class="card-text fs-10 fw-light text-info"><a href="artist.html?id=${trackList.data[index].artist.id}" class="text-decoration-none link-info"> ${trackList.data[index].artist.name} </a></p>
-							</div>
-							</div>`;
+					<button type="button" onclick="madeForYouC()" class="btn"> 
+					<div class="card p-2 bg-secondary">
+						<a href="album.html?id=${trackList.data[index].album.id}" class="text-decoration-none link-info">
+							<img src="${trackList.data[index].album.cover_medium}" class="card-img-top rounded-0"alt="episodeCover">
+						</a>
+						<div class="card-body text-start">
+							<p class="card-text fs-10 text-light text-truncate">${trackList.data[index].title_short}</p>
+							<p class="card-text fs-10 fw-light text-info"><a href="artist.html?id=${trackList.data[index].artist.id}" class="text-decoration-none link-info"> ${trackList.data[index].artist.name} </a></p>
+						</div>
+						</div>
+					</button>`;
+					//button player bar song name and player bar filler
+					let songTitle = document.querySelector('.songTitle');
+					let songArtist = document.querySelector('.songArtist');
+					let songCover = document.querySelector('.songCover');
+					madeForYouC = () => {
+						songTitle.textContent = trackList.data[index].title_short;
+						songArtist.textContent = trackList.data[index].artist.name;
+						songCover.innerHTML = `<img src="${trackList.data[index].album.cover_medium}" alt="album cover" class="img-fluid"/>`;
+					};
 				});
 			});
 	} catch (error) {
@@ -259,15 +276,26 @@ window.onload = () => {
 				let cols = document.querySelectorAll('.madeForYouD');
 				cols.forEach((col, index) => {
 					col.innerHTML += `
-							<div class="card p-2 bg-secondary">
-							<a href="album.html?id=${trackList.data[index].album.id}" class="text-decoration-none link-info">
-									<img src="${trackList.data[index].album.cover_medium}" class="card-img-top rounded-0"alt="episodeCover">
-									</a>
-							<div class="card-body text-start">
-								<p class="card-text fs-10 text-light text-truncate">${trackList.data[index].title_short}</p>
-								<p class="card-text fs-10 fw-light text-info"><a href="artist.html?id=${trackList.data[index].artist.id}" class="text-decoration-none link-info"> ${trackList.data[index].artist.name} </a></p>
-							</div>
-							</div>`;
+					<button type="button" onclick="madeForYouD()"class="btn"> 
+					<div class="card p-2 bg-secondary">
+						<a href="album.html?id=${trackList.data[index].album.id}" class="text-decoration-none link-info">
+							<img src="${trackList.data[index].album.cover_medium}" class="card-img-top rounded-0"alt="episodeCover">
+						</a>
+						<div class="card-body text-start">
+							<p class="card-text fs-10 text-light text-truncate">${trackList.data[index].title_short}</p>
+							<p class="card-text fs-10 fw-light text-info"><a href="artist.html?id=${trackList.data[index].artist.id}" class="text-decoration-none link-info"> ${trackList.data[index].artist.name} </a></p>
+						</div>
+						</div>
+					</button>`;
+					//button player bar song name and player bar filler
+					let songTitle = document.querySelector('.songTitle');
+					let songArtist = document.querySelector('.songArtist');
+					let songCover = document.querySelector('.songCover');
+					madeForYouD = () => {
+						songTitle.textContent = trackList.data[index].title_short;
+						songArtist.textContent = trackList.data[index].artist.name;
+						songCover.innerHTML = `<img src="${trackList.data[index].album.cover_medium}" alt="album cover" class="img-fluid"/>`;
+					};
 				});
 			});
 	} catch (error) {
@@ -282,15 +310,26 @@ window.onload = () => {
 				let cols = document.querySelectorAll('.madeForYouE');
 				cols.forEach((col, index) => {
 					col.innerHTML += `
-							<div class="card p-2 bg-secondary">
+					<button onclick="madeForYouE()" class="btn"> 
+						<div class="card p-2 bg-secondary">
 							<a href="album.html?id=${trackList.data[index].album.id}" class="text-decoration-none link-info">
-									<img src="${trackList.data[index].album.cover_medium}" class="card-img-top rounded-0"alt="episodeCover">
-									</a>
+							<img src="${trackList.data[index].album.cover_medium}" class="card-img-top rounded-0"alt="episodeCover">
+							</a>
 							<div class="card-body text-start">
 								<p class="card-text fs-10 text-light text-truncate">${trackList.data[index].title_short}</p>
 								<p class="card-text fs-10 fw-light text-info"><a href="artist.html?id=${trackList.data[index].artist.id}" class="text-decoration-none link-info"> ${trackList.data[index].artist.name} </a></p>
 							</div>
-							</div>`;
+						</div>
+					</button>`;
+					//button player bar song name and player bar filler
+					let songTitle = document.querySelector('.songTitle');
+					let songArtist = document.querySelector('.songArtist');
+					let songCover = document.querySelector('.songCover');
+					madeForYouE = () => {
+						songTitle.textContent = trackList.data[index].title_short;
+						songArtist.textContent = trackList.data[index].artist.name;
+						songCover.innerHTML = `<img src="${trackList.data[index].album.cover_medium}" alt="album cover" class="img-fluid"/>`;
+					};
 				});
 			});
 	} catch (error) {
@@ -306,15 +345,26 @@ window.onload = () => {
 				let cols = document.querySelectorAll('.yourEpisodesA');
 				cols.forEach((col, index) => {
 					col.innerHTML += `
-							<div class="card p-2 bg-secondary">
-							<a href="album.html?id=${trackList.data[index].album.id}" class="text-decoration-none link-info">
-									<img src="${trackList.data[index].album.cover_medium}" class="card-img-top rounded-0"alt="episodeCover">
+							<button onclick="yourEpisodesA()" class="btn">
+								<div class="card p-2 bg-secondary">
+									<a href="album.html?id=${trackList.data[index].album.id}" class="text-decoration-none link-info">
+										<img src="${trackList.data[index].album.cover_medium}" class="card-img-top rounded-0"alt="episodeCover">
 									</a>
-							<div class="card-body text-start">
-								<p class="card-text fs-10 text-light text-truncate">${trackList.data[index].title_short}</p>
-								<p class="card-text fs-10 fw-light text-info"><a href="artist.html?id=${trackList.data[index].artist.id}" class="text-decoration-none link-info"> ${trackList.data[index].artist.name} </a></p>
-							</div>
-							</div>`;
+									<div class="card-body text-start">
+										<p class="card-text fs-10 text-light text-truncate">${trackList.data[index].title_short}</p>
+										<p class="card-text fs-10 fw-light text-info"><a href="artist.html?id=${trackList.data[index].artist.id}" class="text-decoration-none link-info"> ${trackList.data[index].artist.name} </a></p>
+									</div>
+								</div>
+							</button>`;
+					//button player bar song name and player bar filler
+					let songTitle = document.querySelector('.songTitle');
+					let songArtist = document.querySelector('.songArtist');
+					let songCover = document.querySelector('.songCover');
+					yourEpisodesA = () => {
+						songTitle.textContent = trackList.data[index].title_short;
+						songArtist.textContent = trackList.data[index].artist.name;
+						songCover.innerHTML = `<img src="${trackList.data[index].album.cover_medium}" alt="album cover" class="img-fluid"/>`;
+					};
 				});
 			});
 	} catch (error) {
@@ -329,15 +379,26 @@ window.onload = () => {
 				let cols = document.querySelectorAll('.yourEpisodesB');
 				cols.forEach((col, index) => {
 					col.innerHTML += `
-							<div class="card p-2 bg-secondary">
-							<a href="album.html?id=${trackList.data[index].album.id}" class="text-decoration-none link-info">
-									<img src="${trackList.data[index].album.cover_medium}" class="card-img-top rounded-0"alt="episodeCover">
-									</a>
-							<div class="card-body text-start">
-								<p class="card-text fs-10 text-light text-truncate">${trackList.data[index].title_short}</p>
-								<p class="card-text fs-10 fw-light text-info"><a href="artist.html?id=${trackList.data[index].artist.id}" class="text-decoration-none link-info"> ${trackList.data[index].artist.name} </a></p>
-							</div>
-							</div>`;
+								<button onclick="yourEpisodesB()" class="btn">
+									<div class="card p-2 bg-secondary">
+										<a href="album.html?id=${trackList.data[index].album.id}" class="text-decoration-none link-info">
+											<img src="${trackList.data[index].album.cover_medium}" class="card-img-top rounded-0"alt="episodeCover">
+										</a>
+										<div class="card-body text-start">
+											<p class="card-text fs-10 text-light text-truncate">${trackList.data[index].title_short}</p>
+											<p class="card-text fs-10 fw-light text-info"><a href="artist.html?id=${trackList.data[index].artist.id}" class="text-decoration-none link-info"> ${trackList.data[index].artist.name} </a></p>
+										</div>
+									</div>
+								</button>`;
+					//button player bar song name and player bar filler
+					let songTitle = document.querySelector('.songTitle');
+					let songArtist = document.querySelector('.songArtist');
+					let songCover = document.querySelector('.songCover');
+					yourEpisodesB = () => {
+						songTitle.textContent = trackList.data[index].title_short;
+						songArtist.textContent = trackList.data[index].artist.name;
+						songCover.innerHTML = `<img src="${trackList.data[index].album.cover_medium}" alt="album cover" class="img-fluid"/>`;
+					};
 				});
 			});
 	} catch (error) {
@@ -352,15 +413,26 @@ window.onload = () => {
 				let cols = document.querySelectorAll('.yourEpisodesC');
 				cols.forEach((col, index) => {
 					col.innerHTML += `
-							<div class="card p-2 bg-secondary">
-							<a href="album.html?id=${trackList.data[index].album.id}" class="text-decoration-none link-info">
-									<img src="${trackList.data[index].album.cover_medium}" class="card-img-top rounded-0"alt="episodeCover">
-									</a>
-							<div class="card-body text-start">
-								<p class="card-text fs-10 text-light text-truncate">${trackList.data[index].title_short}</p>
-								<p class="card-text fs-10 fw-light text-info"><a href="artist.html?id=${trackList.data[index].artist.id}" class="text-decoration-none link-info"> ${trackList.data[index].artist.name} </a></p>
-							</div>
-							</div>`;
+					<button onclick="yourEpisodesC()" class="btn">
+					<div class="card p-2 bg-secondary">
+						<a href="album.html?id=${trackList.data[index].album.id}" class="text-decoration-none link-info">
+							<img src="${trackList.data[index].album.cover_medium}" class="card-img-top rounded-0"alt="episodeCover">
+						</a>
+						<div class="card-body text-start">
+							<p class="card-text fs-10 text-light text-truncate">${trackList.data[index].title_short}</p>
+							<p class="card-text fs-10 fw-light text-info"><a href="artist.html?id=${trackList.data[index].artist.id}" class="text-decoration-none link-info"> ${trackList.data[index].artist.name} </a></p>
+						</div>
+					</div>
+				</button>`;
+					//button player bar song name and player bar filler
+					let songTitle = document.querySelector('.songTitle');
+					let songArtist = document.querySelector('.songArtist');
+					let songCover = document.querySelector('.songCover');
+					yourEpisodesC = () => {
+						songTitle.textContent = trackList.data[index].title_short;
+						songArtist.textContent = trackList.data[index].artist.name;
+						songCover.innerHTML = `<img src="${trackList.data[index].album.cover_medium}" alt="album cover" class="img-fluid"/>`;
+					};
 				});
 			});
 	} catch (error) {
@@ -375,15 +447,26 @@ window.onload = () => {
 				let cols = document.querySelectorAll('.yourEpisodesD');
 				cols.forEach((col, index) => {
 					col.innerHTML += `
-							<div class="card p-2 bg-secondary">
-							<a href="album.html?id=${trackList.data[index].album.id}" class="text-decoration-none link-info">
-									<img src="${trackList.data[index].album.cover_medium}" class="card-img-top rounded-0"alt="episodeCover">
-									</a>
-							<div class="card-body text-start">
-								<p class="card-text fs-10 text-light text-truncate">${trackList.data[index].title_short}</p>
-								<p class="card-text fs-10 fw-light text-info"><a href="artist.html?id=${trackList.data[index].artist.id}" class="text-decoration-none link-info"> ${trackList.data[index].artist.name} </a></p>
-							</div>
-							</div>`;
+					<button onclick="yourEpisodesD()" class="btn">
+					<div class="card p-2 bg-secondary">
+						<a href="album.html?id=${trackList.data[index].album.id}" class="text-decoration-none link-info">
+							<img src="${trackList.data[index].album.cover_medium}" class="card-img-top rounded-0"alt="episodeCover">
+						</a>
+						<div class="card-body text-start">
+							<p class="card-text fs-10 text-light text-truncate">${trackList.data[index].title_short}</p>
+							<p class="card-text fs-10 fw-light text-info"><a href="artist.html?id=${trackList.data[index].artist.id}" class="text-decoration-none link-info"> ${trackList.data[index].artist.name} </a></p>
+						</div>
+					</div>
+				</button>`;
+					//button player bar song name and player bar filler
+					let songTitle = document.querySelector('.songTitle');
+					let songArtist = document.querySelector('.songArtist');
+					let songCover = document.querySelector('.songCover');
+					yourEpisodesD = () => {
+						songTitle.textContent = trackList.data[index].title_short;
+						songArtist.textContent = trackList.data[index].artist.name;
+						songCover.innerHTML = `<img src="${trackList.data[index].album.cover_medium}" alt="album cover" class="img-fluid"/>`;
+					};
 				});
 			});
 	} catch (error) {
@@ -398,15 +481,26 @@ window.onload = () => {
 				let cols = document.querySelectorAll('.yourEpisodesE');
 				cols.forEach((col, index) => {
 					col.innerHTML += `
-							<div class="card p-2 bg-secondary">
-							<a href="album.html?id=${trackList.data[index].album.id}" class="text-decoration-none link-info">
-									<img src="${trackList.data[index].album.cover_medium}" class="card-img-top rounded-0"alt="episodeCover">
-									</a>
-							<div class="card-body text-start">
-								<p class="card-text fs-10 text-light text-truncate">${trackList.data[index].title_short}</p>
-								<p class="card-text fs-10 fw-light text-info"><a href="artist.html?id=${trackList.data[index].artist.id}" class="text-decoration-none link-info"> ${trackList.data[index].artist.name} </a></p>
-							</div>
-							</div>`;
+					<button onclick="yourEpisodesE()" class="btn">
+					<div class="card p-2 bg-secondary">
+						<a href="album.html?id=${trackList.data[index].album.id}" class="text-decoration-none link-info">
+							<img src="${trackList.data[index].album.cover_medium}" class="card-img-top rounded-0"alt="episodeCover">
+						</a>
+						<div class="card-body text-start">
+							<p class="card-text fs-10 text-light text-truncate">${trackList.data[index].title_short}</p>
+							<p class="card-text fs-10 fw-light text-info"><a href="artist.html?id=${trackList.data[index].artist.id}" class="text-decoration-none link-info"> ${trackList.data[index].artist.name} </a></p>
+						</div>
+					</div>
+				</button>`;
+					//button player bar song name and player bar filler
+					let songTitle = document.querySelector('.songTitle');
+					let songArtist = document.querySelector('.songArtist');
+					let songCover = document.querySelector('.songCover');
+					yourEpisodesE = () => {
+						songTitle.textContent = trackList.data[index].title_short;
+						songArtist.textContent = trackList.data[index].artist.name;
+						songCover.innerHTML = `<img src="${trackList.data[index].album.cover_medium}" alt="album cover" class="img-fluid"/>`;
+					};
 				});
 			});
 	} catch (error) {
@@ -424,7 +518,7 @@ window.onload = () => {
 					col.innerHTML += `
 									<div class="card border border-0 bg-dark" style="width: 150px">
 									<a href="album.html?id=${trackList.data[index].album.id}" class="text-decoration-none link-info">
-									<img src="${trackList.data[index].album.cover_medium}" class="card-img-top rounded-0"alt="episodeCover">
+									<img src="${trackList.data[index].album.cover_medium}" class="card-img-top rounded-0" alt="episodeCover">
 									</a>
 									<div class="card-body text-start px-1 mobileHomeMainCards">
 										<p class="card-text text-light fs-10 text-truncate">${trackList.data[index].title_short}</p>
@@ -609,7 +703,7 @@ window.onload = () => {
 					col.innerHTML += `
 								<div class="card border border-0 bg-dark" style="width: 150px">
 									<a href="album.html?id=${trackList.data[index].album.id}" class="text-decoration-none link-info">
-									<img src="${trackList.data[index].album.cover_medium}" class="card-img-top rounded-0"alt="episodeCover">
+									<img src="${trackList.data[index].album.cover_medium}" class="card-img-top rounded-0" alt="episodeCover">
 									</a>
 									<div class="card-body text-start px-1 mobileHomeMainCards">
 										<p class="card-text text-light fs-10 text-truncate">${trackList.data[index].title_short}</p>
@@ -634,9 +728,9 @@ window.onload = () => {
 					col.innerHTML += `
 								<div class="card border border-0 bg-dark" style="width: 150px">
 								<a href="artist.html?id=${artist.id}" class="text-decoration-none link-info">
-									<img src="${artist.picture}" class="card-img-top rounded-circle"
+									<img src="${artist.picture}" class="card-img-top rounded-circle" alt="episodeCover">
 									</a>
-									alt="episodeCover">
+									
 								<div class="card-body text-start px-1 mobileHomeMainCards">
 									<p class="card-text text-light fs-10"><a href="artist.html?id=${artist.id}" class="text-decoration-none link-info"> ${artist.name} </a></p>
 								</div>
@@ -657,7 +751,7 @@ window.onload = () => {
 					col.innerHTML += `
 								<div class="card border border-0 bg-dark" style="width: 150px">
 									<a href="album.html?id=${trackList.data[index].album.id}" class="text-decoration-none link-info">
-									<img src="${trackList.data[index].album.cover_medium}" class="card-img-top rounded-0"alt="episodeCover">
+									<img src="${trackList.data[index].album.cover_medium}" class="card-img-top rounded-0" alt="episodeCover">
 									</a>
 									<div class="card-body text-start px-1 mobileHomeMainCards">
 										<p class="card-text text-light fs-10 text-truncate">${trackList.data[index].title_short}</p>

@@ -68,11 +68,25 @@ window.onload = () => {
 					let songArtistMobile = document.querySelector(".songArtistMobile");
 					let songCoverMobile = document.querySelector(".songCoverMobile");
 					let trackBtn = liElement.querySelector(".trackBtn");
+					let audioPlayer = document.getElementById("audioPlayer");
+					let playPauseBtn = document.getElementById("playPauseBtn");
+
 					trackBtn.addEventListener("click", function () {
 						songTitle.textContent = track.title_short;
 						songTitleMobile.textContent = track.title_short;
 						songArtist.textContent = track.artist.name;
 						songArtistMobile.textContent = track.artist.name;
+						audioPlayer.src = track.preview;
+						console.log(audioPlayer);
+						playPauseBtn.addEventListener("click", function () {
+							if (audioPlayer.paused) {
+								audioPlayer.play();
+								playPauseBtn.innerHTML = '<i class="bi bi-pause-circle-fill text-light fs-6"></i>';
+							} else {
+								audioPlayer.pause();
+								playPauseBtn.innerHTML = '<i class="bi bi-play-circle-fill text-light fs-6"></i>';
+							}
+						});
 						songCover.innerHTML = `
 						<img src="${track.album.cover_medium}" alt="album cover" class="img-fluid" />
 						`;

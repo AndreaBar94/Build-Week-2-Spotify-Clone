@@ -83,11 +83,23 @@ window.onload = () => {
 					let songTitleMobile = document.querySelector('.songTitleMobile');
 					let songArtistMobile = document.querySelector('.songArtistMobile');
 					let songCoverMobile = document.querySelector('.songCoverMobile');
-					let trackBtn = document.getElementById('trackBtn');
+					let playPauseBtn2 = document.getElementById('playPauseBtn2');
+					let audioPlayer2 = document.getElementById('audioPlayer2');
+
 					playSong = () => {
 						songTitleMobile.textContent = trackList.data[index].title_short;
 						songArtistMobile.textContent = trackList.data[index].artist.name;
 						songCoverMobile.innerHTML = `<img src="${trackList.data[index].album.cover_medium}" alt="album cover" class="img-fluid" style="width: 50px"/>`;
+						audioPlayer2.src = trackList.data[index].preview;
+						playPauseBtn2.addEventListener('click', function () {
+							if (audioPlayer2.paused) {
+								audioPlayer2.play();
+								playPauseBtn2.innerHTML = '<i class="bi bi-pause-fill text-light fs-6"></i>';
+							} else {
+								audioPlayer2.pause();
+								playPauseBtn2.innerHTML = '<i class="bi bi-play-fill text-light fs-6"></i>';
+							}
+						});
 					};
 				});
 			});
@@ -145,11 +157,23 @@ window.onload = () => {
 					let songTitleMobile = document.querySelector('.songTitleMobile');
 					let songArtistMobile = document.querySelector('.songArtistMobile');
 					let songCoverMobile = document.querySelector('.songCoverMobile');
-					let trackBtn = document.getElementById('trackBtn');
+					let playPauseBtn2 = document.getElementById('playPauseBtn2');
+					let audioPlayer2 = document.getElementById('audioPlayer2');
+
 					playCanzone = () => {
 						songTitleMobile.textContent = trackList.data[index].title_short;
 						songArtistMobile.textContent = trackList.data[index].artist.name;
 						songCoverMobile.innerHTML = `<img src="${trackList.data[index].album.cover_medium}" alt="album cover" class="img-fluid" style="width: 50px"/>`;
+						audioPlayer2.src = trackList.data[index].preview;
+						playPauseBtn2.addEventListener('click', function () {
+							if (audioPlayer2.paused) {
+								audioPlayer2.play();
+								playPauseBtn2.innerHTML = '<i class="bi bi-pause-fill text-light fs-6"></i>';
+							} else {
+								audioPlayer2.pause();
+								playPauseBtn2.innerHTML = '<i class="bi bi-play-fill text-light fs-6"></i>';
+							}
+						});
 					};
 				});
 			});
@@ -204,12 +228,24 @@ window.onload = () => {
 					let songArtist = document.querySelector('.songArtist');
 					let songCover = document.querySelector('.songCover');
 					let playbarInfo = document.querySelector('#songInfo');
+					let playPauseBtn = document.getElementById('playPauseBtn');
+					let audioPlayer = document.getElementById('audioPlayer');
 
 					madeForYouA = () => {
 						playbarInfo.classList.add('d-block');
 						songTitle.textContent = trackList.data[index].title_short;
 						songArtist.textContent = trackList.data[index].artist.name;
 						songCover.innerHTML = `<img src="${trackList.data[index].album.cover_medium}" alt="album cover" class="img-fluid"/>`;
+						audioPlayer.src = trackList.data[index].preview;
+						playPauseBtn.addEventListener('click', function () {
+							if (audioPlayer.paused) {
+								audioPlayer.play();
+								playPauseBtn.innerHTML = '<i class="bi bi-pause-circle-fill text-light fs-6"></i>';
+							} else {
+								audioPlayer.pause();
+								playPauseBtn.innerHTML = '<i class="bi bi-play-circle-fill text-light fs-6"></i>';
+							}
+						});
 					};
 				});
 			});

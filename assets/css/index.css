@@ -11899,4 +11899,8 @@ main {
 
 .yourEpisodesIconBg {
   background: #004537;
+}
+
+#tipe {
+  text-transform: uppercase;
 }/*# sourceMappingURL=index.css.map */

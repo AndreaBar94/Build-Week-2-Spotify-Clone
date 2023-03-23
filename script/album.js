@@ -17,6 +17,10 @@ window.onload = () => {
         let NumTrack = document.getElementById("NumTrack");
         let tipe = document.getElementById("tipe");
         let coverPic = document.getElementById("coverPic");
+        let authorAlbum = document.getElementById("authorAlbum");
+        let releaseDate = document.getElementById("releaseDate");
+        releaseDate.textContent = album.release_date;
+        authorAlbum.textContent = `${album.artist.name}`;
         coverPic.src = `${album.cover}`;
         imgAlbum.src = `${album.cover_medium}`;
         titleAlbum.textContent = album.title;
@@ -45,7 +49,7 @@ window.onload = () => {
           liAlbum.innerHTML += `
             <div id="AlbumList" class="row align-items-start">
               <div id="album-title" class="col12 col-md-5 mb-3">
-              <button id="trackBtn" type="button" class="btn text-light text-start trackBtn align-self-center text-truncate">${track.title_short}</button>
+              <button id="trackBtn" type="button" class="btn text-light text-start trackBtn align-self-center text-truncate ps-0">${track.title_short}</button>
                 <br>
                 <a href="artist.html?id=${track.artist.id}" class="album-artist text-info text-decoration-none">${track.artist.name}</a>
               </div>

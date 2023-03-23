@@ -70,6 +70,8 @@ window.onload = () => {
 					let trackBtn = liElement.querySelector(".trackBtn");
 					let audioPlayer = document.getElementById("audioPlayer");
 					let playPauseBtn = document.getElementById("playPauseBtn");
+					let audioPlayer2 = document.getElementById("audioPlayer2");
+					let playPauseBtn2 = document.getElementById("playPauseBtn2");
 
 					trackBtn.addEventListener("click", function () {
 						songTitle.textContent = track.title_short;
@@ -77,7 +79,6 @@ window.onload = () => {
 						songArtist.textContent = track.artist.name;
 						songArtistMobile.textContent = track.artist.name;
 						audioPlayer.src = track.preview;
-						console.log(audioPlayer);
 						playPauseBtn.addEventListener("click", function () {
 							if (audioPlayer.paused) {
 								audioPlayer.play();
@@ -85,6 +86,16 @@ window.onload = () => {
 							} else {
 								audioPlayer.pause();
 								playPauseBtn.innerHTML = '<i class="bi bi-play-circle-fill text-light fs-6"></i>';
+							}
+						});
+						audioPlayer2.src = track.preview;
+						playPauseBtn2.addEventListener("click", function () {
+							if (audioPlayer2.paused) {
+								audioPlayer2.play();
+								playPauseBtn2.innerHTML = '<i class="bi bi-pause-fill text-light fs-6"></i>';
+							} else {
+								audioPlayer2.pause();
+								playPauseBtn2.innerHTML = '<i class="bi bi-play-fill text-light fs-6"></i>';
 							}
 						});
 						songCover.innerHTML = `

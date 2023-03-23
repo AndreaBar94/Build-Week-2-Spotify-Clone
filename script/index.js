@@ -28,7 +28,7 @@ window.onload = () => {
 				cols.forEach((col, index) => {
 					col.innerHTML += ` <div class="row g-0 d-flex justify-content-between align-items-center p-4">
 											<div class="col-4">
-												<img src="${trackList.data[index].album.cover_medium}" class="img-fluid" alt="song Cover">
+												<img src="${trackList.data[index].album.cover_medium}" class="img-fluid imgGlow" alt="song Cover">
 											</div>
 											<div class="col-8">
 												<div class="card-body">
@@ -53,7 +53,7 @@ window.onload = () => {
 												<div class="d-flex align-items-center px-3">
 													<p class="card-text"><small class="text-muted">${trackList.data[index].artist.name}</small></p>
 												</div>
-												<button class="btn rounded-circle bg-light d-flex align-items-center p-2">
+												<button onclick="playSong()" type="button" class="btn rounded-circle bg-light d-flex align-items-center p-2">
 													<svg role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16"
 														data-encore-id="icon">
 														<path
@@ -64,6 +64,79 @@ window.onload = () => {
 											</div>
 										</div>
 									`;
+
+					//button player bar song name and player bar filler
+					let songTitleMobile = document.querySelector('.songTitleMobile');
+					let songArtistMobile = document.querySelector('.songArtistMobile');
+					let songCoverMobile = document.querySelector('.songCoverMobile');
+					let trackBtn = document.getElementById('trackBtn');
+					playSong = () => {
+						songTitleMobile.textContent = trackList.data[index].title_short;
+						songArtistMobile.textContent = trackList.data[index].artist.name;
+						songCoverMobile.innerHTML = `<img src="${trackList.data[index].album.cover_medium}" alt="album cover" class="img-fluid" style="width: 50px"/>`;
+					};
+				});
+			});
+	} catch (error) {
+		console.log('ERROR' + error);
+	}
+
+	try {
+		fetch('https://striveschool-api.herokuapp.com/api/deezer/artist/6/top?limit=50')
+			.then((responseObj) => responseObj.json())
+			.then((trackList) => {
+				console.log(trackList);
+				let cols = document.querySelectorAll('.mobileMainCards2');
+				cols.forEach((col, index) => {
+					col.innerHTML += ` <div class="row g-0 d-flex justify-content-between align-items-center p-4">
+											<div class="col-4">
+												<img src="${trackList.data[index].album.cover_medium}" class="img-fluid imgGlow" alt="song Cover">
+											</div>
+											<div class="col-8">
+												<div class="card-body">
+													<p class="card-title text-info fs-11">Song</p>
+													<h5 class="card-text text-light">${trackList.data[index].title_short}</h5>
+												</div>
+											</div>
+										</div>
+										<div class="row g-0 d-flex align-items-center justify-content-between p-4">
+											<div class="col-6 d-flex align-items-center">
+												<svg role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16"
+													data-encore-id="icon" fill="#1cb954">
+													<path
+														d="M15.724 4.22A4.313 4.313 0 0 0 12.192.814a4.269 4.269 0 0 0-3.622 1.13.837.837 0 0 1-1.14 0 4.272 4.272 0 0 0-6.21 5.855l5.916 7.05a1.128 1.128 0 0 0 1.727 0l5.916-7.05a4.228 4.228 0 0 0 .945-3.577z">
+													</path>
+												</svg>
+												<div>
+													<i class="bi bi-three-dots-vertical text-info"></i>
+												</div>
+											</div>
+											<div class="col-6 d-flex align-items-center justify-content-end">
+												<div class="d-flex align-items-center px-3">
+													<p class="card-text"><small class="text-muted">${trackList.data[index].artist.name}</small></p>
+												</div>
+												<button onclick="playCanzone()" type="button" class="btn rounded-circle bg-light d-flex align-items-center p-2">
+													<svg role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16"
+														data-encore-id="icon">
+														<path
+															d="M3 1.713a.7.7 0 0 1 1.05-.607l10.89 6.288a.7.7 0 0 1 0 1.212L4.05 14.894A.7.7 0 0 1 3 14.288V1.713z">
+														</path>
+													</svg>
+												</button>
+											</div>
+										</div>
+									`;
+
+					//button player bar song name and player bar filler
+					let songTitleMobile = document.querySelector('.songTitleMobile');
+					let songArtistMobile = document.querySelector('.songArtistMobile');
+					let songCoverMobile = document.querySelector('.songCoverMobile');
+					let trackBtn = document.getElementById('trackBtn');
+					playCanzone = () => {
+						songTitleMobile.textContent = trackList.data[index].title_short;
+						songArtistMobile.textContent = trackList.data[index].artist.name;
+						songCoverMobile.innerHTML = `<img src="${trackList.data[index].album.cover_medium}" alt="album cover" class="img-fluid" style="width: 50px"/>`;
+					};
 				});
 			});
 	} catch (error) {

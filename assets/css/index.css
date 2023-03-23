@@ -11908,4 +11908,8 @@ main {
 .login {
   padding-top: 10rem;
   padding-inline: 20rem;
+}
+
+.imgGlow {
+  box-shadow: 0px 0px 10px #fff;
 }/*# sourceMappingURL=index.css.map */

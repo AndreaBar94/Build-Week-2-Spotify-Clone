@@ -5,6 +5,25 @@ const selectedId = URLParams.get('id');
 const endpoint = 'https://striveschool-api.herokuapp.com/api/deezer/artist/' + selectedId;
 const trackList = 'https://striveschool-api.herokuapp.com/api/deezer/artist/' + selectedId + '/top?limit=50';
 
+let progressBar = document.getElementById('progressBar');
+let audioPlayer = document.getElementById('audioPlayer');
+let progressTime = document.getElementById('progressTime');
+
+audioPlayer.addEventListener('timeupdate', function () {
+	let progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+	progressBar.style.width = `${progress}%`;
+
+	let progressSecond = Math.floor((audioPlayer.currentTime / audioPlayer.duration) * 30);
+
+	if (progressSecond < 10) {
+		progressTime.textContent = `0:0${progressSecond}`;
+	} else if (progressTime.textConten == Nan) {
+		progressTime.textContent = `0:00`;
+	} else {
+		progressTime.textContent = `0:${progressSecond}`;
+	}
+});
+
 // https://rapidapi.com/deezerdevs/api/deezer-1 documentazione
 //fill the html with artist info
 window.onload = () => {

@@ -1,15 +1,15 @@
-let searchInput = document.getElementById("searchInput");
+let searchInput = document.getElementById('searchInput');
 
 let searched = () => {
 	try {
-		searchInput.addEventListener("keydown", function (event) {
+		searchInput.addEventListener('keydown', function (event) {
 			if (event.keyCode === 13) {
 				// Invio
 				event.preventDefault(); // previene il comportamento predefinito della pressione del tasto Invio
-				fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=" + searchInput.value)
+				fetch('https://striveschool-api.herokuapp.com/api/deezer/search?q=' + searchInput.value)
 					.then((responseObj) => responseObj.json())
 					.then((artist) => {
-						let searchMainCard = document.getElementById("homeMainCard");
+						let searchMainCard = document.getElementById('homeMainCard');
 						if (artist) {
 							searchMainCard.innerHTML = `
 										<div class=" row g-0">
@@ -27,7 +27,7 @@ let searched = () => {
 							</div>
 							`;
 						} else {
-							searchMainCard.innerHTML = "";
+							searchMainCard.innerHTML = '';
 						}
 					});
 			}
@@ -37,3 +37,22 @@ let searched = () => {
 	}
 };
 searched();
+
+let progressBar = document.getElementById('progressBar');
+let audioPlayer = document.getElementById('audioPlayer');
+let progressTime = document.getElementById('progressTime');
+
+audioPlayer.addEventListener('timeupdate', function () {
+	let progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+	progressBar.style.width = `${progress}%`;
+
+	let progressSecond = Math.floor((audioPlayer.currentTime / audioPlayer.duration) * 30);
+
+	if (progressSecond < 10) {
+		progressTime.textContent = `0:0${progressSecond}`;
+	} else if (progressTime.textConten == Nan) {
+		progressTime.textContent = `0:00`;
+	} else {
+		progressTime.textContent = `0:${progressSecond}`;
+	}
+});

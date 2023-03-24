@@ -6,6 +6,25 @@ const selectedId = URLParams.get('id');
 const endpoint = ' https://striveschool-api.herokuapp.com/api/deezer/album/' + selectedId;
 const tracklist = ' https://striveschool-api.herokuapp.com/api/deezer/album/' + selectedId;
 
+let progressBar = document.getElementById('progressBar');
+let audioPlayer = document.getElementById('audioPlayer');
+let progressTime = document.getElementById('progressTime');
+
+audioPlayer.addEventListener('timeupdate', function () {
+	let progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+	progressBar.style.width = `${progress}%`;
+
+	let progressSecond = Math.floor((audioPlayer.currentTime / audioPlayer.duration) * 30);
+
+	if (progressSecond < 10) {
+		progressTime.textContent = `0:0${progressSecond}`;
+	} else if (progressTime.textConten == Nan) {
+		progressTime.textContent = `0:00`;
+	} else {
+		progressTime.textContent = `0:${progressSecond}`;
+	}
+});
+
 window.onload = () => {
 	try {
 		fetch(endpoint)

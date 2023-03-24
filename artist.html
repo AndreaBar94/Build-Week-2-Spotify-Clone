@@ -381,21 +381,19 @@
 		</div>
 
 		<!-- PLAYBAR -->
-		<div class="row">
+		<div class="row m-0">
 			<div class="col-12 container position-fixed bottom-0 bg-secondary d-none d-lg-block p-2">
 				<div class="container-fluid px-5">
 					<div class="row d-flex align-items-center justify-content-start">
 						<div id="songInfo" class="col-md-4 col-lg-3">
 							<div class="row d-flex align-items-center justify-content-start">
-								<div class="col-3 songCover">
-									<img src="assets/imgs/main/image-1.jpg" alt="album cover" class="img-fluid"
-										style="width: 100%" />
-								</div>
-								<div class="col-5 text-light playbarSongData">
-									<p class="fw-bold fs-10 songTitle">Select a song</p>
-									<p class="fs-11 songArtist"></p>
-								</div>
-								<div class="col-1">
+								<div class="col-3 songCover"></div>
+								<div class="col-6 text-light playbarSongData d-flex">
+									<div>
+										<p class="fw-bold fs-10 songTitle"></p>
+										<p class="fs-11 songArtist"></p>
+									</div>
+
 									<button class="btn"><i class="bi bi-heart text-light"></i></button>
 								</div>
 							</div>
@@ -406,9 +404,8 @@
 									<button class="btn"><i class="bi bi-shuffle text-primary"></i></button>
 									<button class="btn"><i class="bi bi-skip-backward-fill text-muted"></i></button>
 									<audio id="audioPlayer" src=""></audio>
-									<button id="playPauseBtn" class="btn">
-
-										<i class="bi bi-play-circle-fill text-light fs-6"></i></button>
+									<button id="playPauseBtn" class="btn"><i
+											class="bi bi-play-circle-fill text-light fs-6"></i></button>
 									<button class="btn"><i class="bi bi-skip-forward-fill text-muted"></i></button>
 									<button class="btn"><i class="bi bi-repeat text-primary"></i></button>
 								</div>
@@ -421,8 +418,7 @@
 								<div class="container col-8">
 									<div class="progress d-flex justify-content-start" style="height: 3px">
 										<div class="progress-bar" role="progressbar" style="width: 25%"
-											aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-										</div>
+											aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 									</div>
 								</div>
 								<div class="col-2 d-flex align-items-center justify-content-start">
@@ -479,13 +475,8 @@
 											</svg>
 										</button>
 										<div class="volume-bar__slider-container">
-											<div class="p1ULRzPc4bD8eQ4T_wyp DFtdzavKSbEhwKYkPTa6">
-												<input type="range" min="0" max="1" step="0.1" value="1" />
-												<div data-testid="progress-bar" style="--progress-bar-transform: 100%">
-													<div data-testid="progress-bar-background"></div>
-													<div style="width: 100%"></div>
-												</div>
-											</div>
+											<input id="volume-control" type="range" class="form-range" min="0" max="100"
+												id="customRange2">
 										</div>
 									</div>
 									<button class="btn">

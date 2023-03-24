@@ -37,17 +37,24 @@ audioPlayer.addEventListener("timeupdate", function () {
 });
 
 //playbar placeholder
-let playbarInfo = document.querySelector("#songInfo");
+let playbarInfo = document.querySelector(".playbarSongData");
 let songTitleMobile = document.querySelector(".songTitleMobile");
 let songTitle = document.querySelector(".songTitle");
+let playbarLikeBtn = document.getElementById("playbarLikeBtn");
 
-if (songTitle == "") {
-	playbarInfo.classList.add("d-none");
-}
-if (songTitleMobile == "") {
-	playbarInfo.classList.add("d-none");
-}
+// if (songTitle == "") {
+// 	playbarLikeBtn.classList.add("d-block");
+// }
+// if (songTitleMobile == "") {
+// 	playbarLikeBtn.classList.add("d-block");
+// }
 
+if (songTitle.textContent == false) {
+	playbarLikeBtn.style.display = "none";
+}
+if (songTitle.textContent == true) {
+	playbarLikeBtn.style.display = "block";
+}
 //Population of the fields
 
 window.onload = () => {

@@ -98,7 +98,8 @@ window.onload = () => {
 						songTitleMobile.textContent = track.title_short;
 						songArtist.innerHTML = track.artist.name;
 						songArtistMobile.innerHTML = track.artist.name;
-
+						songCover.innerHTML = `<img src="${track.album.cover_medium}" alt="album cover" class="img-fluid" />`;
+						songCoverMobile.innerHTML = `<img src="${track.album.cover_medium}" alt="album cover" class="img-fluid" style="width: 50px" />`;
 						//player audio
 						audioPlayer.src = track.preview;
 						playPauseBtn.addEventListener("click", function () {
@@ -128,9 +129,6 @@ window.onload = () => {
 								audioPlayer.volume = e.currentTarget.value / 100;
 							});
 						});
-
-						songCover.innerHTML = `<img src="${track.album.cover_medium}" alt="album cover" class="img-fluid" />`;
-						songCoverMobile.innerHTML = `<img src="${track.album.cover_medium}" alt="album cover" class="img-fluid" style="width: 50px" />`;
 					});
 				});
 			});

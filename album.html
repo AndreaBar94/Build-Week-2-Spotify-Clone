@@ -143,7 +143,7 @@
     </nav>
 
     <!-- SIDEBAR MOBILE -->
-    <ul class="nav position-fixed bottom-0 bg-dark d-md-none" id="sidebarMobile">
+    <ul class="nav position-fixed bottom-0 bg-dark d-lg-none" id="sidebarMobile">
       <li class="nav-item">
         <a class="nav-link text-center" href="index.html">
           <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#FFFFFF" class="bi bi-house-door mr-2"
@@ -502,27 +502,32 @@
     </div>
 
     <!-- PLAYBAR MOBILE -->
-    <div class="container d-flex justify-content-center" id="playbarMobile">
-      <div
-        class="container d-md-none m-2 bg-dark position-fixed bottom-0 d-flex justify-content-between border border-0 rounded-2 mb-6">
+    <div class="container d-flex justify-content-center playbarMobile">
+      <div class="container d-lg-none m-2 bg-dark position-fixed bottom-0 d-flex justify-content-between border border-0 rounded-4 mb-6"
+        style="width: 95%">
         <div id="songInfo" class="col-6 d-flex align-items-center justify-content-start">
           <div class="d-flex align-items-center">
-            <div class="pe-3 songCoverMobile">
-              <img src="assets/imgs/main/image-1.jpg" alt="album cover" class="img-fluid" style="width: 50px" />
-            </div>
-            <div class="lh-1 pt-3">
-              <p class="fw-bold text-light songTitleMobile">Song Title</p>
-              <p class="text-muted songArtistMobile">Song artist</p>
+            <div class="pe-3 songCoverMobile"></div>
+            <div class="lh-1 pt-3 playbarSongData">
+              <p class="text-light songTitleMobile fs-11 playbarSongInfo"></p>
+              <p class="text-muted songArtistMobile fs-12 fw-light"></p>
             </div>
           </div>
         </div>
         <div id="songControls" class="col-6 d-flex align-items-center justify-content-end">
           <div class="d-flex align-items-center justify-content-end">
-            <div class="">
-              <button class="btn text-muted"><i class="bi bi-speaker fs-5"></i></button>
-            </div>
             <div class="d-flex align-items-center">
-              <button class="btn text-muted"><i class="bi bi-play-circle-fill fs-1"></i></button>
+              <button class="btn text-muted">
+                <svg role="presentation" height="20" width="20" aria-hidden="true"
+                  class="Svg-sc-ytk21e-0 gQUQL" viewBox="0 0 16 16" data-encore-id="icon" fill="#b3b3b3">
+                  <path
+                    d="M6 2.75C6 1.784 6.784 1 7.75 1h6.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 14.25 15h-6.5A1.75 1.75 0 0 1 6 13.25V2.75zm1.75-.25a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h6.5a.25.25 0 0 0 .25-.25V2.75a.25.25 0 0 0-.25-.25h-6.5zm-6 0a.25.25 0 0 0-.25.25v6.5c0 .138.112.25.25.25H4V11H1.75A1.75 1.75 0 0 1 0 9.25v-6.5C0 1.784.784 1 1.75 1H4v1.5H1.75zM4 15H2v-1.5h2V15z">
+                  </path>
+                  <path d="M13 10a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm-1-5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path>
+                </svg>
+              </button>
+              <audio id="audioPlayer2" src=""></audio>
+              <button id="playPauseBtn2" class="btn text-light"><i class="bi bi-play-fill fs-5"></i></button>
             </div>
           </div>
         </div>

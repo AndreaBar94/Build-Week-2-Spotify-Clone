@@ -1,0 +1,273 @@
+@import 'bootstrap-overrides';
+
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css');
+
+.dropdown-item:hover {
+	background-color: #3e3e3e;
+}
+
+.navBtns {
+	background-color: $dark;
+}
+
+body {
+	font-family: 'Circular';
+	background-color: $dark;
+}
+
+#playbarMobile {
+	position: fixed;
+	bottom: 80px;
+	z-index: 1;
+}
+
+@media screen and (max-width: 320px) {
+	#playbarMobile {
+		position: fixed;
+		bottom: 105px;
+		z-index: 1;
+	}
+}
+
+#sticky {
+	position: -webkit-sticky;
+	position: fixed;
+	bottom: 0;
+	z-index: 1;
+}
+
+.spotify-logo-text {
+	width: 130px;
+}
+
+@media screen and (max-width: 1220px) {
+	.spotify-logo-text {
+		width: 100px;
+		height: auto;
+	}
+}
+
+#navDivider {
+	width: 95%;
+}
+
+#sidebarMobile {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	z-index: 1;
+	/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#282828+0,070707+100&0.8+0,1+66 */
+	background: -moz-linear-gradient(top, rgba(40, 40, 40, 0.8) 0%, rgba(18, 18, 18, 1) 66%, rgba(7, 7, 7, 1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(40, 40, 40, 0.8) 0%, rgba(18, 18, 18, 1) 66%, rgba(7, 7, 7, 1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(
+		to bottom,
+		rgba(40, 40, 40, 0.8) 0%,
+		rgba(18, 18, 18, 1) 66%,
+		rgba(7, 7, 7, 1) 100%
+	); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+	p {
+		font-size: 0.8rem;
+	}
+}
+
+.songCover {
+	img {
+		width: max-content;
+		height: auto;
+	}
+}
+
+#playbarMobile {
+	z-index: 1;
+}
+
+.playbarSongInfo {
+	line-height: 0rem;
+}
+
+main {
+	/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#282828+0,282828+0,070707+100 */
+	background: #282828; /* Old browsers */
+	background: -moz-linear-gradient(top, #282828 0%, #282828 0%, #070707 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #282828 0%, #282828 0%, #070707 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #282828 0%, #282828 0%, #070707 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+.mainBox {
+	margin-inline: 0;
+	padding-bottom: 10rem;
+	background-color: $dark;
+}
+
+#friendsPicture {
+	width: 15%;
+	height: 15%;
+}
+
+#friendsActivity {
+	background-color: $dark;
+	padding-bottom: 10rem;
+}
+
+.friendsInfo {
+	line-height: 0.3rem;
+}
+
+#sidebarDesktop {
+	width: 15%;
+	padding-bottom: 10rem;
+}
+// ARTIST
+#mainContent {
+	position: relative;
+	background: #282828;
+	background: -moz-linear-gradient(top, #282828 0%, #282828 0%, #070707 100%);
+	background: -webkit-linear-gradient(top, #282828 0%, #282828 0%, #070707 100%);
+	background: linear-gradient(to bottom, #282828 0%, #282828 0%, #070707 100%);
+}
+#artistMainContent {
+	position: absolute;
+	top: 0;
+	padding-inline: 0;
+	padding-bottom: 10rem;
+	background: #282828;
+	background: -moz-linear-gradient(top, #282828 0%, #282828 0%, #070707 100%);
+	background: -webkit-linear-gradient(top, #282828 0%, #282828 0%, #070707 100%);
+	background: linear-gradient(to bottom, #282828 0%, #282828 0%, #070707 100%);
+}
+
+#artistThumbnail {
+	// background-image: url(https://www.romatoday.it/~media/horizontal-hi/51536659594995/concerto-maneskin-9-luglio-2.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 60vh;
+}
+
+@media screen and (max-width: 991px) {
+	#artistPlaybar {
+		display: flex;
+		flex-direction: row-reverse;
+		justify-content: space-between;
+	}
+	#artistOverview {
+		padding: 1rem;
+		.row {
+			display: flex;
+			flex-direction: row;
+		}
+	}
+	#artistMainContent {
+		position: static;
+	}
+	#centralNavbar {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+	}
+}
+
+#homeMainCard {
+	/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#070707+0,282828+100 */
+	background: #070707; /* Old browsers */
+	background: -moz-linear-gradient(45deg, #070707 0%, #282828 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(45deg, #070707 0%, #282828 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(45deg, #070707 0%, #282828 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+	width: 100%;
+}
+
+.mobileHomeMainCards {
+	line-height: 1rem;
+}
+
+.horizontal-scrollable {
+	overflow-x: auto;
+	white-space: nowrap;
+}
+
+@media screen and (max-width: 777px) {
+	#cont {
+		margin-top: 30rem;
+	}
+}
+@media screen and (min-width: 768px) {
+	#cont {
+		margin-top: 18rem;
+	}
+}
+@media screen and (min-width: 865px) {
+	#cont {
+		margin-top: 20rem;
+	}
+}
+@media screen and (min-width: 992px) {
+	#cont {
+		margin-top: 17rem;
+	}
+}
+
+.playbarSongData {
+	line-height: 0.8rem;
+}
+#popularList {
+	list-style: none;
+	counter-reset: my-counter 0;
+
+	li {
+		position: relative;
+	}
+	li:before {
+		content: counter(my-counter) ' ';
+		counter-increment: my-counter;
+		position: absolute;
+		left: -25px;
+		top: 25px;
+	}
+}
+.likedSongsIconBg {
+	background: linear-gradient(135deg, #450af5, #c4efd9);
+}
+.yourEpisodesIconBg {
+	background: #004537;
+}
+
+#tipe {
+	text-transform: uppercase;
+}
+
+.login {
+	padding-top: 10rem;
+}
+
+.imgGlow {
+	box-shadow: 0px 0px 10px #fff;
+}
+
+.madeForYouRow {
+	flex-wrap: nowrap;
+	overflow-x: scroll;
+}
+
+.yourEpisodesRow {
+	flex-wrap: nowrap;
+	overflow-x: scroll;
+}
+
+input[type='range'] {
+	overflow: hidden;
+	width: 120px;
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+	height: 3px;
+	background: $light;
+}
+
+input[type='range']::-webkit-slider-thumb {
+	width: 10px;
+	height: 10px;
+	background: $primary;
+}

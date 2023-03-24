@@ -70,11 +70,38 @@ window.onload = () => {
           let songArtistMobile = document.querySelector(".songArtistMobile");
           let songCoverMobile = document.querySelector(".songCoverMobile");
           let trackBtn = liAlbum.querySelector("#trackBtn");
+          let audioPlayer = document.getElementById("audioPlayer");
+          let playPauseBtn = document.getElementById("playPauseBtn");
+          let audioPlayer2 = document.getElementById("audioPlayer2");
+          let playPauseBtn2 = document.getElementById("playPauseBtn2");
           trackBtn.addEventListener("click", function () {
             songTitle.textContent = track.title_short;
             songTitleMobile.textContent = track.title_short;
             songArtist.innerHTML = track.artist.name;
             songArtistMobile.innerHTML = track.artist.name;
+
+            //player audio
+            audioPlayer.src = track.preview;
+            playPauseBtn.addEventListener("click", function () {
+              if (audioPlayer.paused) {
+                audioPlayer.play();
+                playPauseBtn.innerHTML = '<i class="bi bi-pause-circle-fill text-light fs-6"></i>';
+              } else {
+                audioPlayer.pause();
+                playPauseBtn.innerHTML = '<i class="bi bi-play-circle-fill text-light fs-6"></i>';
+              }
+            });
+            audioPlayer2.src = track.preview;
+            playPauseBtn2.addEventListener("click", function () {
+              if (audioPlayer2.paused) {
+                audioPlayer2.play();
+                playPauseBtn2.innerHTML = '<i class="bi bi-pause-fill text-light fs-6"></i>';
+              } else {
+                audioPlayer2.pause();
+                playPauseBtn2.innerHTML = '<i class="bi bi-play-fill text-light fs-6"></i>';
+              }
+            });
+
             songCover.innerHTML = `<img src="${track.album.cover_medium}" alt="album cover" class="img-fluid" />`;
             songCoverMobile.innerHTML = `<img src="${track.album.cover_medium}" alt="album cover" class="img-fluid" style="width: 50px" />`;
           });

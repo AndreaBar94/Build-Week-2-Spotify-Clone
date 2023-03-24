@@ -4,24 +4,24 @@
 // const endpointArtist = 'https://striveschool-api.herokuapp.com/api/deezer/artist/' + randomArtist;
 // const endpointAlbum = 'https://striveschool-api.herokuapp.com/api/deezer/album/' + randomAlbum;
 // const endpointTrackList = 'https://striveschool-api.herokuapp.com/api/deezer/artist/' + randomArtist + '/top?limit=50';
-const endpoint = 'https://striveschool-api.herokuapp.com/api/deezer/album/';
+const endpoint = "https://striveschool-api.herokuapp.com/api/deezer/album/";
 const URLParams = new URLSearchParams(window.location.search);
-const selectedId = URLParams.get('id');
+const selectedId = URLParams.get("id");
 //username set
-let userName = document.getElementById('userNameCustom');
-if (localStorage.getItem('Username')) {
-	let users = JSON.parse(localStorage.getItem('Username'));
+let userName = document.getElementById("userNameCustom");
+if (localStorage.getItem("Username")) {
+	let users = JSON.parse(localStorage.getItem("Username"));
 	userName.textContent = users[users.length - 1];
 } else {
-	userName.textContent = 'Nessun utente memorizzato';
+	userName.textContent = "Nessun utente memorizzato";
 }
 
 //Playbar audio progress
-let progressBar = document.getElementById('progressBar');
-let audioPlayer = document.getElementById('audioPlayer');
-let progressTime = document.getElementById('progressTime');
+let progressBar = document.getElementById("progressBar");
+let audioPlayer = document.getElementById("audioPlayer");
+let progressTime = document.getElementById("progressTime");
 
-audioPlayer.addEventListener('timeupdate', function () {
+audioPlayer.addEventListener("timeupdate", function () {
 	let progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
 	progressBar.style.width = `${progress}%`;
 
@@ -37,15 +37,15 @@ audioPlayer.addEventListener('timeupdate', function () {
 });
 
 //playbar placeholder
-let playbarInfo = document.querySelector('#songInfo');
-let songTitleMobile = document.querySelector('.songTitleMobile');
-let songTitle = document.querySelector('.songTitle');
+let playbarInfo = document.querySelector("#songInfo");
+let songTitleMobile = document.querySelector(".songTitleMobile");
+let songTitle = document.querySelector(".songTitle");
 
-if (songTitle == '') {
-	playbarInfo.classList.add('d-none');
+if (songTitle == "") {
+	playbarInfo.classList.add("d-none");
 }
-if (songTitleMobile == '') {
-	playbarInfo.classList.add('d-none');
+if (songTitleMobile == "") {
+	playbarInfo.classList.add("d-none");
 }
 
 //Population of the fields
@@ -53,11 +53,11 @@ if (songTitleMobile == '') {
 window.onload = () => {
 	//Mobile main cards population
 	try {
-		fetch('https://striveschool-api.herokuapp.com/api/deezer/artist/647650/top?limit=50')
+		fetch("https://striveschool-api.herokuapp.com/api/deezer/artist/647650/top?limit=50")
 			.then((responseObj) => responseObj.json())
 			.then((trackList) => {
 				console.log(trackList);
-				let cols = document.querySelectorAll('.mobileMainCards');
+				let cols = document.querySelectorAll(".mobileMainCards");
 				cols.forEach((col, index) => {
 					col.innerHTML += ` <div class="row g-0 d-flex justify-content-between align-items-center p-4">
 					<div class="col-4">
@@ -99,17 +99,17 @@ window.onload = () => {
 			`;
 					playSong = () => {
 						//button player bar song name and player bar filler
-						let songTitleMobile = document.querySelector('.songTitleMobile');
-						let songArtistMobile = document.querySelector('.songArtistMobile');
-						let songCoverMobile = document.querySelector('.songCoverMobile');
-						let playPauseBtn2 = document.getElementById('playPauseBtn2');
-						let audioPlayer2 = document.getElementById('audioPlayer2');
+						let songTitleMobile = document.querySelector(".songTitleMobile");
+						let songArtistMobile = document.querySelector(".songArtistMobile");
+						let songCoverMobile = document.querySelector(".songCoverMobile");
+						let playPauseBtn2 = document.getElementById("playPauseBtn2");
+						let audioPlayer2 = document.getElementById("audioPlayer2");
 
 						songTitleMobile.textContent = trackList.data[index].title_short;
 						songArtistMobile.textContent = trackList.data[index].artist.name;
 						songCoverMobile.innerHTML = `<img src="${trackList.data[index].album.cover_medium}" alt="album cover" class="img-fluid" style="width: 50px"/>`;
 						audioPlayer2.src = trackList.data[index].preview;
-						playPauseBtn2.addEventListener('click', function () {
+						playPauseBtn2.addEventListener("click", function () {
 							if (audioPlayer2.paused) {
 								audioPlayer2.play();
 								playPauseBtn2.innerHTML = '<i class="bi bi-pause-fill text-light fs-6"></i>';
@@ -122,15 +122,15 @@ window.onload = () => {
 				});
 			});
 	} catch (error) {
-		console.log('ERROR' + error);
+		console.log("ERROR" + error);
 	}
 
 	try {
-		fetch('https://striveschool-api.herokuapp.com/api/deezer/artist/6/top?limit=50')
+		fetch("https://striveschool-api.herokuapp.com/api/deezer/artist/6/top?limit=50")
 			.then((responseObj) => responseObj.json())
 			.then((trackList) => {
 				console.log(trackList);
-				let cols = document.querySelectorAll('.mobileMainCards2');
+				let cols = document.querySelectorAll(".mobileMainCards2");
 				cols.forEach((col, index) => {
 					col.innerHTML += ` <div class="row g-0 d-flex justify-content-between align-items-center p-4">
 					<div class="col-4">
@@ -172,17 +172,17 @@ window.onload = () => {
 			`;
 					playSongB = () => {
 						//button player bar song name and player bar filler
-						let songTitleMobile = document.querySelector('.songTitleMobile');
-						let songArtistMobile = document.querySelector('.songArtistMobile');
-						let songCoverMobile = document.querySelector('.songCoverMobile');
-						let playPauseBtn2 = document.getElementById('playPauseBtn2');
-						let audioPlayer2 = document.getElementById('audioPlayer2');
+						let songTitleMobile = document.querySelector(".songTitleMobile");
+						let songArtistMobile = document.querySelector(".songArtistMobile");
+						let songCoverMobile = document.querySelector(".songCoverMobile");
+						let playPauseBtn2 = document.getElementById("playPauseBtn2");
+						let audioPlayer2 = document.getElementById("audioPlayer2");
 
 						songTitleMobile.textContent = trackList.data[index].title_short;
 						songArtistMobile.textContent = trackList.data[index].artist.name;
 						songCoverMobile.innerHTML = `<img src="${trackList.data[index].album.cover_medium}" alt="album cover" class="img-fluid" style="width: 50px"/>`;
 						audioPlayer2.src = trackList.data[index].preview;
-						playPauseBtn2.addEventListener('click', function () {
+						playPauseBtn2.addEventListener("click", function () {
 							if (audioPlayer2.paused) {
 								audioPlayer2.play();
 								playPauseBtn2.innerHTML = '<i class="bi bi-pause-fill text-light fs-6"></i>';
@@ -195,37 +195,37 @@ window.onload = () => {
 				});
 			});
 	} catch (error) {
-		console.log('ERROR' + error);
+		console.log("ERROR" + error);
 	}
 
 	//Spotlight album population
 	try {
-		fetch(endpoint + '395973467')
+		fetch(endpoint + "395973467")
 			.then((responseObj) => responseObj.json())
 			.then((album) => {
-				let albumName = document.getElementById('albumNameTop');
+				let albumName = document.getElementById("albumNameTop");
 				albumName.innerHTML = `<a href="album.html?id=${album.id}" class="text-decoration-none link-light d-inline-block text-truncate"> ${album.title} </a>`;
-				let albumArtist = document.getElementById('albumArtistTop');
+				let albumArtist = document.getElementById("albumArtistTop");
 				albumArtist.innerHTML = `<a href="artist.html?id=${album.artist.id}" class="text-decoration-none link-light d-inline-block text-truncate"> ${album.artist.name} </a>`;
-				let albumCover = document.getElementById('albumCoverTop');
+				let albumCover = document.getElementById("albumCoverTop");
 				albumCover.src = album.cover_big;
-				let albumCoverLink = document.getElementById('albumCoverLink');
+				let albumCoverLink = document.getElementById("albumCoverLink");
 				albumCoverLink.href = `album.html?id=${album.id}`;
-				let spotlightPlay = document.getElementById('spotlightPlay');
-				let songTitle = document.querySelector('.songTitle');
-				let songArtist = document.querySelector('.songArtist');
-				let songCover = document.querySelector('.songCover');
-				let playPauseBtn = document.getElementById('playPauseBtn');
-				let audioPlayer = document.getElementById('audioPlayer');
-				let progressBar = document.getElementById('progressBar');
+				let spotlightPlay = document.getElementById("spotlightPlay");
+				let songTitle = document.querySelector(".songTitle");
+				let songArtist = document.querySelector(".songArtist");
+				let songCover = document.querySelector(".songCover");
+				let playPauseBtn = document.getElementById("playPauseBtn");
+				let audioPlayer = document.getElementById("audioPlayer");
+				let progressBar = document.getElementById("progressBar");
 				let duration = 30;
 
-				spotlightPlay.addEventListener('click', function () {
+				spotlightPlay.addEventListener("click", function () {
 					songTitle.textContent = album.tracks.data[0].title_short;
 					songArtist.textContent = album.artist.name;
 					songCover.innerHTML = `<img src="${album.cover_medium}" alt="album cover" class="img-fluid"/>`;
 					audioPlayer.src = album.tracks.data[0].preview;
-					playPauseBtn.addEventListener('click', function () {
+					playPauseBtn.addEventListener("click", function () {
 						if (audioPlayer.paused) {
 							audioPlayer.play();
 							playPauseBtn.innerHTML = '<i class="bi bi-pause-circle-fill text-light fs-6"></i>';
@@ -235,8 +235,8 @@ window.onload = () => {
 						}
 					});
 				});
-				let volume = document.querySelector('#volume-control');
-				volume.addEventListener('input', function (e) {
+				let volume = document.querySelector("#volume-control");
+				volume.addEventListener("input", function (e) {
 					audioPlayer.volume = e.currentTarget.value / 100;
 				});
 				// audioPlayer.addEventListener('timeupdate', function () {
@@ -247,16 +247,16 @@ window.onload = () => {
 				// });
 			});
 	} catch (error) {
-		console.log('ERROR' + error);
+		console.log("ERROR" + error);
 	}
 
 	//Made for you population
 	try {
-		fetch('https://striveschool-api.herokuapp.com/api/deezer/artist/1/top?limit=50')
+		fetch("https://striveschool-api.herokuapp.com/api/deezer/artist/1/top?limit=50")
 			.then((responseObj) => responseObj.json())
 			.then((trackList) => {
 				console.log(trackList);
-				let cols = document.querySelectorAll('.madeForYouA');
+				let cols = document.querySelectorAll(".madeForYouA");
 				cols.forEach((col, index) => {
 					col.innerHTML += `
 							<div class="card p-2 bg-secondary" onclick="madeForYouA()">
@@ -269,17 +269,17 @@ window.onload = () => {
 								</div>
 								</div>
 							`; //button player bar song name and player bar filler
-					let songTitle = document.querySelector('.songTitle');
-					let songArtist = document.querySelector('.songArtist');
-					let songCover = document.querySelector('.songCover');
-					let playPauseBtn = document.getElementById('playPauseBtn');
-					let audioPlayer = document.getElementById('audioPlayer');
+					let songTitle = document.querySelector(".songTitle");
+					let songArtist = document.querySelector(".songArtist");
+					let songCover = document.querySelector(".songCover");
+					let playPauseBtn = document.getElementById("playPauseBtn");
+					let audioPlayer = document.getElementById("audioPlayer");
 					madeForYouA = () => {
 						songTitle.textContent = trackList.data[index].title_short;
 						songArtist.textContent = trackList.data[index].artist.name;
 						songCover.innerHTML = `<img src="${trackList.data[index].album.cover_medium}" alt="album cover" class="img-fluid"/>`;
 						audioPlayer.src = trackList.data[index].preview;
-						playPauseBtn.addEventListener('click', function () {
+						playPauseBtn.addEventListener("click", function () {
 							if (audioPlayer.paused) {
 								audioPlayer.play();
 								playPauseBtn.innerHTML = '<i class="bi bi-pause-circle-fill text-light fs-6"></i>';
@@ -289,22 +289,22 @@ window.onload = () => {
 							}
 						});
 					};
-					let volume = document.querySelector('#volume-control');
-					volume.addEventListener('input', function (e) {
+					let volume = document.querySelector("#volume-control");
+					volume.addEventListener("input", function (e) {
 						audioPlayer.volume = e.currentTarget.value / 100;
 					});
 				});
 			});
 	} catch (error) {
-		console.log('ERROR' + error);
+		console.log("ERROR" + error);
 	}
 
 	try {
-		fetch('https://striveschool-api.herokuapp.com/api/deezer/artist/416239/top?limit=50')
+		fetch("https://striveschool-api.herokuapp.com/api/deezer/artist/416239/top?limit=50")
 			.then((responseObj) => responseObj.json())
 			.then((trackList) => {
 				console.log(trackList);
-				let cols = document.querySelectorAll('.madeForYouB');
+				let cols = document.querySelectorAll(".madeForYouB");
 				cols.forEach((col, index) => {
 					col.innerHTML += `
 								 
@@ -319,17 +319,17 @@ window.onload = () => {
 									</div>
 								`;
 					//button player bar song name and player bar filler
-					let songTitle = document.querySelector('.songTitle');
-					let songArtist = document.querySelector('.songArtist');
-					let songCover = document.querySelector('.songCover');
-					let playPauseBtn = document.getElementById('playPauseBtn');
-					let audioPlayer = document.getElementById('audioPlayer');
+					let songTitle = document.querySelector(".songTitle");
+					let songArtist = document.querySelector(".songArtist");
+					let songCover = document.querySelector(".songCover");
+					let playPauseBtn = document.getElementById("playPauseBtn");
+					let audioPlayer = document.getElementById("audioPlayer");
 					madeForYouB = () => {
 						songTitle.textContent = trackList.data[index].title_short;
 						songArtist.textContent = trackList.data[index].artist.name;
 						songCover.innerHTML = `<img src="${trackList.data[index].album.cover_medium}" alt="album cover" class="img-fluid"/>`;
 						audioPlayer.src = trackList.data[index].preview;
-						playPauseBtn.addEventListener('click', function () {
+						playPauseBtn.addEventListener("click", function () {
 							if (audioPlayer.paused) {
 								audioPlayer.play();
 								playPauseBtn.innerHTML = '<i class="bi bi-pause-circle-fill text-light fs-6"></i>';
@@ -339,22 +339,22 @@ window.onload = () => {
 							}
 						});
 					};
-					let volume = document.querySelector('#volume-control');
-					volume.addEventListener('input', function (e) {
+					let volume = document.querySelector("#volume-control");
+					volume.addEventListener("input", function (e) {
 						audioPlayer.volume = e.currentTarget.value / 100;
 					});
 				});
 			});
 	} catch (error) {
-		console.log('ERROR' + error);
+		console.log("ERROR" + error);
 	}
 
 	try {
-		fetch('https://striveschool-api.herokuapp.com/api/deezer/artist/860/top?limit=50')
+		fetch("https://striveschool-api.herokuapp.com/api/deezer/artist/860/top?limit=50")
 			.then((responseObj) => responseObj.json())
 			.then((trackList) => {
 				console.log(trackList);
-				let cols = document.querySelectorAll('.madeForYouC');
+				let cols = document.querySelectorAll(".madeForYouC");
 				cols.forEach((col, index) => {
 					col.innerHTML += `
 				
@@ -369,17 +369,17 @@ window.onload = () => {
 						</div>
 				`;
 					//button player bar song name and player bar filler
-					let songTitle = document.querySelector('.songTitle');
-					let songArtist = document.querySelector('.songArtist');
-					let songCover = document.querySelector('.songCover');
-					let playPauseBtn = document.getElementById('playPauseBtn');
-					let audioPlayer = document.getElementById('audioPlayer');
+					let songTitle = document.querySelector(".songTitle");
+					let songArtist = document.querySelector(".songArtist");
+					let songCover = document.querySelector(".songCover");
+					let playPauseBtn = document.getElementById("playPauseBtn");
+					let audioPlayer = document.getElementById("audioPlayer");
 					madeForYouC = () => {
 						songTitle.textContent = trackList.data[index].title_short;
 						songArtist.textContent = trackList.data[index].artist.name;
 						songCover.innerHTML = `<img src="${trackList.data[index].album.cover_medium}" alt="album cover" class="img-fluid"/>`;
 						audioPlayer.src = trackList.data[index].preview;
-						playPauseBtn.addEventListener('click', function () {
+						playPauseBtn.addEventListener("click", function () {
 							if (audioPlayer.paused) {
 								audioPlayer.play();
 								playPauseBtn.innerHTML = '<i class="bi bi-pause-circle-fill text-light fs-6"></i>';
@@ -389,22 +389,22 @@ window.onload = () => {
 							}
 						});
 					};
-					let volume = document.querySelector('#volume-control');
-					volume.addEventListener('input', function (e) {
+					let volume = document.querySelector("#volume-control");
+					volume.addEventListener("input", function (e) {
 						audioPlayer.volume = e.currentTarget.value / 100;
 					});
 				});
 			});
 	} catch (error) {
-		console.log('ERROR' + error);
+		console.log("ERROR" + error);
 	}
 
 	try {
-		fetch('https://striveschool-api.herokuapp.com/api/deezer/artist/52/top?limit=50')
+		fetch("https://striveschool-api.herokuapp.com/api/deezer/artist/52/top?limit=50")
 			.then((responseObj) => responseObj.json())
 			.then((trackList) => {
 				console.log(trackList);
-				let cols = document.querySelectorAll('.madeForYouD');
+				let cols = document.querySelectorAll(".madeForYouD");
 				cols.forEach((col, index) => {
 					col.innerHTML += `
 									 
@@ -419,17 +419,17 @@ window.onload = () => {
 										</div>
 									`;
 					//button player bar song name and player bar filler
-					let songTitle = document.querySelector('.songTitle');
-					let songArtist = document.querySelector('.songArtist');
-					let songCover = document.querySelector('.songCover');
-					let playPauseBtn = document.getElementById('playPauseBtn');
-					let audioPlayer = document.getElementById('audioPlayer');
+					let songTitle = document.querySelector(".songTitle");
+					let songArtist = document.querySelector(".songArtist");
+					let songCover = document.querySelector(".songCover");
+					let playPauseBtn = document.getElementById("playPauseBtn");
+					let audioPlayer = document.getElementById("audioPlayer");
 					madeForYouD = () => {
 						songTitle.textContent = trackList.data[index].title_short;
 						songArtist.textContent = trackList.data[index].artist.name;
 						songCover.innerHTML = `<img src="${trackList.data[index].album.cover_medium}" alt="album cover" class="img-fluid"/>`;
 						audioPlayer.src = trackList.data[index].preview;
-						playPauseBtn.addEventListener('click', function () {
+						playPauseBtn.addEventListener("click", function () {
 							if (audioPlayer.paused) {
 								audioPlayer.play();
 								playPauseBtn.innerHTML = '<i class="bi bi-pause-circle-fill text-light fs-6"></i>';
@@ -439,22 +439,22 @@ window.onload = () => {
 							}
 						});
 					};
-					let volume = document.querySelector('#volume-control');
-					volume.addEventListener('input', function (e) {
+					let volume = document.querySelector("#volume-control");
+					volume.addEventListener("input", function (e) {
 						audioPlayer.volume = e.currentTarget.value / 100;
 					});
 				});
 			});
 	} catch (error) {
-		console.log('ERROR' + error);
+		console.log("ERROR" + error);
 	}
 
 	try {
-		fetch('https://striveschool-api.herokuapp.com/api/deezer/artist/6168800/top?limit=50')
+		fetch("https://striveschool-api.herokuapp.com/api/deezer/artist/6168800/top?limit=50")
 			.then((responseObj) => responseObj.json())
 			.then((trackList) => {
 				console.log(trackList);
-				let cols = document.querySelectorAll('.madeForYouE');
+				let cols = document.querySelectorAll(".madeForYouE");
 				cols.forEach((col, index) => {
 					col.innerHTML += `
 							
@@ -468,17 +468,17 @@ window.onload = () => {
 									</div>
 								</div>`;
 					//button player bar song name and player bar filler
-					let songTitle = document.querySelector('.songTitle');
-					let songArtist = document.querySelector('.songArtist');
-					let songCover = document.querySelector('.songCover');
-					let playPauseBtn = document.getElementById('playPauseBtn');
-					let audioPlayer = document.getElementById('audioPlayer');
+					let songTitle = document.querySelector(".songTitle");
+					let songArtist = document.querySelector(".songArtist");
+					let songCover = document.querySelector(".songCover");
+					let playPauseBtn = document.getElementById("playPauseBtn");
+					let audioPlayer = document.getElementById("audioPlayer");
 					madeForYouE = () => {
 						songTitle.textContent = trackList.data[index].title_short;
 						songArtist.textContent = trackList.data[index].artist.name;
 						songCover.innerHTML = `<img src="${trackList.data[index].album.cover_medium}" alt="album cover" class="img-fluid"/>`;
 						audioPlayer.src = trackList.data[index].preview;
-						playPauseBtn.addEventListener('click', function () {
+						playPauseBtn.addEventListener("click", function () {
 							if (audioPlayer.paused) {
 								audioPlayer.play();
 								playPauseBtn.innerHTML = '<i class="bi bi-pause-circle-fill text-light fs-6"></i>';
@@ -488,23 +488,23 @@ window.onload = () => {
 							}
 						});
 					};
-					let volume = document.querySelector('#volume-control');
-					volume.addEventListener('input', function (e) {
+					let volume = document.querySelector("#volume-control");
+					volume.addEventListener("input", function (e) {
 						audioPlayer.volume = e.currentTarget.value / 100;
 					});
 				});
 			});
 	} catch (error) {
-		console.log('ERROR' + error);
+		console.log("ERROR" + error);
 	}
 
 	//Your Episodes population
 	try {
-		fetch('https://striveschool-api.herokuapp.com/api/deezer/artist/4946605/top?limit=50')
+		fetch("https://striveschool-api.herokuapp.com/api/deezer/artist/4946605/top?limit=50")
 			.then((responseObj) => responseObj.json())
 			.then((trackList) => {
 				console.log(trackList);
-				let cols = document.querySelectorAll('.yourEpisodesA');
+				let cols = document.querySelectorAll(".yourEpisodesA");
 				cols.forEach((col, index) => {
 					col.innerHTML += `
 								<div class="card p-2 bg-secondary" onclick="yourEpisodesA()">
@@ -518,18 +518,18 @@ window.onload = () => {
 								</div>
 							`;
 					//button player bar song name and player bar filler
-					let songTitle = document.querySelector('.songTitle');
-					let songArtist = document.querySelector('.songArtist');
-					let songCover = document.querySelector('.songCover');
-					let playPauseBtn = document.getElementById('playPauseBtn');
-					let audioPlayer = document.getElementById('audioPlayer');
+					let songTitle = document.querySelector(".songTitle");
+					let songArtist = document.querySelector(".songArtist");
+					let songCover = document.querySelector(".songCover");
+					let playPauseBtn = document.getElementById("playPauseBtn");
+					let audioPlayer = document.getElementById("audioPlayer");
 
 					yourEpisodesA = () => {
 						songTitle.textContent = trackList.data[index].title_short;
 						songArtist.textContent = trackList.data[index].artist.name;
 						songCover.innerHTML = `<img src="${trackList.data[index].album.cover_medium}" alt="album cover" class="img-fluid"/>`;
 						audioPlayer.src = trackList.data[index].preview;
-						playPauseBtn.addEventListener('click', function () {
+						playPauseBtn.addEventListener("click", function () {
 							if (audioPlayer.paused) {
 								audioPlayer.play();
 								playPauseBtn.innerHTML = '<i class="bi bi-pause-circle-fill text-light fs-6"></i>';
@@ -539,22 +539,22 @@ window.onload = () => {
 							}
 						});
 					};
-					let volume = document.querySelector('#volume-control');
-					volume.addEventListener('input', function (e) {
+					let volume = document.querySelector("#volume-control");
+					volume.addEventListener("input", function (e) {
 						audioPlayer.volume = e.currentTarget.value / 100;
 					});
 				});
 			});
 	} catch (error) {
-		console.log('ERROR' + error);
+		console.log("ERROR" + error);
 	}
 
 	try {
-		fetch('https://striveschool-api.herokuapp.com/api/deezer/artist/1188/top?limit=50')
+		fetch("https://striveschool-api.herokuapp.com/api/deezer/artist/1188/top?limit=50")
 			.then((responseObj) => responseObj.json())
 			.then((trackList) => {
 				console.log(trackList);
-				let cols = document.querySelectorAll('.yourEpisodesB');
+				let cols = document.querySelectorAll(".yourEpisodesB");
 				cols.forEach((col, index) => {
 					col.innerHTML += `
 									<div class="card p-2 bg-secondary" onclick="yourEpisodesB()">
@@ -568,18 +568,18 @@ window.onload = () => {
 									</div>
 								`;
 					//button player bar song name and player bar filler
-					let songTitle = document.querySelector('.songTitle');
-					let songArtist = document.querySelector('.songArtist');
-					let songCover = document.querySelector('.songCover');
-					let playPauseBtn = document.getElementById('playPauseBtn');
-					let audioPlayer = document.getElementById('audioPlayer');
+					let songTitle = document.querySelector(".songTitle");
+					let songArtist = document.querySelector(".songArtist");
+					let songCover = document.querySelector(".songCover");
+					let playPauseBtn = document.getElementById("playPauseBtn");
+					let audioPlayer = document.getElementById("audioPlayer");
 
 					yourEpisodesB = () => {
 						songTitle.textContent = trackList.data[index].title_short;
 						songArtist.textContent = trackList.data[index].artist.name;
 						songCover.innerHTML = `<img src="${trackList.data[index].album.cover_medium}" alt="album cover" class="img-fluid"/>`;
 						audioPlayer.src = trackList.data[index].preview;
-						playPauseBtn.addEventListener('click', function () {
+						playPauseBtn.addEventListener("click", function () {
 							if (audioPlayer.paused) {
 								audioPlayer.play();
 								playPauseBtn.innerHTML = '<i class="bi bi-pause-circle-fill text-light fs-6"></i>';
@@ -589,22 +589,22 @@ window.onload = () => {
 							}
 						});
 					};
-					let volume = document.querySelector('#volume-control');
-					volume.addEventListener('input', function (e) {
+					let volume = document.querySelector("#volume-control");
+					volume.addEventListener("input", function (e) {
 						audioPlayer.volume = e.currentTarget.value / 100;
 					});
 				});
 			});
 	} catch (error) {
-		console.log('ERROR' + error);
+		console.log("ERROR" + error);
 	}
 
 	try {
-		fetch('https://striveschool-api.herokuapp.com/api/deezer/artist/402/top?limit=50')
+		fetch("https://striveschool-api.herokuapp.com/api/deezer/artist/402/top?limit=50")
 			.then((responseObj) => responseObj.json())
 			.then((trackList) => {
 				console.log(trackList);
-				let cols = document.querySelectorAll('.yourEpisodesC');
+				let cols = document.querySelectorAll(".yourEpisodesC");
 				cols.forEach((col, index) => {
 					col.innerHTML += `
 					
@@ -618,18 +618,18 @@ window.onload = () => {
 						</div>
 					</div>`;
 					//button player bar song name and player bar filler
-					let songTitle = document.querySelector('.songTitle');
-					let songArtist = document.querySelector('.songArtist');
-					let songCover = document.querySelector('.songCover');
-					let playPauseBtn = document.getElementById('playPauseBtn');
-					let audioPlayer = document.getElementById('audioPlayer');
+					let songTitle = document.querySelector(".songTitle");
+					let songArtist = document.querySelector(".songArtist");
+					let songCover = document.querySelector(".songCover");
+					let playPauseBtn = document.getElementById("playPauseBtn");
+					let audioPlayer = document.getElementById("audioPlayer");
 
 					yourEpisodesC = () => {
 						songTitle.textContent = trackList.data[index].title_short;
 						songArtist.textContent = trackList.data[index].artist.name;
 						songCover.innerHTML = `<img src="${trackList.data[index].album.cover_medium}" alt="album cover" class="img-fluid"/>`;
 						audioPlayer.src = trackList.data[index].preview;
-						playPauseBtn.addEventListener('click', function () {
+						playPauseBtn.addEventListener("click", function () {
 							if (audioPlayer.paused) {
 								audioPlayer.play();
 								playPauseBtn.innerHTML = '<i class="bi bi-pause-circle-fill text-light fs-6"></i>';
@@ -639,22 +639,22 @@ window.onload = () => {
 							}
 						});
 					};
-					let volume = document.querySelector('#volume-control');
-					volume.addEventListener('input', function (e) {
+					let volume = document.querySelector("#volume-control");
+					volume.addEventListener("input", function (e) {
 						audioPlayer.volume = e.currentTarget.value / 100;
 					});
 				});
 			});
 	} catch (error) {
-		console.log('ERROR' + error);
+		console.log("ERROR" + error);
 	}
 
 	try {
-		fetch('https://striveschool-api.herokuapp.com/api/deezer/artist/1097709/top?limit=50')
+		fetch("https://striveschool-api.herokuapp.com/api/deezer/artist/1097709/top?limit=50")
 			.then((responseObj) => responseObj.json())
 			.then((trackList) => {
 				console.log(trackList);
-				let cols = document.querySelectorAll('.yourEpisodesD');
+				let cols = document.querySelectorAll(".yourEpisodesD");
 				cols.forEach((col, index) => {
 					col.innerHTML += `
 					
@@ -668,18 +668,18 @@ window.onload = () => {
 						</div>
 					</div>`;
 					//button player bar song name and player bar filler
-					let songTitle = document.querySelector('.songTitle');
-					let songArtist = document.querySelector('.songArtist');
-					let songCover = document.querySelector('.songCover');
-					let playPauseBtn = document.getElementById('playPauseBtn');
-					let audioPlayer = document.getElementById('audioPlayer');
+					let songTitle = document.querySelector(".songTitle");
+					let songArtist = document.querySelector(".songArtist");
+					let songCover = document.querySelector(".songCover");
+					let playPauseBtn = document.getElementById("playPauseBtn");
+					let audioPlayer = document.getElementById("audioPlayer");
 
 					yourEpisodesD = () => {
 						songTitle.textContent = trackList.data[index].title_short;
 						songArtist.textContent = trackList.data[index].artist.name;
 						songCover.innerHTML = `<img src="${trackList.data[index].album.cover_medium}" alt="album cover" class="img-fluid"/>`;
 						audioPlayer.src = trackList.data[index].preview;
-						playPauseBtn.addEventListener('click', function () {
+						playPauseBtn.addEventListener("click", function () {
 							if (audioPlayer.paused) {
 								audioPlayer.play();
 								playPauseBtn.innerHTML = '<i class="bi bi-pause-circle-fill text-light fs-6"></i>';
@@ -689,22 +689,22 @@ window.onload = () => {
 							}
 						});
 					};
-					let volume = document.querySelector('#volume-control');
-					volume.addEventListener('input', function (e) {
+					let volume = document.querySelector("#volume-control");
+					volume.addEventListener("input", function (e) {
 						audioPlayer.volume = e.currentTarget.value / 100;
 					});
 				});
 			});
 	} catch (error) {
-		console.log('ERROR' + error);
+		console.log("ERROR" + error);
 	}
 
 	try {
-		fetch('https://striveschool-api.herokuapp.com/api/deezer/artist/13612387/top?limit=50')
+		fetch("https://striveschool-api.herokuapp.com/api/deezer/artist/13612387/top?limit=50")
 			.then((responseObj) => responseObj.json())
 			.then((trackList) => {
 				console.log(trackList);
-				let cols = document.querySelectorAll('.yourEpisodesE');
+				let cols = document.querySelectorAll(".yourEpisodesE");
 				cols.forEach((col, index) => {
 					col.innerHTML += `
 									
@@ -719,18 +719,18 @@ window.onload = () => {
 									</div>
 								`;
 					//button player bar song name and player bar filler
-					let songTitle = document.querySelector('.songTitle');
-					let songArtist = document.querySelector('.songArtist');
-					let songCover = document.querySelector('.songCover');
-					let playPauseBtn = document.getElementById('playPauseBtn');
-					let audioPlayer = document.getElementById('audioPlayer');
+					let songTitle = document.querySelector(".songTitle");
+					let songArtist = document.querySelector(".songArtist");
+					let songCover = document.querySelector(".songCover");
+					let playPauseBtn = document.getElementById("playPauseBtn");
+					let audioPlayer = document.getElementById("audioPlayer");
 
 					yourEpisodesE = () => {
 						songTitle.textContent = trackList.data[index].title_short;
 						songArtist.textContent = trackList.data[index].artist.name;
 						songCover.innerHTML = `<img src="${trackList.data[index].album.cover_medium}" alt="album cover" class="img-fluid"/>`;
 						audioPlayer.src = trackList.data[index].preview;
-						playPauseBtn.addEventListener('click', function () {
+						playPauseBtn.addEventListener("click", function () {
 							if (audioPlayer.paused) {
 								audioPlayer.play();
 								playPauseBtn.innerHTML = '<i class="bi bi-pause-circle-fill text-light fs-6"></i>';
@@ -740,23 +740,23 @@ window.onload = () => {
 							}
 						});
 					};
-					let volume = document.querySelector('#volume-control');
-					volume.addEventListener('input', function (e) {
+					let volume = document.querySelector("#volume-control");
+					volume.addEventListener("input", function (e) {
 						audioPlayer.volume = e.currentTarget.value / 100;
 					});
 				});
 			});
 	} catch (error) {
-		console.log('ERROR' + error);
+		console.log("ERROR" + error);
 	}
 
 	//Mobile episodes population
 	try {
-		fetch('https://striveschool-api.herokuapp.com/api/deezer/artist/647650/top?limit=50')
+		fetch("https://striveschool-api.herokuapp.com/api/deezer/artist/647650/top?limit=50")
 			.then((responseObj) => responseObj.json())
 			.then((trackList) => {
 				console.log(trackList);
-				let cols = document.querySelectorAll('.mobileEpisodeA');
+				let cols = document.querySelectorAll(".mobileEpisodeA");
 				cols.forEach((col, index) => {
 					col.innerHTML += `
 									<div class="card border border-0 bg-dark" style="width: 150px">
@@ -771,15 +771,15 @@ window.onload = () => {
 				});
 			});
 	} catch (error) {
-		console.log('ERROR' + error);
+		console.log("ERROR" + error);
 	}
 
 	try {
-		fetch('https://striveschool-api.herokuapp.com/api/deezer/artist/106849212/top?limit=50')
+		fetch("https://striveschool-api.herokuapp.com/api/deezer/artist/106849212/top?limit=50")
 			.then((responseObj) => responseObj.json())
 			.then((trackList) => {
 				console.log(trackList);
-				let cols = document.querySelectorAll('.mobileEpisodeB');
+				let cols = document.querySelectorAll(".mobileEpisodeB");
 				cols.forEach((col, index) => {
 					col.innerHTML += `
 									<div class="card border border-0 bg-dark" style="width: 150px">
@@ -794,15 +794,15 @@ window.onload = () => {
 				});
 			});
 	} catch (error) {
-		console.log('ERROR' + error);
+		console.log("ERROR" + error);
 	}
 
 	try {
-		fetch('https://striveschool-api.herokuapp.com/api/deezer/artist/75798/top?limit=50')
+		fetch("https://striveschool-api.herokuapp.com/api/deezer/artist/75798/top?limit=50")
 			.then((responseObj) => responseObj.json())
 			.then((trackList) => {
 				console.log(trackList);
-				let cols = document.querySelectorAll('.mobileEpisodeC');
+				let cols = document.querySelectorAll(".mobileEpisodeC");
 				cols.forEach((col, index) => {
 					col.innerHTML += `
 									<div class="card border border-0 bg-dark" style="width: 150px">
@@ -817,15 +817,15 @@ window.onload = () => {
 				});
 			});
 	} catch (error) {
-		console.log('ERROR' + error);
+		console.log("ERROR" + error);
 	}
 
 	try {
-		fetch('https://striveschool-api.herokuapp.com/api/deezer/artist/3469/top?limit=50')
+		fetch("https://striveschool-api.herokuapp.com/api/deezer/artist/3469/top?limit=50")
 			.then((responseObj) => responseObj.json())
 			.then((trackList) => {
 				console.log(trackList);
-				let cols = document.querySelectorAll('.mobileEpisodeD');
+				let cols = document.querySelectorAll(".mobileEpisodeD");
 				cols.forEach((col, index) => {
 					col.innerHTML += `
 									<div class="card border border-0 bg-dark" style="width: 150px">
@@ -840,15 +840,15 @@ window.onload = () => {
 				});
 			});
 	} catch (error) {
-		console.log('ERROR' + error);
+		console.log("ERROR" + error);
 	}
 
 	try {
-		fetch('https://striveschool-api.herokuapp.com/api/deezer/artist/5313805/top?limit=50')
+		fetch("https://striveschool-api.herokuapp.com/api/deezer/artist/5313805/top?limit=50")
 			.then((responseObj) => responseObj.json())
 			.then((trackList) => {
 				console.log(trackList);
-				let cols = document.querySelectorAll('.mobileEpisodeE');
+				let cols = document.querySelectorAll(".mobileEpisodeE");
 				cols.forEach((col, index) => {
 					col.innerHTML += `
 									<div class="card border border-0 bg-dark" style="width: 150px">
@@ -863,15 +863,15 @@ window.onload = () => {
 				});
 			});
 	} catch (error) {
-		console.log('ERROR' + error);
+		console.log("ERROR" + error);
 	}
 
 	try {
-		fetch('https://striveschool-api.herokuapp.com/api/deezer/artist/892/top?limit=50')
+		fetch("https://striveschool-api.herokuapp.com/api/deezer/artist/892/top?limit=50")
 			.then((responseObj) => responseObj.json())
 			.then((trackList) => {
 				console.log(trackList);
-				let cols = document.querySelectorAll('.mobileEpisodeF');
+				let cols = document.querySelectorAll(".mobileEpisodeF");
 				cols.forEach((col, index) => {
 					col.innerHTML += `
 									<div class="card border border-0 bg-dark" style="width: 150px">
@@ -886,15 +886,15 @@ window.onload = () => {
 				});
 			});
 	} catch (error) {
-		console.log('ERROR' + error);
+		console.log("ERROR" + error);
 	}
 
 	try {
-		fetch('https://striveschool-api.herokuapp.com/api/deezer/artist/74398/top?limit=50')
+		fetch("https://striveschool-api.herokuapp.com/api/deezer/artist/74398/top?limit=50")
 			.then((responseObj) => responseObj.json())
 			.then((trackList) => {
 				console.log(trackList);
-				let cols = document.querySelectorAll('.mobileEpisodeG');
+				let cols = document.querySelectorAll(".mobileEpisodeG");
 				cols.forEach((col, index) => {
 					col.innerHTML += `
 									<div class="card border border-0 bg-dark" style="width: 150px">
@@ -909,15 +909,15 @@ window.onload = () => {
 				});
 			});
 	} catch (error) {
-		console.log('ERROR' + error);
+		console.log("ERROR" + error);
 	}
 
 	try {
-		fetch('https://striveschool-api.herokuapp.com/api/deezer/artist/144227/top?limit=50')
+		fetch("https://striveschool-api.herokuapp.com/api/deezer/artist/144227/top?limit=50")
 			.then((responseObj) => responseObj.json())
 			.then((trackList) => {
 				console.log(trackList);
-				let cols = document.querySelectorAll('.mobileEpisodeH');
+				let cols = document.querySelectorAll(".mobileEpisodeH");
 				cols.forEach((col, index) => {
 					col.innerHTML += `
 									<div class="card border border-0 bg-dark" style="width: 150px">
@@ -932,16 +932,16 @@ window.onload = () => {
 				});
 			});
 	} catch (error) {
-		console.log('ERROR' + error);
+		console.log("ERROR" + error);
 	}
 
 	//Mobile album population
 	try {
-		fetch('https://striveschool-api.herokuapp.com/api/deezer/artist/4101559/top?limit=50')
+		fetch("https://striveschool-api.herokuapp.com/api/deezer/artist/4101559/top?limit=50")
 			.then((responseObj) => responseObj.json())
 			.then((trackList) => {
 				console.log(trackList);
-				let cols = document.querySelectorAll('.homeMainAlbumCardA');
+				let cols = document.querySelectorAll(".homeMainAlbumCardA");
 				cols.forEach((col, index) => {
 					col.innerHTML += `
 								<div class="card border border-0 bg-dark" style="width: 150px">
@@ -956,17 +956,17 @@ window.onload = () => {
 				});
 			});
 	} catch (error) {
-		console.log('ERROR' + error);
+		console.log("ERROR" + error);
 	}
 
 	//Mobile artist population
 
 	try {
-		fetch('https://striveschool-api.herokuapp.com/api/deezer/artist/74357')
+		fetch("https://striveschool-api.herokuapp.com/api/deezer/artist/74357")
 			.then((responseObj) => responseObj.json())
 			.then((artist) => {
 				console.log(artist);
-				let cols = document.querySelectorAll('.homeMainArtistCardB');
+				let cols = document.querySelectorAll(".homeMainArtistCardB");
 				cols.forEach((col, index) => {
 					col.innerHTML += `
 								<div class="card border border-0 bg-dark" style="width: 150px">
@@ -981,15 +981,15 @@ window.onload = () => {
 				});
 			});
 	} catch (error) {
-		console.log('ERROR' + error);
+		console.log("ERROR" + error);
 	}
 
 	try {
-		fetch('https://striveschool-api.herokuapp.com/api/deezer/artist/599/top?limit=50')
+		fetch("https://striveschool-api.herokuapp.com/api/deezer/artist/599/top?limit=50")
 			.then((responseObj) => responseObj.json())
 			.then((trackList) => {
 				console.log(trackList);
-				let cols = document.querySelectorAll('.homeMainAlbumCardB');
+				let cols = document.querySelectorAll(".homeMainAlbumCardB");
 				cols.forEach((col, index) => {
 					col.innerHTML += `
 								<div class="card border border-0 bg-dark" style="width: 150px">
@@ -1004,15 +1004,15 @@ window.onload = () => {
 				});
 			});
 	} catch (error) {
-		console.log('ERROR' + error);
+		console.log("ERROR" + error);
 	}
 
 	try {
-		fetch('https://striveschool-api.herokuapp.com/api/deezer/artist/8074581462/top?limit=50')
+		fetch("https://striveschool-api.herokuapp.com/api/deezer/artist/8074581462/top?limit=50")
 			.then((responseObj) => responseObj.json())
 			.then((trackList) => {
 				console.log(trackList);
-				let cols = document.querySelectorAll('.homeMainAlbumCardC');
+				let cols = document.querySelectorAll(".homeMainAlbumCardC");
 				cols.forEach((col, index) => {
 					col.innerHTML += `
 								<div class="card border border-0 bg-dark" style="width: 150px">
@@ -1027,15 +1027,15 @@ window.onload = () => {
 				});
 			});
 	} catch (error) {
-		console.log('ERROR' + error);
+		console.log("ERROR" + error);
 	}
 
 	try {
-		fetch('https://striveschool-api.herokuapp.com/api/deezer/artist/5062414')
+		fetch("https://striveschool-api.herokuapp.com/api/deezer/artist/5062414")
 			.then((responseObj) => responseObj.json())
 			.then((artist) => {
 				console.log(artist);
-				let cols = document.querySelectorAll('.homeMainArtistCardA');
+				let cols = document.querySelectorAll(".homeMainArtistCardA");
 				cols.forEach((col, index) => {
 					col.innerHTML += `
 								<div class="card border border-0 bg-dark" style="width: 150px">
@@ -1050,15 +1050,15 @@ window.onload = () => {
 				});
 			});
 	} catch (error) {
-		console.log('ERROR' + error);
+		console.log("ERROR" + error);
 	}
 
 	try {
-		fetch('https://striveschool-api.herokuapp.com/api/deezer/artist/75491/top?limit=50')
+		fetch("https://striveschool-api.herokuapp.com/api/deezer/artist/75491/top?limit=50")
 			.then((responseObj) => responseObj.json())
 			.then((trackList) => {
 				console.log(trackList);
-				let cols = document.querySelectorAll('.homeMainAlbumCardD');
+				let cols = document.querySelectorAll(".homeMainAlbumCardD");
 				cols.forEach((col, index) => {
 					col.innerHTML += `
 									<div class="card border border-0 bg-dark" style="width: 150px">
@@ -1073,15 +1073,15 @@ window.onload = () => {
 				});
 			});
 	} catch (error) {
-		console.log('ERROR' + error);
+		console.log("ERROR" + error);
 	}
 
 	try {
-		fetch('https://striveschool-api.herokuapp.com/api/deezer/artist/181878/top?limit=50')
+		fetch("https://striveschool-api.herokuapp.com/api/deezer/artist/181878/top?limit=50")
 			.then((responseObj) => responseObj.json())
 			.then((trackList) => {
 				console.log(trackList);
-				let cols = document.querySelectorAll('.homeMainAlbumCardE');
+				let cols = document.querySelectorAll(".homeMainAlbumCardE");
 				cols.forEach((col, index) => {
 					col.innerHTML += `
 									<div class="card border border-0 bg-dark" style="width: 150px">
@@ -1096,6 +1096,6 @@ window.onload = () => {
 				});
 			});
 	} catch (error) {
-		console.log('ERROR' + error);
+		console.log("ERROR" + error);
 	}
 };

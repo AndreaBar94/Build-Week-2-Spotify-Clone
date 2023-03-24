@@ -9,8 +9,8 @@ const URLParams = new URLSearchParams(window.location.search);
 const selectedId = URLParams.get('id');
 //username set
 let userName = document.getElementById('userNameCustom');
-if (sessionStorage.getItem('Username')) {
-	let users = JSON.parse(sessionStorage.getItem('Username'));
+if (localStorage.getItem('Username')) {
+	let users = JSON.parse(localStorage.getItem('Username'));
 	userName.textContent = users[users.length - 1];
 } else {
 	userName.textContent = 'Nessun utente memorizzato';

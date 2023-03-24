@@ -9,25 +9,25 @@ let searched = () => {
 				fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=" + searchInput.value)
 					.then((responseObj) => responseObj.json())
 					.then((artist) => {
-						let artistId = artist.data[0].artist.id; // prende il primo artista restituito (se presente)
+						let searchMainCard = document.getElementById("homeMainCard");
+						searchCards.style.display = "none";
 						if (artist) {
-							window.location.href = "artist.html?id=" + artistId; // reindirizza alla pagina dell'artista
+							searchMainCard.innerHTML = `
+										<div class=" row g-0">
+								<div class="col-md-3">
+									<a href="artist.html?id=${artist.data[0].artist.id}" id="albumCoverLink"><img src="${artist.data[0].artist.picture_xl}" class="img-fluid rounded-start" alt="artist cover"
+											id="albumCoverTop" /></a>
+								</div>
+								<div class="col-md-9 text-truncate">
+									<div class="card-body p-0 px-4 text-truncate">
+										<h4 class="card-text fw-bold text-light py-2">${artist.data[0].artist.name}</h4>
+									</div>
+								</div>
+							</div>
+							`;
+						} else {
+							searchMainCard.innerHTML = "";
 						}
-					})
-					.then((song) => {
-						let songId = song.data[0].title;
-						if (song) {
-							window.location.href = "album.html?id=" + songId;
-						}
-					})
-					.then((album) => {
-						let albumId = album.id;
-						if (song) {
-							window.location.href = "album.html?id=" + albumId;
-						}
-					})
-					.catch((error) => {
-						console.log(error);
 					});
 			}
 		});
@@ -35,5 +35,4 @@ let searched = () => {
 		console.log(error);
 	}
 };
-
 searched();

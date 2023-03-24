@@ -43,6 +43,7 @@ window.onload = () => {
 				coverPic.src = `${album.cover}`;
 				imgAlbum.src = `${album.cover_medium}`;
 				titleAlbum.textContent = album.title;
+				titleAlbum.classList.add("text-truncate");
 				NumTrack.textContent = album.nb_tracks + " brani";
 				tipe.textContent = album.record_type;
 			});

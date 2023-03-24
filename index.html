@@ -317,7 +317,8 @@
 								<p id="albumArtistTop" class="card-text fs-8 text-light"></p>
 								<p class="card-text fw-light text-light">Ascolta il nuovo album!</p>
 								<div class="py-3">
-									<button class="btn btn-primary rounded-5 px-4 py-2 fs-10">Play</button>
+									<button class="btn btn-primary rounded-5 px-4 py-2 fs-10"
+										id="spotlightPlay">Play</button>
 									<button
 										class="btn btn-dark border border-1 border-info rounded-5 px-4 py-2 fs-10 ms-3">Salva</button>
 								</div>
@@ -759,7 +760,8 @@
 									</button>
 									<div class="volume-bar__slider-container">
 										<div class="p1ULRzPc4bD8eQ4T_wyp DFtdzavKSbEhwKYkPTa6">
-											<input type="range" min="0" max="1" step="0.1" value="1" />
+											<input type="range" min="0" max="100" step="1" value="100"
+												id="volume-control" />
 											<div data-testid="progress-bar" style="--progress-bar-transform: 100%">
 												<div data-testid="progress-bar-background"></div>
 												<div style="width: 100%"></div>

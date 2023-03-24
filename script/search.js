@@ -1,4 +1,5 @@
 let searchInput = document.getElementById("searchInput");
+let searchCards = document.querySelector(".searchCards");
 
 let searched = () => {
 	try {
@@ -21,6 +22,8 @@ let searched = () => {
 								<div class="col-md-9 text-truncate">
 									<div class="card-body p-0 px-4 text-truncate">
 										<h4 class="card-text fw-bold text-light py-2">${artist.data[0].artist.name}</h4>
+										<a href="album.html?id=${artist.data[0].album.id}" class="text-decoration-none"><p class="text-light" >${artist.data[0].title}<p/></a>
+										<a href="album.html?id=${artist.data[0].album.id}" class="text-decoration-none"><p class="text-light" >${artist.data[0].album.title}<p/></a>
 									</div>
 								</div>
 							</div>

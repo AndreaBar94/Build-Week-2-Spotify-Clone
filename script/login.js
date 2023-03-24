@@ -5,11 +5,11 @@ let users = [];
 
 loginForm.addEventListener("submit", function (event) {
 	event.preventDefault();
-	if (sessionStorage.getItem("Username")) {
-		users = JSON.parse(sessionStorage.getItem("Username"));
+	if (localStorage.getItem("Username")) {
+		users = JSON.parse(localStorage.getItem("Username"));
 	}
 	users.push(userName.value);
-	sessionStorage.setItem("Username", JSON.stringify(users));
+	localStorage.setItem("Username", JSON.stringify(users));
 	window.location.href = "index.html";
 });
 

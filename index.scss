@@ -255,3 +255,19 @@ main {
 	flex-wrap: nowrap;
 	overflow-x: scroll;
 }
+
+input[type='range'] {
+	overflow: hidden;
+	width: 120px;
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+	height: 3px;
+	background: $light;
+}
+
+input[type='range']::-webkit-slider-thumb {
+	width: 10px;
+	height: 10px;
+	background: $primary;
+}

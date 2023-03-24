@@ -11921,4 +11921,20 @@ main {
 .yourEpisodesRow {
   flex-wrap: nowrap;
   overflow-x: scroll;
+}
+
+input[type=range] {
+  overflow: hidden;
+  width: 120px;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  height: 3px;
+  background: #ffffff;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  width: 10px;
+  height: 10px;
+  background: #1cb954;
 }/*# sourceMappingURL=index.css.map */

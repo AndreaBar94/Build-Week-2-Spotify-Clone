@@ -11911,4 +11911,14 @@ main {
 
 .imgGlow {
   box-shadow: 0px 0px 10px #fff;
+}
+
+.madeForYouRow {
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+}
+
+.yourEpisodesRow {
+  flex-wrap: nowrap;
+  overflow-x: scroll;
 }/*# sourceMappingURL=index.css.map */

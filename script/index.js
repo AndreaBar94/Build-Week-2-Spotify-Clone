@@ -16,6 +16,26 @@ if (sessionStorage.getItem('Username')) {
 	userName.textContent = 'Nessun utente memorizzato';
 }
 
+//Playbar audio progress
+let progressBar = document.getElementById('progressBar');
+let audioPlayer = document.getElementById('audioPlayer');
+let progressTime = document.getElementById('progressTime');
+
+audioPlayer.addEventListener('timeupdate', function () {
+	let progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+	progressBar.style.width = `${progress}%`;
+
+	let progressSecond = Math.floor((audioPlayer.currentTime / audioPlayer.duration) * 30);
+
+	if (progressSecond < 10) {
+		progressTime.textContent = `0:0${progressSecond}`;
+	} else if (progressTime.textConten == Nan) {
+		progressTime.textContent = `0:00`;
+	} else {
+		progressTime.textContent = `0:${progressSecond}`;
+	}
+});
+
 //playbar placeholder
 let playbarInfo = document.querySelector('#songInfo');
 let songTitleMobile = document.querySelector('.songTitleMobile');
@@ -197,6 +217,8 @@ window.onload = () => {
 				let songCover = document.querySelector('.songCover');
 				let playPauseBtn = document.getElementById('playPauseBtn');
 				let audioPlayer = document.getElementById('audioPlayer');
+				let progressBar = document.getElementById('progressBar');
+				let duration = 30;
 
 				spotlightPlay.addEventListener('click', function () {
 					songTitle.textContent = album.tracks.data[0].title_short;
@@ -217,6 +239,12 @@ window.onload = () => {
 				volume.addEventListener('input', function (e) {
 					audioPlayer.volume = e.currentTarget.value / 100;
 				});
+				// audioPlayer.addEventListener('timeupdate', function () {
+				// 	// Calcola la percentuale di avanzamento
+				// 	var progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+				// 	// Aggiorna la progress bar
+				// 	progressBar.style.width = `${progress}%`;
+				// });
 			});
 	} catch (error) {
 		console.log('ERROR' + error);

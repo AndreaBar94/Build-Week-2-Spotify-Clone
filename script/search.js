@@ -1,5 +1,4 @@
 let searchInput = document.getElementById("searchInput");
-let searchCards = document.querySelector(".searchCards");
 
 let searched = () => {
 	try {
@@ -11,7 +10,6 @@ let searched = () => {
 					.then((responseObj) => responseObj.json())
 					.then((artist) => {
 						let searchMainCard = document.getElementById("homeMainCard");
-						searchCards.style.display = "none";
 						if (artist) {
 							searchMainCard.innerHTML = `
 										<div class=" row g-0">

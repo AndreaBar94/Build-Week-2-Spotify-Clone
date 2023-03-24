@@ -24,7 +24,6 @@ let songTitle = document.querySelector('.songTitle');
 if (songTitle == '') {
 	playbarInfo.classList.add('d-none');
 }
-
 if (songTitleMobile == '') {
 	playbarInfo.classList.add('d-none');
 }
@@ -41,52 +40,51 @@ window.onload = () => {
 				let cols = document.querySelectorAll('.mobileMainCards');
 				cols.forEach((col, index) => {
 					col.innerHTML += ` <div class="row g-0 d-flex justify-content-between align-items-center p-4">
-											<div class="col-4">
-												<img src="${trackList.data[index].album.cover_medium}" class="img-fluid imgGlow" alt="song Cover">
-											</div>
-											<div class="col-8">
-												<div class="card-body">
-													<p class="card-title text-info fs-11">Song</p>
-													<h5 class="card-text text-light">${trackList.data[index].title_short}</h5>
-												</div>
-											</div>
-										</div>
-										<div class="row g-0 d-flex align-items-center justify-content-between p-4">
-											<div class="col-6 d-flex align-items-center">
-												<svg role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16"
-													data-encore-id="icon" fill="#1cb954">
-													<path
-														d="M15.724 4.22A4.313 4.313 0 0 0 12.192.814a4.269 4.269 0 0 0-3.622 1.13.837.837 0 0 1-1.14 0 4.272 4.272 0 0 0-6.21 5.855l5.916 7.05a1.128 1.128 0 0 0 1.727 0l5.916-7.05a4.228 4.228 0 0 0 .945-3.577z">
-													</path>
-												</svg>
-												<div>
-													<i class="bi bi-three-dots-vertical text-info"></i>
-												</div>
-											</div>
-											<div class="col-6 d-flex align-items-center justify-content-end">
-												<div class="d-flex align-items-center px-3">
-													<p class="card-text"><small class="text-muted">${trackList.data[index].artist.name}</small></p>
-												</div>
-												<button onclick="playSong()" type="button" class="btn rounded-circle bg-light d-flex align-items-center p-2">
-													<svg role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16"
-														data-encore-id="icon">
-														<path
-															d="M3 1.713a.7.7 0 0 1 1.05-.607l10.89 6.288a.7.7 0 0 1 0 1.212L4.05 14.894A.7.7 0 0 1 3 14.288V1.713z">
-														</path>
-													</svg>
-												</button>
-											</div>
-										</div>
-									`;
-
-					//button player bar song name and player bar filler
-					let songTitleMobile = document.querySelector('.songTitleMobile');
-					let songArtistMobile = document.querySelector('.songArtistMobile');
-					let songCoverMobile = document.querySelector('.songCoverMobile');
-					let playPauseBtn2 = document.getElementById('playPauseBtn2');
-					let audioPlayer2 = document.getElementById('audioPlayer2');
-
+					<div class="col-4">
+						<img src="${trackList.data[index].album.cover_medium}" class="img-fluid imgGlow" alt="song Cover">
+					</div>
+					<div class="col-8">
+						<div class="card-body">
+							<p class="card-title text-info fs-11">Song</p>
+							<h5 class="card-text text-light">${trackList.data[index].title_short}</h5>
+						</div>
+					</div>
+				</div>
+				<div class="row g-0 d-flex align-items-center justify-content-between p-4">
+					<div class="col-6 d-flex align-items-center">
+						<svg role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16"
+							data-encore-id="icon" fill="#1cb954">
+							<path
+								d="M15.724 4.22A4.313 4.313 0 0 0 12.192.814a4.269 4.269 0 0 0-3.622 1.13.837.837 0 0 1-1.14 0 4.272 4.272 0 0 0-6.21 5.855l5.916 7.05a1.128 1.128 0 0 0 1.727 0l5.916-7.05a4.228 4.228 0 0 0 .945-3.577z">
+							</path>
+						</svg>
+						<div>
+							<i class="bi bi-three-dots-vertical text-info"></i>
+						</div>
+					</div>
+					<div class="col-6 d-flex align-items-center justify-content-end">
+						<div class="d-flex align-items-center px-3">
+							<p class="card-text"><small class="text-muted">${trackList.data[index].artist.name}</small></p>
+						</div>
+						<button onclick="playSong()" type="button" class="btn rounded-circle bg-light d-flex align-items-center p-2">
+							<svg role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16"
+								data-encore-id="icon">
+								<path
+									d="M3 1.713a.7.7 0 0 1 1.05-.607l10.89 6.288a.7.7 0 0 1 0 1.212L4.05 14.894A.7.7 0 0 1 3 14.288V1.713z">
+								</path>
+							</svg>
+						</button>
+					</div>
+				</div>
+			`;
 					playSong = () => {
+						//button player bar song name and player bar filler
+						let songTitleMobile = document.querySelector('.songTitleMobile');
+						let songArtistMobile = document.querySelector('.songArtistMobile');
+						let songCoverMobile = document.querySelector('.songCoverMobile');
+						let playPauseBtn2 = document.getElementById('playPauseBtn2');
+						let audioPlayer2 = document.getElementById('audioPlayer2');
+
 						songTitleMobile.textContent = trackList.data[index].title_short;
 						songArtistMobile.textContent = trackList.data[index].artist.name;
 						songCoverMobile.innerHTML = `<img src="${trackList.data[index].album.cover_medium}" alt="album cover" class="img-fluid" style="width: 50px"/>`;
@@ -115,52 +113,51 @@ window.onload = () => {
 				let cols = document.querySelectorAll('.mobileMainCards2');
 				cols.forEach((col, index) => {
 					col.innerHTML += ` <div class="row g-0 d-flex justify-content-between align-items-center p-4">
-											<div class="col-4">
-												<img src="${trackList.data[index].album.cover_medium}" class="img-fluid imgGlow" alt="song Cover">
-											</div>
-											<div class="col-8">
-												<div class="card-body">
-													<p class="card-title text-info fs-11">Song</p>
-													<h5 class="card-text text-light">${trackList.data[index].title_short}</h5>
-												</div>
-											</div>
-										</div>
-										<div class="row g-0 d-flex align-items-center justify-content-between p-4">
-											<div class="col-6 d-flex align-items-center">
-												<svg role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16"
-													data-encore-id="icon" fill="#1cb954">
-													<path
-														d="M15.724 4.22A4.313 4.313 0 0 0 12.192.814a4.269 4.269 0 0 0-3.622 1.13.837.837 0 0 1-1.14 0 4.272 4.272 0 0 0-6.21 5.855l5.916 7.05a1.128 1.128 0 0 0 1.727 0l5.916-7.05a4.228 4.228 0 0 0 .945-3.577z">
-													</path>
-												</svg>
-												<div>
-													<i class="bi bi-three-dots-vertical text-info"></i>
-												</div>
-											</div>
-											<div class="col-6 d-flex align-items-center justify-content-end">
-												<div class="d-flex align-items-center px-3">
-													<p class="card-text"><small class="text-muted">${trackList.data[index].artist.name}</small></p>
-												</div>
-												<button onclick="playCanzone()" type="button" class="btn rounded-circle bg-light d-flex align-items-center p-2">
-													<svg role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16"
-														data-encore-id="icon">
-														<path
-															d="M3 1.713a.7.7 0 0 1 1.05-.607l10.89 6.288a.7.7 0 0 1 0 1.212L4.05 14.894A.7.7 0 0 1 3 14.288V1.713z">
-														</path>
-													</svg>
-												</button>
-											</div>
-										</div>
-									`;
+					<div class="col-4">
+						<img src="${trackList.data[index].album.cover_medium}" class="img-fluid imgGlow" alt="song Cover">
+					</div>
+					<div class="col-8">
+						<div class="card-body">
+							<p class="card-title text-info fs-11">Song</p>
+							<h5 class="card-text text-light">${trackList.data[index].title_short}</h5>
+						</div>
+					</div>
+				</div>
+				<div class="row g-0 d-flex align-items-center justify-content-between p-4">
+					<div class="col-6 d-flex align-items-center">
+						<svg role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16"
+							data-encore-id="icon" fill="#1cb954">
+							<path
+								d="M15.724 4.22A4.313 4.313 0 0 0 12.192.814a4.269 4.269 0 0 0-3.622 1.13.837.837 0 0 1-1.14 0 4.272 4.272 0 0 0-6.21 5.855l5.916 7.05a1.128 1.128 0 0 0 1.727 0l5.916-7.05a4.228 4.228 0 0 0 .945-3.577z">
+							</path>
+						</svg>
+						<div>
+							<i class="bi bi-three-dots-vertical text-info"></i>
+						</div>
+					</div>
+					<div class="col-6 d-flex align-items-center justify-content-end">
+						<div class="d-flex align-items-center px-3">
+							<p class="card-text"><small class="text-muted">${trackList.data[index].artist.name}</small></p>
+						</div>
+						<button onclick="playSongB()" type="button" class="btn rounded-circle bg-light d-flex align-items-center p-2">
+							<svg role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16"
+								data-encore-id="icon">
+								<path
+									d="M3 1.713a.7.7 0 0 1 1.05-.607l10.89 6.288a.7.7 0 0 1 0 1.212L4.05 14.894A.7.7 0 0 1 3 14.288V1.713z">
+								</path>
+							</svg>
+						</button>
+					</div>
+				</div>
+			`;
+					playSongB = () => {
+						//button player bar song name and player bar filler
+						let songTitleMobile = document.querySelector('.songTitleMobile');
+						let songArtistMobile = document.querySelector('.songArtistMobile');
+						let songCoverMobile = document.querySelector('.songCoverMobile');
+						let playPauseBtn2 = document.getElementById('playPauseBtn2');
+						let audioPlayer2 = document.getElementById('audioPlayer2');
 
-					//button player bar song name and player bar filler
-					let songTitleMobile = document.querySelector('.songTitleMobile');
-					let songArtistMobile = document.querySelector('.songArtistMobile');
-					let songCoverMobile = document.querySelector('.songCoverMobile');
-					let playPauseBtn2 = document.getElementById('playPauseBtn2');
-					let audioPlayer2 = document.getElementById('audioPlayer2');
-
-					playCanzone = () => {
 						songTitleMobile.textContent = trackList.data[index].title_short;
 						songArtistMobile.textContent = trackList.data[index].artist.name;
 						songCoverMobile.innerHTML = `<img src="${trackList.data[index].album.cover_medium}" alt="album cover" class="img-fluid" style="width: 50px"/>`;
@@ -194,7 +191,32 @@ window.onload = () => {
 				albumCover.src = album.cover_big;
 				let albumCoverLink = document.getElementById('albumCoverLink');
 				albumCoverLink.href = `album.html?id=${album.id}`;
-				console.log(endpointAlbum);
+				let spotlightPlay = document.getElementById('spotlightPlay');
+				let songTitle = document.querySelector('.songTitle');
+				let songArtist = document.querySelector('.songArtist');
+				let songCover = document.querySelector('.songCover');
+				let playPauseBtn = document.getElementById('playPauseBtn');
+				let audioPlayer = document.getElementById('audioPlayer');
+
+				spotlightPlay.addEventListener('click', function () {
+					songTitle.textContent = album.tracks.data[0].title_short;
+					songArtist.textContent = album.artist.name;
+					songCover.innerHTML = `<img src="${album.cover_medium}" alt="album cover" class="img-fluid"/>`;
+					audioPlayer.src = album.tracks.data[0].preview;
+					playPauseBtn.addEventListener('click', function () {
+						if (audioPlayer.paused) {
+							audioPlayer.play();
+							playPauseBtn.innerHTML = '<i class="bi bi-pause-circle-fill text-light fs-6"></i>';
+						} else {
+							audioPlayer.pause();
+							playPauseBtn.innerHTML = '<i class="bi bi-play-circle-fill text-light fs-6"></i>';
+						}
+					});
+				});
+				let volume = document.querySelector('#volume-control');
+				volume.addEventListener('input', function (e) {
+					audioPlayer.volume = e.currentTarget.value / 100;
+				});
 			});
 	} catch (error) {
 		console.log('ERROR' + error);
@@ -209,30 +231,22 @@ window.onload = () => {
 				let cols = document.querySelectorAll('.madeForYouA');
 				cols.forEach((col, index) => {
 					col.innerHTML += `
-							
-							<button type="button" onclick="madeForYouA()" class="btn"> 
-							<div class="card p-2 bg-secondary">
+							<div class="card p-2 bg-secondary" onclick="madeForYouA()">
 								<a href="album.html?id=${trackList.data[index].album.id}" class="text-decoration-none link-info">
-									<img src="${trackList.data[index].album.cover_medium}" class="card-img-top rounded-0"alt="episodeCover">
+									<img src="${trackList.data[index].album.cover_medium}" class="card-img-top rounded-0" alt="episodeCover">
 								</a>
 								<div class="card-body text-start">
 									<p class="card-text fs-10 text-light text-truncate">${trackList.data[index].title_short}</p>
 									<p class="card-text fs-10 fw-light text-info"><a href="artist.html?id=${trackList.data[index].artist.id}" class="text-decoration-none link-info"> ${trackList.data[index].artist.name} </a></p>
 								</div>
 								</div>
-							</button>
-							`;
-
-					//button player bar song name and player bar filler
+							`; //button player bar song name and player bar filler
 					let songTitle = document.querySelector('.songTitle');
 					let songArtist = document.querySelector('.songArtist');
 					let songCover = document.querySelector('.songCover');
-					let playbarInfo = document.querySelector('#songInfo');
 					let playPauseBtn = document.getElementById('playPauseBtn');
 					let audioPlayer = document.getElementById('audioPlayer');
-
 					madeForYouA = () => {
-						playbarInfo.classList.add('d-block');
 						songTitle.textContent = trackList.data[index].title_short;
 						songArtist.textContent = trackList.data[index].artist.name;
 						songCover.innerHTML = `<img src="${trackList.data[index].album.cover_medium}" alt="album cover" class="img-fluid"/>`;
@@ -247,6 +261,10 @@ window.onload = () => {
 							}
 						});
 					};
+					let volume = document.querySelector('#volume-control');
+					volume.addEventListener('input', function (e) {
+						audioPlayer.volume = e.currentTarget.value / 100;
+					});
 				});
 			});
 	} catch (error) {
@@ -261,17 +279,17 @@ window.onload = () => {
 				let cols = document.querySelectorAll('.madeForYouB');
 				cols.forEach((col, index) => {
 					col.innerHTML += `
-					<button type="button" onclick="madeForYouB()" class="btn"> 
-					<div class="card p-2 bg-secondary">
-						<a href="album.html?id=${trackList.data[index].album.id}" class="text-decoration-none link-info">
-							<img src="${trackList.data[index].album.cover_medium}" class="card-img-top rounded-0"alt="episodeCover">
-						</a>
-						<div class="card-body text-start">
-							<p class="card-text fs-10 text-light text-truncate">${trackList.data[index].title_short}</p>
-							<p class="card-text fs-10 fw-light text-info"><a href="artist.html?id=${trackList.data[index].artist.id}" class="text-decoration-none link-info"> ${trackList.data[index].artist.name} </a></p>
-						</div>
-						</div>
-					</button>`;
+								 
+								<div class="card p-2 bg-secondary" onclick="madeForYouB()">
+									<a href="album.html?id=${trackList.data[index].album.id}" class="text-decoration-none link-info">
+										<img src="${trackList.data[index].album.cover_medium}" class="card-img-top rounded-0" alt="episodeCover">
+									</a>
+									<div class="card-body text-start">
+										<p class="card-text fs-10 text-light text-truncate">${trackList.data[index].title_short}</p>
+										<p class="card-text fs-10 fw-light text-info text-truncate"><a href="artist.html?id=${trackList.data[index].artist.id}" class="text-decoration-none link-info"> ${trackList.data[index].artist.name} </a></p>
+									</div>
+									</div>
+								`;
 					//button player bar song name and player bar filler
 					let songTitle = document.querySelector('.songTitle');
 					let songArtist = document.querySelector('.songArtist');
@@ -293,6 +311,10 @@ window.onload = () => {
 							}
 						});
 					};
+					let volume = document.querySelector('#volume-control');
+					volume.addEventListener('input', function (e) {
+						audioPlayer.volume = e.currentTarget.value / 100;
+					});
 				});
 			});
 	} catch (error) {
@@ -307,17 +329,17 @@ window.onload = () => {
 				let cols = document.querySelectorAll('.madeForYouC');
 				cols.forEach((col, index) => {
 					col.innerHTML += `
-					<button type="button" onclick="madeForYouC()" class="btn"> 
-					<div class="card p-2 bg-secondary">
+				
+					<div class="card p-2 bg-secondary" onclick="madeForYouC()">
 						<a href="album.html?id=${trackList.data[index].album.id}" class="text-decoration-none link-info">
-							<img src="${trackList.data[index].album.cover_medium}" class="card-img-top rounded-0"alt="episodeCover">
+							<img src="${trackList.data[index].album.cover_medium}" class="card-img-top rounded-0" alt="episodeCover">
 						</a>
 						<div class="card-body text-start">
 							<p class="card-text fs-10 text-light text-truncate">${trackList.data[index].title_short}</p>
 							<p class="card-text fs-10 fw-light text-info"><a href="artist.html?id=${trackList.data[index].artist.id}" class="text-decoration-none link-info"> ${trackList.data[index].artist.name} </a></p>
 						</div>
 						</div>
-					</button>`;
+				`;
 					//button player bar song name and player bar filler
 					let songTitle = document.querySelector('.songTitle');
 					let songArtist = document.querySelector('.songArtist');
@@ -339,6 +361,10 @@ window.onload = () => {
 							}
 						});
 					};
+					let volume = document.querySelector('#volume-control');
+					volume.addEventListener('input', function (e) {
+						audioPlayer.volume = e.currentTarget.value / 100;
+					});
 				});
 			});
 	} catch (error) {
@@ -353,17 +379,17 @@ window.onload = () => {
 				let cols = document.querySelectorAll('.madeForYouD');
 				cols.forEach((col, index) => {
 					col.innerHTML += `
-					<button type="button" onclick="madeForYouD()"class="btn"> 
-					<div class="card p-2 bg-secondary">
-						<a href="album.html?id=${trackList.data[index].album.id}" class="text-decoration-none link-info">
-							<img src="${trackList.data[index].album.cover_medium}" class="card-img-top rounded-0"alt="episodeCover">
-						</a>
-						<div class="card-body text-start">
-							<p class="card-text fs-10 text-light text-truncate">${trackList.data[index].title_short}</p>
-							<p class="card-text fs-10 fw-light text-info"><a href="artist.html?id=${trackList.data[index].artist.id}" class="text-decoration-none link-info"> ${trackList.data[index].artist.name} </a></p>
-						</div>
-						</div>
-					</button>`;
+									 
+									<div class="card p-2 bg-secondary" onclick="madeForYouD()">
+										<a href="album.html?id=${trackList.data[index].album.id}" class="text-decoration-none link-info">
+											<img src="${trackList.data[index].album.cover_medium}" class="card-img-top rounded-0" alt="episodeCover">
+										</a>
+										<div class="card-body text-start">
+											<p class="card-text fs-10 text-light text-truncate">${trackList.data[index].title_short}</p>
+											<p class="card-text fs-10 fw-light text-info"><a href="artist.html?id=${trackList.data[index].artist.id}" class="text-decoration-none link-info"> ${trackList.data[index].artist.name} </a></p>
+										</div>
+										</div>
+									`;
 					//button player bar song name and player bar filler
 					let songTitle = document.querySelector('.songTitle');
 					let songArtist = document.querySelector('.songArtist');
@@ -385,6 +411,10 @@ window.onload = () => {
 							}
 						});
 					};
+					let volume = document.querySelector('#volume-control');
+					volume.addEventListener('input', function (e) {
+						audioPlayer.volume = e.currentTarget.value / 100;
+					});
 				});
 			});
 	} catch (error) {
@@ -399,17 +429,16 @@ window.onload = () => {
 				let cols = document.querySelectorAll('.madeForYouE');
 				cols.forEach((col, index) => {
 					col.innerHTML += `
-					<button onclick="madeForYouE()" class="btn"> 
-						<div class="card p-2 bg-secondary">
-							<a href="album.html?id=${trackList.data[index].album.id}" class="text-decoration-none link-info">
-							<img src="${trackList.data[index].album.cover_medium}" class="card-img-top rounded-0"alt="episodeCover">
-							</a>
-							<div class="card-body text-start">
-								<p class="card-text fs-10 text-light text-truncate">${trackList.data[index].title_short}</p>
-								<p class="card-text fs-10 fw-light text-info"><a href="artist.html?id=${trackList.data[index].artist.id}" class="text-decoration-none link-info"> ${trackList.data[index].artist.name} </a></p>
-							</div>
-						</div>
-					</button>`;
+							
+								<div class="card p-2 bg-secondary" onclick="madeForYouE()">
+									<a href="album.html?id=${trackList.data[index].album.id}" class="text-decoration-none link-info">
+									<img src="${trackList.data[index].album.cover_medium}" class="card-img-top rounded-0" alt="episodeCover">
+									</a>
+									<div class="card-body text-start">
+										<p class="card-text fs-10 text-light text-truncate">${trackList.data[index].title_short}</p>
+										<p class="card-text fs-10 fw-light text-info text-truncate"><a href="artist.html?id=${trackList.data[index].artist.id}" class="text-decoration-none link-info"> ${trackList.data[index].artist.name} </a></p>
+									</div>
+								</div>`;
 					//button player bar song name and player bar filler
 					let songTitle = document.querySelector('.songTitle');
 					let songArtist = document.querySelector('.songArtist');
@@ -431,6 +460,10 @@ window.onload = () => {
 							}
 						});
 					};
+					let volume = document.querySelector('#volume-control');
+					volume.addEventListener('input', function (e) {
+						audioPlayer.volume = e.currentTarget.value / 100;
+					});
 				});
 			});
 	} catch (error) {
@@ -446,8 +479,7 @@ window.onload = () => {
 				let cols = document.querySelectorAll('.yourEpisodesA');
 				cols.forEach((col, index) => {
 					col.innerHTML += `
-							<button onclick="yourEpisodesA()" class="btn">
-								<div class="card p-2 bg-secondary">
+								<div class="card p-2 bg-secondary" onclick="yourEpisodesA()">
 									<a href="album.html?id=${trackList.data[index].album.id}" class="text-decoration-none link-info">
 										<img src="${trackList.data[index].album.cover_medium}" class="card-img-top rounded-0"alt="episodeCover">
 									</a>
@@ -456,7 +488,7 @@ window.onload = () => {
 										<p class="card-text fs-10 fw-light text-info"><a href="artist.html?id=${trackList.data[index].artist.id}" class="text-decoration-none link-info"> ${trackList.data[index].artist.name} </a></p>
 									</div>
 								</div>
-							</button>`;
+							`;
 					//button player bar song name and player bar filler
 					let songTitle = document.querySelector('.songTitle');
 					let songArtist = document.querySelector('.songArtist');
@@ -479,6 +511,10 @@ window.onload = () => {
 							}
 						});
 					};
+					let volume = document.querySelector('#volume-control');
+					volume.addEventListener('input', function (e) {
+						audioPlayer.volume = e.currentTarget.value / 100;
+					});
 				});
 			});
 	} catch (error) {
@@ -493,8 +529,7 @@ window.onload = () => {
 				let cols = document.querySelectorAll('.yourEpisodesB');
 				cols.forEach((col, index) => {
 					col.innerHTML += `
-								<button onclick="yourEpisodesB()" class="btn">
-									<div class="card p-2 bg-secondary">
+									<div class="card p-2 bg-secondary" onclick="yourEpisodesB()">
 										<a href="album.html?id=${trackList.data[index].album.id}" class="text-decoration-none link-info">
 											<img src="${trackList.data[index].album.cover_medium}" class="card-img-top rounded-0"alt="episodeCover">
 										</a>
@@ -503,7 +538,7 @@ window.onload = () => {
 											<p class="card-text fs-10 fw-light text-info"><a href="artist.html?id=${trackList.data[index].artist.id}" class="text-decoration-none link-info"> ${trackList.data[index].artist.name} </a></p>
 										</div>
 									</div>
-								</button>`;
+								`;
 					//button player bar song name and player bar filler
 					let songTitle = document.querySelector('.songTitle');
 					let songArtist = document.querySelector('.songArtist');
@@ -526,6 +561,10 @@ window.onload = () => {
 							}
 						});
 					};
+					let volume = document.querySelector('#volume-control');
+					volume.addEventListener('input', function (e) {
+						audioPlayer.volume = e.currentTarget.value / 100;
+					});
 				});
 			});
 	} catch (error) {
@@ -540,8 +579,8 @@ window.onload = () => {
 				let cols = document.querySelectorAll('.yourEpisodesC');
 				cols.forEach((col, index) => {
 					col.innerHTML += `
-					<button onclick="yourEpisodesC()" class="btn">
-					<div class="card p-2 bg-secondary">
+					
+					<div class="card p-2 bg-secondary" onclick="yourEpisodesC()">
 						<a href="album.html?id=${trackList.data[index].album.id}" class="text-decoration-none link-info">
 							<img src="${trackList.data[index].album.cover_medium}" class="card-img-top rounded-0"alt="episodeCover">
 						</a>
@@ -549,8 +588,7 @@ window.onload = () => {
 							<p class="card-text fs-10 text-light text-truncate">${trackList.data[index].title_short}</p>
 							<p class="card-text fs-10 fw-light text-info"><a href="artist.html?id=${trackList.data[index].artist.id}" class="text-decoration-none link-info"> ${trackList.data[index].artist.name} </a></p>
 						</div>
-					</div>
-				</button>`;
+					</div>`;
 					//button player bar song name and player bar filler
 					let songTitle = document.querySelector('.songTitle');
 					let songArtist = document.querySelector('.songArtist');
@@ -573,6 +611,10 @@ window.onload = () => {
 							}
 						});
 					};
+					let volume = document.querySelector('#volume-control');
+					volume.addEventListener('input', function (e) {
+						audioPlayer.volume = e.currentTarget.value / 100;
+					});
 				});
 			});
 	} catch (error) {
@@ -587,8 +629,8 @@ window.onload = () => {
 				let cols = document.querySelectorAll('.yourEpisodesD');
 				cols.forEach((col, index) => {
 					col.innerHTML += `
-					<button onclick="yourEpisodesD()" class="btn">
-					<div class="card p-2 bg-secondary">
+					
+					<div class="card p-2 bg-secondary" onclick="yourEpisodesD()">
 						<a href="album.html?id=${trackList.data[index].album.id}" class="text-decoration-none link-info">
 							<img src="${trackList.data[index].album.cover_medium}" class="card-img-top rounded-0"alt="episodeCover">
 						</a>
@@ -596,8 +638,7 @@ window.onload = () => {
 							<p class="card-text fs-10 text-light text-truncate">${trackList.data[index].title_short}</p>
 							<p class="card-text fs-10 fw-light text-info"><a href="artist.html?id=${trackList.data[index].artist.id}" class="text-decoration-none link-info"> ${trackList.data[index].artist.name} </a></p>
 						</div>
-					</div>
-				</button>`;
+					</div>`;
 					//button player bar song name and player bar filler
 					let songTitle = document.querySelector('.songTitle');
 					let songArtist = document.querySelector('.songArtist');
@@ -620,6 +661,10 @@ window.onload = () => {
 							}
 						});
 					};
+					let volume = document.querySelector('#volume-control');
+					volume.addEventListener('input', function (e) {
+						audioPlayer.volume = e.currentTarget.value / 100;
+					});
 				});
 			});
 	} catch (error) {
@@ -634,17 +679,17 @@ window.onload = () => {
 				let cols = document.querySelectorAll('.yourEpisodesE');
 				cols.forEach((col, index) => {
 					col.innerHTML += `
-					<button onclick="yourEpisodesE()" class="btn">
-					<div class="card p-2 bg-secondary">
-						<a href="album.html?id=${trackList.data[index].album.id}" class="text-decoration-none link-info">
-							<img src="${trackList.data[index].album.cover_medium}" class="card-img-top rounded-0"alt="episodeCover">
-						</a>
-						<div class="card-body text-start">
-							<p class="card-text fs-10 text-light text-truncate">${trackList.data[index].title_short}</p>
-							<p class="card-text fs-10 fw-light text-info"><a href="artist.html?id=${trackList.data[index].artist.id}" class="text-decoration-none link-info"> ${trackList.data[index].artist.name} </a></p>
-						</div>
-					</div>
-				</button>`;
+									
+									<div class="card p-2 bg-secondary" onclick="yourEpisodesE()">
+										<a href="album.html?id=${trackList.data[index].album.id}" class="text-decoration-none link-info">
+											<img src="${trackList.data[index].album.cover_medium}" class="card-img-top rounded-0"alt="episodeCover">
+										</a>
+										<div class="card-body text-start">
+											<p class="card-text fs-10 text-light text-truncate">${trackList.data[index].title_short}</p>
+											<p class="card-text fs-10 fw-light text-info"><a href="artist.html?id=${trackList.data[index].artist.id}" class="text-decoration-none link-info"> ${trackList.data[index].artist.name} </a></p>
+										</div>
+									</div>
+								`;
 					//button player bar song name and player bar filler
 					let songTitle = document.querySelector('.songTitle');
 					let songArtist = document.querySelector('.songArtist');
@@ -667,6 +712,10 @@ window.onload = () => {
 							}
 						});
 					};
+					let volume = document.querySelector('#volume-control');
+					volume.addEventListener('input', function (e) {
+						audioPlayer.volume = e.currentTarget.value / 100;
+					});
 				});
 			});
 	} catch (error) {

@@ -15,8 +15,8 @@
 <body>
 	<div class="mainBox row g-0 bg-dark">
 		<!-- SIDEBAR -->
-		<nav class="navbar col-0 col-lg-2 fixed-start bg-dark d-none d-lg-block px-3 g-0">
-			<div class="container-fluid pb-4 pt-2 px-2">
+		<nav class="navbar col-0 col-lg-2 fixed-start bg-dark d-none d-lg-block px-3">
+			<div class="container-fluid p-2 pb-5">
 				<a class="navbar-brand text-info" href="index.html">
 					<svg viewBox="0 0 1134 340" class="spotify-logo-text" xmlns="http://www.w3.org/2000/svg">
 						<title>Spotify</title>
@@ -104,43 +104,43 @@
 			<hr class="border border-1 border-info" id="navDivider" />
 
 			<div class="container-fluid">
-				<a href="#">
-					<p class="text-info">Playlist 1</p>
+				<a href="#" class="link-light text-decoration-none">
+					<p class="text-info">Operazione Buonumore</p>
 				</a>
 			</div>
 			<div class="container-fluid">
-				<a href="#">
-					<p class="text-info">Playlist 2</p>
+				<a href="#" class="link-light text-decoration-none">
+					<p class="text-info">Summer 2022✨</p>
 				</a>
 			</div>
 			<div class="container-fluid">
-				<a href="#">
-					<p class="text-info">Playlist 3</p>
+				<a href="#" class="link-light text-decoration-none">
+					<p class="text-info">Music for a sushi restaurant🍱</p>
 				</a>
 			</div>
 			<div class="container-fluid">
-				<a href="#">
-					<p class="text-info">Playlist 4</p>
+				<a href="#" class="link-light text-decoration-none">
+					<p class="text-info">50s Rock</p>
 				</a>
 			</div>
 			<div class="container-fluid">
-				<a href="#">
-					<p class="text-info">Playlist 5</p>
+				<a href="#" class="link-light text-decoration-none">
+					<p class="text-info">Confidence Boost</p>
 				</a>
 			</div>
 			<div class="container-fluid">
-				<a href="#">
-					<p class="text-info">Playlist 6</p>
+				<a href="#" class="link-light text-decoration-none">
+					<p class="text-info">ghosted my therapist</p>
 				</a>
 			</div>
 			<div class="container-fluid">
-				<a href="#">
-					<p class="text-info">Playlist 7</p>
+				<a href="#" class="link-light text-decoration-none">
+					<p class="text-info">soundtrack to your quarter life crisis</p>
 				</a>
 			</div>
 			<div class="container-fluid">
-				<a href="#">
-					<p class="text-info">Playlist 8</p>
+				<a href="#" class="link-light text-decoration-none">
+					<p class="text-info">Your Top Songs 2020</p>
 				</a>
 			</div>
 		</nav>
@@ -180,8 +180,9 @@
 		</ul>
 
 		<!-- CENTRAL NAVBAR  + MAIN -->
-		<div class="col-12 col-lg-8 px-0 m-0 g-0">
-			<nav class="navbar navbar-expand-lg navbar-dark bg-secondary d-flex justify-content-end sticky-top">
+		<div id="mainContent" class="col-12 col-lg-8 px-0 overflow-scroll">
+			<nav id="centralNavbar"
+				class="navbar navbar-expand-lg navbar-dark bg-secondary d-flex justify-content-end sticky-top bg-opacity-10">
 				<div class="container-fluid ps-3 ps-lg-1">
 					<span class="d-lg-none text-light fw-bold fs-5">Good evening</span>
 					<div class="btn-group d-none d-lg-block d-flex align-items-center my-2" role="group">
@@ -240,7 +241,8 @@
 							<ul class="dropdown-menu dropdown-menu-end bg-secondary">
 								<li><a class="dropdown-item text-light" href="#">Account</a></li>
 								<li><a class="dropdown-item text-light" href="#">Profilo</a></li>
-								<li><a class="dropdown-item text-light" href="#">Effettua l'upgrade a premium</a></li>
+								<li><a class="dropdown-item text-light" href="#">Effettua l'upgrade a premium</a>
+								</li>
 								<li><a class="dropdown-item text-light border-bottom border-light pb-2"
 										href="#">Impostazioni</a></li>
 								<li><a class="dropdown-item text-light pt-2" href="#">Esci</a></li>
@@ -266,7 +268,8 @@
 						<div class="offcanvas-body bg-dark opacity-3">
 							<ul class="list-group list-unstyled bg-dark text-decoration-none">
 								<li>
-									<a class="dropdown-item text-light pt-2 fs-3 fw-bold" href="#">Visualizza account
+									<a class="dropdown-item text-light pt-2 fs-3 fw-bold" href="#">Visualizza
+										account
 										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 											fill="currentColor" class="bi bi-arrow-up-right" viewBox="0 0 16 16">
 											<path fill-rule="evenodd"
@@ -295,6 +298,7 @@
 					</div>
 				</div>
 			</nav>
+
 			<!-- MAIN -->
 			<main class="py-2 pb-5 px-4 m-0 overflow-auto d-none d-lg-block" style="height: 90vh">
 				<div class="container-fluid">
@@ -312,7 +316,8 @@
 								<p id="albumArtistTop" class="card-text fs-8 text-light"></p>
 								<p class="card-text fw-light text-light">Ascolta il nuovo album!</p>
 								<div class="py-3">
-									<button class="btn btn-primary rounded-5 px-4 py-2 fs-10">Play</button>
+									<button class="btn btn-primary rounded-5 px-4 py-2 fs-10"
+										id="spotlightPlay">Play</button>
 									<button
 										class="btn btn-dark border border-1 border-info rounded-5 px-4 py-2 fs-10 ms-3">Salva</button>
 								</div>
@@ -439,7 +444,7 @@
 					</div>
 				</div>
 
-				<div class="container-fluid py-2">
+				<div class="container-fluid py-2 ">
 					<div class="container-fluid d-flex justify-content-between align-items-baseline py-2">
 						<p class="text-light fs-8 fw-bold">Made for you</p>
 						<button class="btn">
@@ -447,8 +452,8 @@
 						</button>
 					</div>
 
-					<div class="container-fluid">
-						<div class="row">
+					<div class="container-fluid ">
+						<div class="row row-cols-md-5 madeForYouRow ">
 							<div class="col madeForYouA"></div>
 							<div class="col madeForYouB"></div>
 							<div class="col madeForYouC"></div>
@@ -466,7 +471,7 @@
 					</div>
 
 					<div class="container-fluid">
-						<div class="row">
+						<div class="row row-cols-md-5 yourEpisodesRow">
 							<div class="col yourEpisodesA"></div>
 							<div class="col yourEpisodesB"></div>
 							<div class="col yourEpisodesC"></div>
@@ -753,13 +758,8 @@
 										</svg>
 									</button>
 									<div class="volume-bar__slider-container">
-										<div class="p1ULRzPc4bD8eQ4T_wyp DFtdzavKSbEhwKYkPTa6">
-											<input type="range" min="0" max="1" step="0.1" value="1" />
-											<div data-testid="progress-bar" style="--progress-bar-transform: 100%">
-												<div data-testid="progress-bar-background"></div>
-												<div style="width: 100%"></div>
-											</div>
-										</div>
+										<input id="volume-control" type="range" class="form-range" min="0" max="100"
+											id="customRange2">
 									</div>
 								</div>
 								<button class="btn">
